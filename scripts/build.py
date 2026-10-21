@@ -337,8 +337,9 @@ class Archive:
         pid = 'p' + ts.replace('.', '')
         sub = m.get('subtype', '')
         attrs = ' id="%s"' % pid if anchor else ''
-        stamp = '<a class="tm" href="#%s" title="%s UTC">%s</a>' % (
-            pid, when.strftime('%Y-%m-%d %H:%M:%S'), when.strftime('%H:%M'))
+        stamp = '<a class="tm" href="%s%s" title="%s UTC">%s</a>' % (
+            prefix, share_path(ts), when.strftime('%Y-%m-%d %H:%M:%S'),
+            when.strftime('%H:%M'))
 
         if sub in ('channel_join', 'channel_leave', 'channel_topic',
                    'channel_purpose', 'pinned_item', 'tombstone',
@@ -449,7 +450,30 @@ def guard(path):
 </script>''' % (CANONICAL, path)
 
 
-def page(title, path, prefix, body, description):
+def share_path(ts):
+    return 'p/%s/' % ts.replace('.', '')
+
+
+def page(title, path, prefix, body, description, image=None, robots=''):
+    """Image is (url, width, height) or None for the site card."""
+    url, width, height = image or ('https://%s/card.png' % CANONICAL,
+                                   2400, 1260)
+    title, description = esc(title, True), esc(description, True)
+    meta = [('property', 'og:type', 'website'),
+            ('property', 'og:site_name', 'libbitcoin'),
+            ('property', 'og:url', SITE + path),
+            ('property', 'og:title', title),
+            ('property', 'og:description', description),
+            ('property', 'og:image', esc(url, True)),
+            ('property', 'og:image:width', width),
+            ('property', 'og:image:height', height),
+            ('name', 'twitter:card', 'summary_large_image'),
+            ('name', 'twitter:title', title),
+            ('name', 'twitter:description', description),
+            ('name', 'twitter:image', esc(url, True))]
+    if robots:
+        meta.append(('name', 'robots', robots))
+    tags = '\n'.join('<meta %s="%s" content="%s">' % m for m in meta)
     return '''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -461,14 +485,15 @@ def page(title, path, prefix, body, description):
 <link rel="icon" type="image/svg+xml" href="%sfavicon.svg">
 <link rel="stylesheet" href="%sstyle.css">
 %s
+%s
 </head>
 <body>
 %s
 <script src="%sapp.js"></script>
 </body>
 </html>
-''' % (esc(title), esc(description, True), SITE, path, prefix, prefix,
-       guard(path), body, prefix)
+''' % (title, description, SITE, path, prefix, prefix, tags, guard(path),
+       body, prefix)
 
 
 def mast(prefix, title, lede, extra=''):
@@ -587,6 +612,53 @@ def build_index(a, months):
                                        month_name(last))))
 
 
+def preview_image(m):
+    """The message's first image as a link preview, if usable."""
+    for f in m.get('files', []):
+        if ('path' in f and f.get('size', 0) <= 5 * 1024 * 1024 and
+                f.get('mimetype') in ('image/png', 'image/jpeg', 'image/gif')
+                and f.get('original_w') and f.get('original_h')):
+            return SITE + f['path'], f['original_w'], f['original_h']
+    return None
+
+
+def build_share(a):
+    prefix = '../../'
+    for m in a.messages.values():
+        month = a.home.get(m['ts'])
+        if not month:
+            continue
+        when = store.ts_date(m['ts'])
+        day = '%s %d, %d' % (calendar.month_abbr[when.month], when.day,
+                             when.year)
+        parent = m.get('thread_ts', m['ts'])
+        if parent != m['ts'] and m.get('subtype') != 'thread_broadcast':
+            root = a.messages.get(parent)
+            content = (a.message(root, prefix, anchor=False) if root else '')
+            content += '<div class="th">%s</div>' % a.message(m, prefix)
+        else:
+            content = a.stream([m], prefix).replace('<details class="th">',
+                                                    '<details class="th" '
+                                                    'open>', 1)
+        context = '%s%s/%s/#p%s' % (prefix, month[:4], month[5:],
+                                    m['ts'].replace('.', ''))
+        lede = ('<a href="%s">View in context</a> in the libbitcoin Slack '
+                '<strong>#%s</strong> mirror.' % (context,
+                                                  esc(a.channel['name'])))
+        body = '<div class="wrap">\n%s\n<div class="share">%s</div>\n</div>' % (
+            mast(prefix, day, lede), content)
+        text = a.plain(m) or ' '.join(f.get('title') or f.get('name') or ''
+                                      for f in m.get('files', []))
+        if len(text) > 280:
+            text = text[:279].rstrip() + '…'
+        name = a.name(m)
+        path = share_path(m['ts'])
+        write(os.path.join(OUT, path, 'index.html'),
+              page('%s · #%s · %s' % (name, a.channel['name'], day), path,
+                   prefix, body, text or 'libbitcoin Slack #%s' %
+                   a.channel['name'], preview_image(m)))
+
+
 def build_search(a):
     names, index = [], {}
     rows = []
@@ -645,6 +717,7 @@ def main():
     for month in months:
         build_month(a, month, months)
     build_index(a, months)
+    build_share(a)
     build_search(a)
     for name in os.listdir(os.path.join(store.ROOT, 'site')):
         shutil.copy2(os.path.join(store.ROOT, 'site', name), OUT)
