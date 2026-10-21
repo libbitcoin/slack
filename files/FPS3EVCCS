@@ -1,0 +1,72 @@
+build/boost
+├── 1.69.0
+│   └── ios
+│       └── release
+│           ├── build
+│           │   ├── arm64
+│           │   │   ├── libboost.a
+│           │   │   ├── libboost_atomic.a
+│           │   │   ├── libboost_chrono.a
+│           │   │   ├── libboost_date_time.a
+│           │   │   ├── libboost_exception.a
+│           │   │   ├── libboost_filesystem.a
+│           │   │   ├── libboost_program_options.a
+│           │   │   ├── libboost_random.a
+│           │   │   ├── libboost_system.a
+│           │   │   ├── libboost_thread.a
+│           │   │   ├── libboost_unit_test_framework.a
+│           │   │   └── obj
+│           │   ├── universal
+│           │   │   ├── libboost_atomic.a
+│           │   │   ├── libboost_chrono.a
+│           │   │   ├── libboost_date_time.a
+│           │   │   ├── libboost_exception.a
+│           │   │   ├── libboost_filesystem.a
+│           │   │   ├── libboost_program_options.a
+│           │   │   ├── libboost_random.a
+│           │   │   ├── libboost_system.a
+│           │   │   ├── libboost_thread.a
+│           │   │   └── libboost_unit_test_framework.a
+│           │   └── x86_64
+│           │       ├── libboost.a
+│           │       ├── libboost_atomic.a
+│           │       ├── libboost_chrono.a
+│           │       ├── libboost_date_time.a
+│           │       ├── libboost_exception.a
+│           │       ├── libboost_filesystem.a
+│           │       ├── libboost_program_options.a
+│           │       ├── libboost_random.a
+│           │       ├── libboost_system.a
+│           │       ├── libboost_thread.a
+│           │       ├── libboost_unit_test_framework.a
+│           │       └── obj
+│           ├── framework
+│           │   └── boost.framework
+│           │       ├── Documentation -> Versions/Current/Documentation
+│           │       ├── Headers -> Versions/Current/Headers
+│           │       ├── Resources -> Versions/Current/Resources
+│           │       ├── Versions
+│           │       └── boost -> Versions/Current/boost
+│           ├── ios-build.log
+│           └── prefix
+│               ├── include
+│               │   └── boost
+│               └── lib
+│                   ├── libboost_atomic.a
+│                   ├── libboost_chrono.a
+│                   ├── libboost_date_time.a
+│                   ├── libboost_exception.a
+│                   ├── libboost_filesystem.a
+│                   ├── libboost_prg_exec_monitor.a
+│                   ├── libboost_program_options.a
+│                   ├── libboost_random.a
+│                   ├── libboost_system.a
+│                   ├── libboost_test_exec_monitor.a
+│                   ├── libboost_thread.a
+│                   ├── libboost_timer.a
+│                   └── libboost_unit_test_framework.a
+├── tasks.mk
+├── write-tasks.done
+└── write-tasks.log
+
+19 directories, 50 files

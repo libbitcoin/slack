@@ -1,0 +1,24 @@
+$ cat archive/debug-00002.log  
+14:41:40.741500 DEBUG [node] ================= startup Tue Jul 24 15:41:40 2018 ==================
+14:41:40.745623 INFO [node] ================= startup Tue Jul 24 15:41:40 2018 ==================
+14:41:40.746129 WARNING [node] ================= startup Tue Jul 24 15:41:40 2018 ==================
+14:41:40.746999 ERROR [node] ================= startup Tue Jul 24 15:41:40 2018 ==================
+14:41:40.747077 FATAL [node] ================= startup Tue Jul 24 15:41:40 2018 ==================
+14:41:40.747099 INFO [node] Using config file: "/home/user/libbitcoin4/build/etc/libbitcoin/bn.cfg"
+14:41:40.747182 INFO [node] Press CTRL-C to stop the node.
+14:41:40.747240 INFO [node] Please wait while the node is starting...
+14:41:40.750573 DEBUG [database] Buckets: block [650000], transaction [110000000], address [107000000]
+14:41:40.758881 DEBUG [database] Mapping: "blockchain/block_table" [2600143] (4096)
+14:41:40.759204 DEBUG [database] Mapping: "blockchain/candidate_index" [4] (4096)
+14:41:40.759236 DEBUG [database] Mapping: "blockchain/confirmed_index" [8] (4096)
+14:41:40.759258 DEBUG [database] Mapping: "blockchain/transaction_index" [12] (4096)
+14:41:40.760845 DEBUG [database] Mapping: "blockchain/transaction_table" [880000265] (4096)
+14:41:40.763334 ERROR [node] Failure starting blockchain.
+14:41:40.763949 ERROR [node] Node failed to start with error, operation failed.
+14:41:40.765004 INFO [node] Please wait while the node is stopping...
+14:41:40.769637 DEBUG [database] Unmapped: "blockchain/block_table" [2600143, 2600143]
+14:41:40.769858 DEBUG [database] Unmapped: "blockchain/candidate_index" [4, 4]
+14:41:40.770061 DEBUG [database] Unmapped: "blockchain/confirmed_index" [8, 8]
+14:41:40.770265 DEBUG [database] Unmapped: "blockchain/transaction_index" [12, 12]
+14:41:40.777032 DEBUG [database] Unmapped: "blockchain/transaction_table" [880000265, 880000265]
+14:41:40.778612 INFO [node] Node stopped successfully.

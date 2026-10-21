@@ -1,0 +1,21 @@
+11:31:50.962798 INFO [server] ================= startup  ==================
+11:31:50.962855 WARNING [server] ================= startup  ==================
+11:31:50.963075 ERROR [server] ================= startup  ==================
+11:31:50.963202 FATAL [server] ================= startup  ==================
+11:31:50.963322 INFO [server] Using config file: "/usr/local/Cellar/libbitcoin-server/3.5.0_1/etc/libbitcoin/bs.cfg"
+11:31:50.963374 INFO [server] Please wait while the server is starting...
+11:31:50.964720 INFO [network] Starting manual session.
+11:31:50.964880 INFO [network] Contacting seed [testnet-seed.bitcoin.jonasschnelli.ch:18333]
+11:31:50.964999 INFO [network] Contacting seed [seed.tbtc.petertodd.org:18333]
+11:31:50.965052 INFO [network] Contacting seed [testnet-seed.bluematt.me:18333]
+11:31:50.965104 INFO [network] Contacting seed [testnet-seed.bitcoin.schildbach.de:18333]
+11:31:50.965156 INFO [network] Contacting seed [testnet-seed.voskuil.org:18333]
+11:31:50.996627 INFO [network] Connected seed [testnet-seed.bitcoin.jonasschnelli.ch:18333] as 5.9.121.164:18333
+11:31:55.176124 INFO [network] Failure contacting seed [seed.tbtc.petertodd.org:18333] resolving hostname failed
+11:31:55.399541 INFO [network] Connected seed [testnet-seed.bluematt.me:18333] as 198.251.83.19:18333
+11:31:55.433578 INFO [network] Failure contacting seed [testnet-seed.voskuil.org:18333] operation failed
+11:32:05.298594 INFO [network] Failure contacting seed [testnet-seed.bitcoin.schildbach.de:18333] connection timed out
+11:32:05.298851 ERROR [network] Error seeding host addresses: unresponsive peer may be throttling
+11:32:05.299366 ERROR [server] Server failed to start with error, unresponsive peer may be throttling.
+11:32:05.299830 INFO [server] Please wait while the server is stopping...
+11:33:10.714301 INFO [node] Server stopped successfully.

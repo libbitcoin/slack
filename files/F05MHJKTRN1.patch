@@ -1,0 +1,871 @@
+diff --git a/Home.md b/Home.md
+index 0037975..f39c7d9 100644
+--- a/Home.md
++++ b/Home.md
+@@ -7,10 +7,9 @@ BX is a general purpose Bitcoin command line utility that supports Linux, OS X a
+ ### Example
+ 
+ ```sh
+-$ bx seed | bx ec-new | bx ec-to-public | bx ec-to-address
+-13ua8RRSxLpL5WL5cKUDepUCvJZgGWuKh7
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ec-new | bx ec-to-public | bx ec-to-address
++16u9onWrUZLVZz2RieGuSghzM6Z7WELL9u
+ ```
+ 
+-**Do not use `bx seed` outside of examples!** See [Random Numbers](Random-Numbers).
+-
+ If you encounter problems or have suggestions please use the [issues board](https://github.com/libbitcoin/libbitcoin-explorer/issues).
++
+diff --git a/How to Receive Bitcoin.md b/How to Receive Bitcoin.md
+index afc6413..e9557b6 100644
+--- a/How to Receive Bitcoin.md	
++++ b/How to Receive Bitcoin.md	
+@@ -1,21 +1,18 @@
+-Generate a **private key** from a random **seed** value.
++Generate a **private key** from a seed that you supply. Below we use the seed `21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e`. DO NOT USE THIS SEED FOR ANY WALLETS WITH FUNDS.
+ ```sh
+-$ bx seed | bx ec-new
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ec-new
+ ```
+ 
+-**Do not use `bx seed` to receive real bitcoin!** See [Random Numbers](Random-Numbers).
+-
+ ```
+-dbcd61584666028ac88798bacdc76f4b (seed)
+-4ce3eb6bd06c224e3c355352a488720efc5ac9fe527a219ad35178c3cf762350 (private key)
++9bec42c594db6693a1e4367a3686b5f8aeca522ce6cf21d8371c27d1c4be4105
+ ```
+ Create a Bitcoin **address** from the private key.
+ ```sh
+-$ bx ec-to-public 4ce3eb6bd06c224e3c355352a488720efc5ac9fe527a219ad35178c3cf762350 | bx ec-to-address
++$ bx ec-to-public 9bec42c594db6693a1e4367a3686b5f8aeca522ce6cf21d8371c27d1c4be4105 | bx ec-to-address
+ ```
+ ```
+-03e208f5403383c77d5832a268c9f71480f6e7bfbdfa44904becacfad66163ea31 (public key)
+-1JziqzXeBPyHPeAHrG4DCDW4ASXeGGF6p6 (address)
++022edcd4fa57ae747c7e9d29c7f7bb0856ceb26f68237fe4c92a6b53476718ba81 (public key)
++16u9onWrUZLVZz2RieGuSghzM6Z7WELL9u (address)
+ ```
+ Determine the number of **satoshis** in 0.001 bitcoins.
+ ```sh
+@@ -28,12 +25,12 @@ Send 0.001 bitcoins (100000 satoshis) to the address using any Bitcoin wallet.
+ ### Confirm Receipt of Bitcoin
+ Look up the **balance** of the address.
+ ```sh
+-$ bx fetch-balance 1JziqzXeBPyHPeAHrG4DCDW4ASXeGGF6p6
++$ bx fetch-balance 16u9onWrUZLVZz2RieGuSghzM6Z7WELL9u
+ ```
+ ```js
+ balance
+ {
+-    address 1JziqzXeBPyHPeAHrG4DCDW4ASXeGGF6p6
++    address 16u9onWrUZLVZz2RieGuSghzM6Z7WELL9u
+     confirmed 0
+     received 100000
+     unspent 100000
+@@ -43,7 +40,7 @@ Notice that `balance.confirmed` shows that the transaction has no confirmations.
+ ### View History of Receipt
+ Look up the **history** for the address.
+ ```sh
+-$ bx fetch-history 1JziqzXeBPyHPeAHrG4DCDW4ASXeGGF6p6
++$ bx fetch-history 16u9onWrUZLVZz2RieGuSghzM6Z7WELL9u
+ ```
+ ```js
+ transfers
+@@ -75,4 +72,4 @@ Using `transfers[0].received.height`, there are currently `326525 - 326392 = 133
+ 
+ View the [receive transaction](https://blockchain.info/tx/7c3e880e7c93a7b01506188c36a239f70b561dfa622d0aa0d8f3b7403c94017d) on blockchain.info.
+ 
+-This example is a continued in [How to Spend Bitcoin](How-to-Spend-Bitcoin).
+\ No newline at end of file
++This example is a continued in [How to Spend Bitcoin](How-to-Spend-Bitcoin).
+diff --git a/How-to-Create-a-Multisig-Address.md b/How-to-Create-a-Multisig-Address.md
+index 61c7946..cdb654a 100644
+--- a/How-to-Create-a-Multisig-Address.md
++++ b/How-to-Create-a-Multisig-Address.md
+@@ -2,35 +2,32 @@ To receive payment you must first create a multisig payment address. This exampl
+ ### Create the Public Keys
+ From three random **seeds**, generate three **private keys** and corresponding **public keys**.
+ ```sh
+-$ bx seed | bx ec-new | bx ec-to-public
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ec-new | bx ec-to-public
+ ```
+ ```
+-6b3f9712911f3262fe72de340f0cbb8d (seed #1)
+-9d695afea1c3ab99e11248e4b74e698332b11f5c5c051e6e80da61aa19ae7c89 (private key #1)
+-02b66fcb1064d827094685264aaa90d0126861688932eafbd1d1a4ba149de3308b (public key #1)
++9bec42c594db6693a1e4367a3686b5f8aeca522ce6cf21d8371c27d1c4be4105 (private key #1)
++022edcd4fa57ae747c7e9d29c7f7bb0856ceb26f68237fe4c92a6b53476718ba81 (public key #1)
+ ```
+ ```sh
+-$ bx seed | bx ec-new | bx ec-to-public
++$ echo 32c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ec-new | bx ec-to-public
+ ```
+ ```
+-ca5167e564d813d6011ce02679a2c252 (seed #2)
+-68ebab45a918444d7e088c49bda76d7df89b9ea6ba5ddeb1aab5945391828b83 (private key #2)
+-025cab5e31095551582630f168280a38eb3a62b0b3e230b20f8807fc5463ccca3c (public key #2)
++8c95cb8100d140b23092e4a887a211728dd508a6fab396e77a48dbe2b3cdaa8d (private key #2)
++0338e617ce2d5a8bba37ad72953b8655e004d2c60f72890d73ce1beaa8e2bb2f04 (public key #2)
+ ```
+ ```sh
+-$ bx seed | bx ec-new | bx ec-to-public
++$ echo 43c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ec-new | bx ec-to-public
+ ```
+ ```
+-d4ec97842cf63764ed261ea80f221a69 (seed #3)
+-d1a7069b6057195545d4d9048887dd22be97f16bf463c201b76f8bb05ed423ee (private key #3)
+-021098babedb3408e9ac2984adcf2a8e4c48e56a785065893f76d0fa0ff507f010 (public key #3)
++40e3e5e98d886bd7c24ca8cf503d3b93d66c47b7c79a461afcaed277d0afa388 (private key #3)
++03ab3a7a4415a70a246bb404fcd71f3fee3f26fc7fddf2afb9e3a64d49979d87b1 (public key #3)
+ ```
+ ### Create the Multisig Address
+ Use the public keys to define the multisig redeem **script** and use it to create the script hash address. The "2" represents the number signatures required to spend money received at the address and the "3" represents the number of possible signatures.
+ ```sh
+-$ bx script-to-address "2 [02b66fcb1064d827094685264aaa90d0126861688932eafbd1d1a4ba149de3308b] [025cab5e31095551582630f168280a38eb3a62b0b3e230b20f8807fc5463ccca3c] [021098babedb3408e9ac2984adcf2a8e4c48e56a785065893f76d0fa0ff507f010] 3 checkmultisig"
++$ bx script-to-address "2 [022edcd4fa57ae747c7e9d29c7f7bb0856ceb26f68237fe4c92a6b53476718ba81] [0338e617ce2d5a8bba37ad72953b8655e004d2c60f72890d73ce1beaa8e2bb2f04] [03ab3a7a4415a70a246bb404fcd71f3fee3f26fc7fddf2afb9e3a64d49979d87b1] 3 checkmultisig"
+ ```
+ ```
+-3A6oGpJ5MzABAj9PofXKjcpTJCgYrdGBNJ
++38fi23yLoydaQatrRnTYxTEDgiQuyfW8Sg
+ ```
+-This example is a continued in [How to Spend From a Multisig Address](How-to-Spend-From-a-Multisig-Address).
+\ No newline at end of file
++This example is a continued in [How to Spend From a Multisig Address](How-to-Spend-From-a-Multisig-Address).
+diff --git a/How-to-Encrypt-a-Wallet-Seed.md b/How-to-Encrypt-a-Wallet-Seed.md
+index 5627c1d..0422b5e 100644
+--- a/How-to-Encrypt-a-Wallet-Seed.md
++++ b/How-to-Encrypt-a-Wallet-Seed.md
+@@ -3,11 +3,10 @@ There are two standard ways of encrypting a wallet seed. The [Key Encryption](#u
+ ### Using Key Encryption
+ Create a new HD key from a 256 bit seed.
+ ```sh
+-$ bx seed -b 256 | bx hd-new
++$ echo 2eeba22c0d4e6fac1272daa89f6b3a875bcf49b67267df71d4912670e3fbbb8a | bx hd-new
+ ```
+ ```
+-c82425d18a88ea6c5a92d06bc4ee26bfaf1b8782e7c0537544ae6dd40bb5083b
+-xprv9s21ZrQH143K4EdfsuwWHdxaGgcwGkTB1f71fbzJNfJma1Xga5XE3LqYxXKkwJJLevsp16iDRyk35MwvmKEEyyqLkHQVziTNs6VtPr1xGM8
++xprv9s21ZrQH143K3kGMYLm9ZbFL126vT1y5eASgS9ZqYvusSCQLtAyM46anZDu6AhfvSzBhEeYqocnz3GWPiGtZYHvpqKeVVpd6d9PN36q2dNJ
+ ```
+ 
+ Encrypt the seed (using a stronger passphrase).
+@@ -32,10 +31,10 @@ Save the encrypted private key `6PYVupXn6GTGVxpdVgamwbnTzh8hNAswxDeAhUc5ufTCRu8K
+ ### Using Mnemonics
+ Create a new mnemonic from a temporary seed. Longer seeds produce longer mnemonics.
+ ```sh
+-$ bx seed -b 128 | bx mnemonic-new
++$ echo 9ddad0863f718f24c1377463c13a8c0d | bx mnemonic-new
+ ```
+ ```
+-betray senior exhibit slot apart affair welcome dog hockey razor cart side
++oven story canoe leave body mystery age update glow antenna perfect bread
+ ```
+ 
+ Generate a new HD key from the seed (using a stronger passphrase), or verify your ability to recover the HD key.
+@@ -47,4 +46,4 @@ xprv9s21ZrQH143K38Jah6HduU5yGFkyDqtVDn24E1vjSMZ9vqdtCnUYn1v7pPedGoNvDFzjUG77VuYj
+ ```
+ Save the encrypted mnemonic (including word order) `betray senior exhibit slot apart affair welcome dog hockey razor cart side` and memorize the passphrase `my passphrase`.
+ 
+-The passphrase is optional but if not used the mnemonic is not encrypted and therefore must be kept secret.
+\ No newline at end of file
++The passphrase is optional but if not used the mnemonic is not encrypted and therefore must be kept secret.
+diff --git a/How-to-Remember-a-Wallet-Seed.md b/How-to-Remember-a-Wallet-Seed.md
+index c6bbb22..999ae01 100644
+--- a/How-to-Remember-a-Wallet-Seed.md
++++ b/How-to-Remember-a-Wallet-Seed.md
+@@ -1,9 +1,9 @@
+ Create a new mnemonic from a temporary seed. Longer seeds produce longer mnemonics.
+ ```sh
+-$ bx seed -b 128 | bx mnemonic-new
++$ echo 9ddad0863f718f24c1377463c13a8c0d | bx mnemonic-new
+ ```
+ ```
+-radar wreck account advance race sweet struggle advice basic spare deliver situate
++oven story canoe leave body mystery age update glow antenna perfect bread
+ ```
+ 
+ Generate a new HD wallet from the seed (passphrase optional).
+@@ -23,4 +23,4 @@ $ bx mnemonic-to-seed radar wreck account advance race sweet struggle advice bas
+ xprv9s21ZrQH143K2wbqNakRdoaatpMCevqHG5KKo1PBnk2jmuT1TDW272hcTdmsuBSQWv5PFnqh5CE6LrJac9gbZYcGpSG7sH3VynrWt3s9FDE
+ ```
+ 
+-Without a passphrase the mnemonic must be kept secret. Memorize the mnemonic (including word order) `radar wreck account advance race sweet struggle advice basic spare deliver situate`. See also [Encrypting a Seed](How-to-Encrypt-a-Wallet-Seed).
+\ No newline at end of file
++Without a passphrase the mnemonic must be kept secret. Memorize the mnemonic (including word order) `radar wreck account advance race sweet struggle advice basic spare deliver situate`. See also [Encrypting a Seed](How-to-Encrypt-a-Wallet-Seed).
+diff --git a/Random-Numbers.md b/Random-Numbers.md
+index 3a66895..6989207 100644
+--- a/Random-Numbers.md
++++ b/Random-Numbers.md
+@@ -2,29 +2,4 @@ With the exception of [cert-new](bx-cert-new), any BX command that requires a ra
+ 
+ > The `cert-new` command uses platform random number generation due to its reliance on the underlying [Curve ZMQ](http://curvezmq.org) implementation.
+ 
+-The [seed](bx-seed) command is provided as a convenience for demonstrative purposes only, and **should never be used to secure real bitcoin**.
+-
+-```
+-$ bx help seed
+-
+-Usage: bx seed [-h] [--bit_length value] [--config value]                
+-
+-Info: Generate a pseudorandom seed.                                      
+-
+-Options (named):
+-
+--b [--bit_length]    The length of the seed in bits. Must be divisible by
+-                     8 and must not be less than 128, defaults to 192.   
+--c [--config]        The path to the configuration settings file.        
+--h [--help]          Get a description and instructions for this command.
+-```
+-
+-Example usage:
+-
+-```sh
+-$ bx seed -b 256
+-```
+-```
+-e4d28a5972ce0785477f39f58e424c5ef643b26894c50f8e024601f87736b8fe 
+-```
+ BX utilizes libbitcoin's deterministic ECDSA and as such requires no seed for signing.
+diff --git a/_Sidebar.md b/_Sidebar.md
+index c619e75..f0ab814 100644
+--- a/_Sidebar.md
++++ b/_Sidebar.md
+@@ -49,7 +49,6 @@
+   * [mnemonic-new](bx-mnemonic-new)
+   * [mnemonic-to-seed](bx-mnemonic-to-seed)
+   * [qrcode](bx-qrcode)
+-  * [seed](bx-seed)
+   * [uri-decode](bx-uri-decode)
+   * [uri-encode](bx-uri-encode)
+   * [wif-to-ec](bx-wif-to-ec)
+@@ -132,4 +131,4 @@
+   * [ec-add-secrets](bx-ec-add-secrets)
+   * [ec-multiply](bx-ec-multiply)
+   * [ec-multiply-secrets](bx-ec-multiply-secrets)
+-  * [satoshi-to-btc](bx-satoshi-to-btc)
+\ No newline at end of file
++  * [satoshi-to-btc](bx-satoshi-to-btc)
+diff --git a/bx-address-decode.md b/bx-address-decode.md
+index 90ddccf..b64e958 100644
+--- a/bx-address-decode.md
++++ b/bx-address-decode.md
+@@ -74,17 +74,16 @@ wrapper
+ ### Example 5
+ piped commands
+ ```sh
+-$ bx seed | bx ec-new | bx ec-to-public | bx ec-to-address | bx address-decode
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ec-new | bx ec-to-public | bx ec-to-address | bx address-decode
+ ```
+ ```js
+-f0630cf3954c95d53a021ee0bb6668dd
+-e6d6c2ff0fec07704a57c5f8baaef838ab8254ca29b33f504cec73064548b925
+-03fa282f3907f0929782279a23d6e2ddda2c8309eba0c2f3b00ccb9f9e3d0a5606
+-1PCZAeAsyyeDDFtfdce3p5ppkAfmFBDTsf
++9bec42c594db6693a1e4367a3686b5f8aeca522ce6cf21d8371c27d1c4be4105
++022edcd4fa57ae747c7e9d29c7f7bb0856ceb26f68237fe4c92a6b53476718ba81
++16u9onWrUZLVZz2RieGuSghzM6Z7WELL9u
+ wrapper
+ {
+-    checksum 1659491557
+-    payload f382319f0335055fd7501c0ad8300aba25fa8c05
++    checksum 413151033
++    payload 40b59c3f31b1664672e2c7845040c255b7bc624d
+     version 0
+ }
+-```
+\ No newline at end of file
++```
+diff --git a/bx-address-encode.md b/bx-address-encode.md
+index 635328e..9afae82 100644
+--- a/bx-address-encode.md
++++ b/bx-address-encode.md
+@@ -40,14 +40,13 @@ mwy5FX7MVgDutKYbXBxQG5q7EL6pmhHT58
+ ### Example 3
+ piped commands
+ ```sh
+-$ bx seed | bx ec-new | bx ec-to-public | bx bitcoin160 | bx address-encode
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ec-new | bx ec-to-public | bx bitcoin160 | bx address-encode
+ ```
+ ```
+-3ef002f66a2be8301106e39861433e9740f7e058a738738b
+-6162020b12fdefd90ec772f0da856aa10a34d5e19c4fe1fcedd2eedaf9fcf6fc
+-03527e99e7e665c95c4354c74ecb59c0e0b6d97568b546eed170789648d13c3dea
+-1a928dd68a297e6eff178b17c8faa8afc78b7a4a
+-13RW8k2YdMXP7M4Xc4mcZvGgBEksRmkWQW
++9bec42c594db6693a1e4367a3686b5f8aeca522ce6cf21d8371c27d1c4be4105
++022edcd4fa57ae747c7e9d29c7f7bb0856ceb26f68237fe4c92a6b53476718ba81
++40b59c3f31b1664672e2c7845040c255b7bc624d
++16u9onWrUZLVZz2RieGuSghzM6Z7WELL9u
+ ```
+ ### Example 4
+ 2 of 4 multisig, --version 196 (testnet pay-to-script-hash)
+@@ -56,4 +55,4 @@ $ bx script-to-address -v 196 "2 [020ae29f86f404e4b302cfa17ff15d93149af6a54c80a4
+ ```
+ ```
+ 2N8uwbECKZJLmfYRErQazYBAWfd8PJ66rAN
+-```
+\ No newline at end of file
++```
+diff --git a/bx-ec-to-address.md b/bx-ec-to-address.md
+index d4b575c..aae00e0 100644
+--- a/bx-ec-to-address.md
++++ b/bx-ec-to-address.md
+@@ -54,15 +54,13 @@ modCdv4bPiVHWRhJPLRxdfKuzjxz275cah
+ ### Example 5
+ piped commands
+ ```sh
+-$ bx seed | bx ec-new | bx ec-to-public | bx ec-to-address
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ec-new | bx ec-to-public | bx ec-to-address
+ ```
+ ```
+-3f152b0e3c5806bd9cd2f7c833acd061
+-a927f06ad73c139d7f912c06700bc8ee8060ab0e5507e8119ddf56ad3dbb9576
+-03255c8998fbf7d3820d4c6c73996467080750eeb51f050214b65d16da8cf2b8dc
+-13ua8RRSxLpL5WL5cKUDepUCvJZgGWuKh7
++9bec42c594db6693a1e4367a3686b5f8aeca522ce6cf21d8371c27d1c4be4105
++022edcd4fa57ae747c7e9d29c7f7bb0856ceb26f68237fe4c92a6b53476718ba81
++16u9onWrUZLVZz2RieGuSghzM6Z7WELL9u
+ ```
+-> Note that `$ bx seed` produces random output.
+ 
+ ### Example 6
+ *[Technical background of version 1 Bitcoin addresses]((https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses))*
+@@ -72,4 +70,4 @@ $ bx ec-to-public -u 18e14a7b6a307f426a94f8114701e7c8e774e7f9a47e2c2035db29a2063
+ ```
+ 0450863ad64a87ae8a2fe83c1af1a8403cb53f53e486d8511dad8a04887e5b23522cd470243453a299fa9e77237716103abc11a1df38855ed6f2ee187e9c582ba6
+ 16UwLL9Risc3QfPqBUvKofHmBQ7wMtjvM
+-```
+\ No newline at end of file
++```
+diff --git a/bx-ec-to-ek.md b/bx-ec-to-ek.md
+index dc64f3b..637d56e 100644
+--- a/bx-ec-to-ek.md
++++ b/bx-ec-to-ek.md
+@@ -45,12 +45,11 @@ $ bx ec-to-ek "" 261fc32e9f29c70e3d898aa7db028c81ede0658e8ff8ffab8160073c048ae83
+ ### Example 3
+ piped commands
+ ```sh
+-$ bx seed | bx ec-new | bx ec-to-ek "my passphrase"
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ec-new | bx ec-to-ek "my passphrase"
+ ```
+ ```
+-349e9b1e16620f3af0c8cdd313540c8c4174fc9aa7100f7e
+-261fc32e9f29c70e3d898aa7db028c81ede0658e8ff8ffab8160073c048ae83f
+-6PYXCdvtrs4NN1TjUYbGS5Sd2gjsVsDm7GttqERRWvRjWDsrhQfJeEHrg5
++9bec42c594db6693a1e4367a3686b5f8aeca522ce6cf21d8371c27d1c4be4105
++6PYU5X9QYbEni1fYndb8iT7nh5rB38iUbGzwGfcRLhGXBinSP18gijrbGV
+ ```
+ ### Example 4
+ round trip
+@@ -84,4 +83,4 @@ $ bx ec-to-ek -u -v 111 "my passphrase" 261fc32e9f29c70e3d898aa7db028c81ede0658e
+ ```
+ ```
+ 8EsMUV3Z5A9m8eA28nSYECHAmKmy4YsyCYpGNvzHocFJBFhVYZARNfrfnt
+-```
+\ No newline at end of file
++```
+diff --git a/bx-ec-to-public.md b/bx-ec-to-public.md
+index 13588c7..faf9a20 100644
+--- a/bx-ec-to-public.md
++++ b/bx-ec-to-public.md
+@@ -37,10 +37,9 @@ $ bx ec-to-public -u 8ed1d17dabce1fccbbe5e9bf008b318334e5bcc78eb9e7c1ea850b7eb0d
+ ### Example 2
+ piped commands
+ ```sh
+-$ bx seed | bx ec-new | bx ec-to-public
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ec-new | bx ec-to-public
+ ```
+ ```
+-2deeac24fa1b0678c71f2427400c35ac
+-1f31b7247933f36dde11610b32d473710aedca81f34d90137370366f5291c966
+-02daa7db1b30da2a9a457171f5861d98d055b3bb0f31316679766fd1c774519d2a
+-```
+\ No newline at end of file
++9bec42c594db6693a1e4367a3686b5f8aeca522ce6cf21d8371c27d1c4be4105
++022edcd4fa57ae747c7e9d29c7f7bb0856ceb26f68237fe4c92a6b53476718ba81
++```
+diff --git a/bx-ec-to-wif.md b/bx-ec-to-wif.md
+index 56ecd19..f48ffcd 100644
+--- a/bx-ec-to-wif.md
++++ b/bx-ec-to-wif.md
+@@ -49,12 +49,11 @@ $ bx ec-to-wif -u 0c28fca386c7a227600b2fe50b7cae11ec86d3bf1fbe471be89827e19d72aa
+ ### Example 4
+ piped commands
+ ```sh
+-$ bx seed | bx ec-new | bx ec-to-wif
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ec-new | bx ec-to-wif
+ ```
+ ```
+-6e3f120eb1b8c51486775550b7a44d84
+-984826b715209c50673499ac5faa0b84a4d61e9ef62a231a79ea67102909a0f3
+-L2Kj7UjmWSaJQed5RKLeJk12Ai17CZdmk2svNzi2aUkMTgYC1Tb1
++9bec42c594db6693a1e4367a3686b5f8aeca522ce6cf21d8371c27d1c4be4105
++L2Socy5TfT8kor4cjYeCkKZtM6TFCQgr5Xv9MA91bWWCW3Lr9W98
+ ```
+ ### Example 5
+ --version 239 (testnet)
+@@ -63,4 +62,4 @@ $ bx ec-to-wif -v 239 1560496d135730f5a1bb39580abba1fe8ea270768a08c49a66732772b0
+ ```
+ ```
+ cNJFgo1driFnPcBdBX8BrJrpxchBWXwXCvNH5SoSkdcF6JXXwHMm
+-```
+\ No newline at end of file
++```
+diff --git a/bx-ek-address.md b/bx-ek-address.md
+index d0bc86c..604c080 100644
+--- a/bx-ek-address.md
++++ b/bx-ek-address.md
+@@ -48,11 +48,10 @@ $ bx ek-address passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYF
+ ### Example 3
+ piped commands
+ ```sh
+-$ bx seed | bx ek-address passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKjGYrq
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ek-address passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKjGYrq
+ ```
+ ```
+-7113f4c2e8f67b61225c9a619cd984b63f28df434bf18217 
+-1DS3aqzg5w8bMsyzyutxcrhKoLZGjPnC13
++15v7hCHozX8BRuuJBP6bVfBc4qDCnTwc2w
+ ```
+ ### Example 4
+ invalid seed
+@@ -85,4 +84,4 @@ $ bx ek-address -u -v 111 passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbV
+ ```
+ ```
+ n2Vb3w1eSXon87oQD2QVz2LfvahqVhBXKV
+-```
+\ No newline at end of file
++```
+diff --git a/bx-ek-new.md b/bx-ek-new.md
+index f88ff18..1c22497 100644
+--- a/bx-ek-new.md
++++ b/bx-ek-new.md
+@@ -44,11 +44,10 @@ $ bx ek-new passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKj
+ ### Example 3
+ piped commands
+ ```sh
+-$ bx seed | bx ek-new passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKjGYrq
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ek-new passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKjGYrq
+ ```
+ ```
+-7113f4c2e8f67b61225c9a619cd984b63f28df434bf18217
+-6PnTXoTt48rHNWvuMBRyW2ttL4zfz31J8TMcsJQVNxmxAgqVMN2mmNezsC
++6PnNHrh6uUmyDJjr8v7XR6Eer9eE6AgDiVfdzgW9rcM3ovfrmSvWRp2RBW
+ ```
+ ### Example 4
+ invalid seed
+@@ -81,4 +80,4 @@ $ bx ek-new -u -v 111 passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSm
+ ```
+ ```
+ 8F7FpHwGgCmZag3nViwdDJTcRUVSZDiyp362gLWisvHDtMQkyC6JJuFhVX
+-```
+\ No newline at end of file
++```
+diff --git a/bx-ek-public-to-address.md b/bx-ek-public-to-address.md
+index e8c25f0..c9d9988 100644
+--- a/bx-ek-public-to-address.md
++++ b/bx-ek-public-to-address.md
+@@ -42,12 +42,11 @@ $ bx ek-public-to-address "my passphrase" cfrm38VUVm4ZGXku7wWGiLfAJNoeDHConFb9Cu
+ ### Example 3
+ piped commands
+ ```sh
+-$ bx seed | bx ek-public passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKjGYrq | bx ek-public-to-address "my passphrase"
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ek-public passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKjGYrq | bx ek-public-to-address "my passphrase"
+ ```
+ ```
+-7113f4c2e8f67b61225c9a619cd984b63f28df434bf18217
+-cfrm38VURwDvZXxV2AfWnHe6GwDxSG4FkrK4en7VdaxLPMxMnU8BaLneNVAwf19TAkbmAptNNaH
+-1DS3aqzg5w8bMsyzyutxcrhKoLZGjPnC13
++cfrm38VU8romiJFGLRW1GJgy9wuyyXw5YApC373aU6vTgRdK4rR8yRRh8qcKKJjAgDuUJ91FpLo
++15v7hCHozX8BRuuJBP6bVfBc4qDCnTwc2w
+ ```
+ ### Example 4
+ incorrect passphrase
+@@ -80,4 +79,4 @@ $ bx ek-public-to-address "my passphrase" cfrm2zbi4iuQJ7cY69uJZsxhYLk4wLY7UWQiZ1
+ ```
+ ```
+ n2Vb3w1eSXon87oQD2QVz2LfvahqVhBXKV
+-```
+\ No newline at end of file
++```
+diff --git a/bx-ek-public-to-ec.md b/bx-ek-public-to-ec.md
+index 5a8df23..0be68ac 100644
+--- a/bx-ek-public-to-ec.md
++++ b/bx-ek-public-to-ec.md
+@@ -41,12 +41,11 @@ $ bx ek-public-to-ec "my passphrase" cfrm38VUVm4ZGXku7wWGiLfAJNoeDHConFb9CugfTnR
+ ### Example 3
+ piped commands
+ ```sh
+-$ bx seed | bx ek-public passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKjGYrq | bx ek-public-to-ec "my passphrase"
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ek-public passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKjGYrq | bx ek-public-to-ec "my passphrase"
+ ```
+ ```
+-7113f4c2e8f67b61225c9a619cd984b63f28df434bf18217
+-cfrm38VURwDvZXxV2AfWnHe6GwDxSG4FkrK4en7VdaxLPMxMnU8BaLneNVAwf19TAkbmAptNNaH
+-0355ceb3cb0c6b1294c76cb9a6ebb61035c5e7220099647ce4c2df011ee7280460
++cfrm38VU8romiJFGLRW1GJgy9wuyyXw5YApC373aU6vTgRdK4rR8yRRh8qcKKJjAgDuUJ91FpLo
++033beef71cee2d410d9ed2c3e01b473795b8265213cad803f976e83a7472af38a6
+ ```
+ ### Example 4
+ incorrect passphrase
+@@ -79,4 +78,4 @@ $ bx ek-public-to-ec "my passphrase" cfrm2zbi4iuQJ7cY69uJZsxhYLk4wLY7UWQiZ1wH5b3
+ ```
+ ```
+ 047b49ab1aadf965a885932451c87de4265799cb29749f5713c2f8ace9d7e838753b15f90fb4032de40029a80c45bf9d8fc8653d81b4f18d36464840ddce50a4f9
+-```
+\ No newline at end of file
++```
+diff --git a/bx-ek-public.md b/bx-ek-public.md
+index 9d47ffa..009c213 100644
+--- a/bx-ek-public.md
++++ b/bx-ek-public.md
+@@ -47,11 +47,10 @@ cfrm38VUVm4ZGXku7wWGiLfAJNoeDHConFb9CugfTnR1SQC1jf3uwyKULmCMk4SUhsXasMyPcA9
+ ### Example 3
+ piped commands
+ ```sh
+-$ bx seed | bx ek-public passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKjGYrq
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx ek-public passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKjGYrq
+ ```
+ ```
+-7113f4c2e8f67b61225c9a619cd984b63f28df434bf18217 
+-cfrm38VURwDvZXxV2AfWnHe6GwDxSG4FkrK4en7VdaxLPMxMnU8BaLneNVAwf19TAkbmAptNNaH
++cfrm38VU8romiJFGLRW1GJgy9wuyyXw5YApC373aU6vTgRdK4rR8yRRh8qcKKJjAgDuUJ91FpLo
+ ```
+ ### Example 4
+ invalid seed
+@@ -84,4 +83,4 @@ $ bx ek-public -u -v 111 passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVP
+ ```
+ ```
+ cfrm2zbi4iuQJ7cY69uJZsxhYLk4wLY7UWQiZ1wH5b3pEnzczSH3GHY3hAyV5AiWmU7mpk2Bqqc
+-```
+\ No newline at end of file
++```
+diff --git a/bx-ek-to-address.md b/bx-ek-to-address.md
+index a30433d..97e4369 100644
+--- a/bx-ek-to-address.md
++++ b/bx-ek-to-address.md
+@@ -119,4 +119,4 @@ $ bx ek-to-address "my passphrase" 8F7FpHwGgCmZag3nViwdDJTcRUVSZDiyp362gLWisvHDt
+ ```
+ ```
+ n2Vb3w1eSXon87oQD2QVz2LfvahqVhBXKV
+-```
+\ No newline at end of file
++```
+diff --git a/bx-ek-to-ec.md b/bx-ek-to-ec.md
+index 3127ccc..d227d67 100644
+--- a/bx-ek-to-ec.md
++++ b/bx-ek-to-ec.md
+@@ -46,7 +46,6 @@ piped input
+ $ echo 6PYXCdvtrs4NN1TjUYbGS5Sd2gjsVsDm7GttqERRWvRjWDsrhQfJeEHrg5 | bx ek-to-ec "my passphrase"
+ ```
+ ```
+-6PYXCdvtrs4NN1TjUYbGS5Sd2gjsVsDm7GttqERRWvRjWDsrhQfJeEHrg5 
+ 261fc32e9f29c70e3d898aa7db028c81ede0658e8ff8ffab8160073c048ae83f
+ ```
+ ### Example 4
+@@ -121,4 +120,4 @@ $ bx ek-to-ec "my passphrase" 8F7FpHwGgCmZag3nViwdDJTcRUVSZDiyp362gLWisvHDtMQkyC
+ ```
+ ```
+ b1c23d8bf9a957349eafd851808ce5555279cc103924ebd96ddaa3b03666ac74
+-```
+\ No newline at end of file
++```
+diff --git a/bx-electrum-new.md b/bx-electrum-new.md
+index 5919483..214af33 100644
+--- a/bx-electrum-new.md
++++ b/bx-electrum-new.md
+@@ -33,13 +33,6 @@ SEED                 The Base16 entropy from which the mnemonic is
+ ### Example 1
+ 
+ ```
+-$ echo "05e669b4270f4e25bce6fc3736170d423c" | bx electrum-new
++$ echo 05e669b4270f4e25bce6fc3736170d423c | bx electrum-new
+ giggle crush argue inflict wear defy combine evolve tiger spatial crumble fury
+ ```
+-
+-### Example 2
+-
+-```
+-$ bx seed -b 136 | bx electrum-new
+-fatigue mind comfort web follow wonder vibrant pear guide key seed cup abuse
+-```
+\ No newline at end of file
+diff --git a/bx-electrum-to-seed.md b/bx-electrum-to-seed.md
+index a05097f..13f7302 100644
+--- a/bx-electrum-to-seed.md
++++ b/bx-electrum-to-seed.md
+@@ -27,4 +27,4 @@ WORD                 The set of words that that make up the mnemonic. If
+ 
+ ### Example 1
+ 
+-TODO
+\ No newline at end of file
++TODO
+diff --git a/bx-hd-new.md b/bx-hd-new.md
+index 777dabc..67540d4 100644
+--- a/bx-hd-new.md
++++ b/bx-hd-new.md
+@@ -48,11 +48,10 @@ The seed is less than 128 bits long.
+ ### Example 4
+ piped commands
+ ```sh
+-$ bx seed | bx hd-new
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx hd-new
+ ```
+ ```
+-4cd28fdc7efc770749605d59d94fe7b0
+-xprv9s21ZrQH143K3KDWPNXDFTyieNdyp1ADhcEwqvL7t9CDvvvBaEuwjNVXovz6WXFQPJwWqKe17wNAq3xArJ3qcBZqhVrH2Sq3EQ4en8ig2Fo
++xprv9s21ZrQH143K4bXE5XFnFgYYkhiLGuyE9nE5MwwkwDfjrTGtyx6eTiVH62ZrG37oku4R2BQVZdwQsBa3aDFHpUdm9x9aLg2QMoSy5gJLegv
+ ```
+ ### Example 5
+ --version 70615956 (testnet)
+@@ -61,4 +60,4 @@ $ bx hd-new -v 70615956 baadf00dbaadf00dbaadf00dbaadf00d
+ ```
+ ```
+ tprv8ZgxMBicQKsPeQXeTomURYYS8ZhysPog3wXLPwStJ9LeiPeGvypYe4y6HhWadxZi4BB2dLSAMXVkoRi8AoeNXmjETeYFiyRi56BhFnkm9uh
+-```
+\ No newline at end of file
++```
+diff --git a/bx-hd-private.md b/bx-hd-private.md
+index 0efa459..f55ae5f 100644
+--- a/bx-hd-private.md
++++ b/bx-hd-private.md
+@@ -55,12 +55,11 @@ xprv9wSp6B7kry3Vj9m1zSnLvN3xH8RdsPP1Mh7fAaR7aRLcQMKTR2vidYEeEg2mUCTAwCd6vnxVrcjf
+ ### Example 5
+ piped commands
+ ```sh
+-$ bx seed | hd-new | hd-private
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx hd-new | bx hd-private
+ ```
+ ```
+-875d946b5db47508d67756250f63dd6d
+-xprv9s21ZrQH143K2odHtyepinTKCiDf8eBUv5fTHtwDHef5VwX79HyVkut91SFpMUvRHF9f2jwkoQ1Z4kpsrpfvS8ZX4QKCcoZoMeXmLWfPKvB
+-xprv9vHdLyX7nuCbJGV6xHSSi6MxqibjVeiKRF4Z7P2fPKZgpFvmU1oM9mXJqAXCpsHS7FX2Z2fmSTigfeW32bGAQvkLtgQRqgHJPWSptU1gyo6
++xprv9s21ZrQH143K4bXE5XFnFgYYkhiLGuyE9nE5MwwkwDfjrTGtyx6eTiVH62ZrG37oku4R2BQVZdwQsBa3aDFHpUdm9x9aLg2QMoSy5gJLegv
++xprv9uNjRxm4mipLhHomGvkQGjzN7Pa2AqhQ39YV6ZAJvusc7Acrds2rdSdtX2TCo9er31F2HyaN1gDfMs6UATT5rRwCFrwNDtJoKSWpCdZLMo9
+ ```
+ 
+ ### Example 6
+@@ -70,4 +69,4 @@ $ bx hd-new 000102030405060708090a0b0c0d0e0f | bx hd-private -d | bx hd-private
+ ```
+ ```
+ xprvA41z7zogVVwxVSgdKUHDy1SKmdb533PjDz7J6N6mV6uS3ze1ai8FHa8kmHScGpWmj4WggLyQjgPie1rFSruoUihUZREPSL39UNdE3BBDu76
+-```
+\ No newline at end of file
++```
+diff --git a/bx-hd-public.md b/bx-hd-public.md
+index 55aa427..ec40727 100644
+--- a/bx-hd-public.md
++++ b/bx-hd-public.md
+@@ -74,23 +74,21 @@ xpub6D4BDPcP2GT577Vvch3R8wDkScZWzQzMMUm3PWbmWvVJrZwQY4VUNgqFJPMM3No2dFDFGTsxxpG5
+ ### Example 7
+ piped commands, private derivation
+ ```sh
+-$ bx seed | bx hd-new | bx hd-public
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx hd-new | bx hd-public
+ ```
+ ```
+-091974a96a5bfc5b0d4a5ddb3ed987bf
+-xprv9s21ZrQH143K4R2ZMbGkj7RB7wvDhi9ciTTvoLz92LBxfhpfuebjpzwYW9DVzainPDChhipGuEpyfV76ntw51v95FNBnEhHAgiLsJ9DaR9m
+-xpub69jBNd8w5JXfxde1m46b1oHPVdnG4RWS46ZDSP5gVNph7AbDqJzbdRbpYsYwTKAec6YSMMZEZNXLDDtNQcvVaYHgdSuZkCnqCaTM4PxXBZ2
++xprv9s21ZrQH143K4bXE5XFnFgYYkhiLGuyE9nE5MwwkwDfjrTGtyx6eTiVH62ZrG37oku4R2BQVZdwQsBa3aDFHpUdm9x9aLg2QMoSy5gJLegv
++xpub68N5qUHxc6NdumtENxHQdsw6fRQWaJRFQNU5twZvVFQayxx1BQM7BExNNK6yagqRhdF152aXfoPsg66nk3H781k7pmNoiGdF7Vjw9R33Cpy
+ ```
+ ### Example 8
+ piped commands, public derivation
+ ```sh
+-$ bx seed | bx hd-new | bx hd-to-public | bx hd-public
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx hd-new | bx hd-to-public | bx hd-public
+ ```
+ ```
+-9d72c9d7e17468d5f789e841cfa11e19
+-xprv9s21ZrQH143K3dkWG7DPBN7r6QDrTqvszLBBreXR2PKrG7tPJ21JwJ2rHK5ZSXE3SzoSuzZ5twjJPTYhSCTZgjje2Ueg4TJDpXRikxa9mrk
+-xpub661MyMwAqRbcG7pyN8kPYW4aeS4LsJejMZ6nf2w2airq8vDXqZKZV6ML8a71xfXYNR3ZktB2oF8smPmprPaXuMZ5wStSfcKpUvjorwKugxu
+-xpub68W9m7AG6qRBkVgU3bxrk6feqT6efmdba7m2S9s4AYyyK4dypNWReP5rrUkwthCV3xLhhx65xnJ7eg7j4CK7jv4mKtNRGeNuXxZSQQh883V
++xprv9s21ZrQH143K4bXE5XFnFgYYkhiLGuyE9nE5MwwkwDfjrTGtyx6eTiVH62ZrG37oku4R2BQVZdwQsBa3aDFHpUdm9x9aLg2QMoSy5gJLegv
++xpub661MyMwAqRbcH5bhBYnncpVHJjYpgNh5X19gALMNVZCijFc3XVQu1WokwGmauP2F9uhkALaxUPoRNVhTAj1mKnwCGuXwoBaEU9M44jBGrAK
++xpub68N5qUHxc6NdumtENxHQdsw6fRQWaJRFQNU5twZvVFQayxx1BQM7BExNNK6yagqRhdF152aXfoPsg66nk3H781k7pmNoiGdF7Vjw9R33Cpy
+ ```
+ ### Example 9
+ --index 1, --version 70617039 (testnet)
+@@ -99,4 +97,4 @@ $ bx hd-public -i 1 -v 70617039 xprv9uHRZZhk6KAJC1avXpDAp4MDc3sQKNxDiPvvkX8Br5ng
+ ```
+ ```
+ tpubDApXh6cD2fZ7WjtgpHd8yrWyYaneiFuRZa7fVjMkgxsmC1QzoXW8cgx9zQFJ81Jx4deRGfRE7yXA9A3STsxXj4CKEZJHYgpMYikkas9DBTP
+-```
+\ No newline at end of file
++```
+diff --git a/bx-hd-to-ec.md b/bx-hd-to-ec.md
+index 89b736c..453bfa2 100644
+--- a/bx-hd-to-ec.md
++++ b/bx-hd-to-ec.md
+@@ -37,10 +37,9 @@ $ bx hd-to-ec xpub661MyMwAqRbcFtXgS5sYJABqqG9YLmC4Q1Rdap9gSE8NqtwybGhePY2gZ29ESF
+ ### Example 3
+ piped commands
+ ```sh
+-$ bx seed | bx hd-new | bx hd-to-ec
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx hd-new | bx hd-to-ec
+ ```
+ ```
+-4ee7ae9ae9e6f1e9944ee1dab8f3d496
+-xprv9s21ZrQH143K2uREj44qaJdyaaStTzV4SdfZbKHsSPHkL92aHxXQuxaZQ8pcvYVX2NvosgjGhJ38r7V7dEmUqaDJm9mtKPNx1mNbGLtmjGw
+-ffcfba33f9595f45e9b35ba6166c2fc801b056be83586e6c4a049ed6829f9bb5
+-```
+\ No newline at end of file
++xprv9s21ZrQH143K4bXE5XFnFgYYkhiLGuyE9nE5MwwkwDfjrTGtyx6eTiVH62ZrG37oku4R2BQVZdwQsBa3aDFHpUdm9x9aLg2QMoSy5gJLegv
++9bec42c594db6693a1e4367a3686b5f8aeca522ce6cf21d8371c27d1c4be4105
++```
+diff --git a/bx-hd-to-public.md b/bx-hd-to-public.md
+index 93496ae..a954cc0 100644
+--- a/bx-hd-to-public.md
++++ b/bx-hd-to-public.md
+@@ -39,12 +39,11 @@ xpub661MyMwAqRbcFW31YEwpkMuc5THy2PSt5bDMsktWQcFF8syAmRUapSCGu8ED9W6oDMSgv6Zz8ido
+ ### Example 3
+ piped commands
+ ```sh
+-$ bx seed | bx hd-new | bx hd-to-public
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx hd-new | bx hd-to-public
+ ```
+ ```
+-53dc6e013ee4de6c858adb4ef75eb772
+-xprv9s21ZrQH143K4BXnA5VBs3HYVS9mkTjbXFfDepC5f6yAtU38MYmUUq7www2BjDWqZWR7EXtToXEphCWCxiQ6SwrpwcaUH7uDp2VGD47Hna7
+-xpub661MyMwAqRbcGfcFG72CEBEH3TzG9vTStUapTCbhDSW9mGNGu65j2dSRoDg3Uy79LHe9wFqFbhjM7UitQu5gAvkPnHtAWRLFzDRTM2t3C43
++xprv9s21ZrQH143K4bXE5XFnFgYYkhiLGuyE9nE5MwwkwDfjrTGtyx6eTiVH62ZrG37oku4R2BQVZdwQsBa3aDFHpUdm9x9aLg2QMoSy5gJLegv
++xpub661MyMwAqRbcH5bhBYnncpVHJjYpgNh5X19gALMNVZCijFc3XVQu1WokwGmauP2F9uhkALaxUPoRNVhTAj1mKnwCGuXwoBaEU9M44jBGrAK
+ ```
+ ### Example 4
+ --version 70617039 (testnet)
+@@ -53,4 +52,4 @@ $ bx hd-to-public -v 70617039 xprv9s21ZrQH143K31xYSDQpPDxsXRTUcvj2iNHm5NUtrGiGG5
+ ```
+ ```
+ tpubD6NzVbkrYhZ4XJDrzRvuxHEyQaPd1mwwdDofEJwekX18tAdsqeKfxss79AJzg1431FybXg5rfpTrJF4iAhyR7RubberdzEQXiRmXGADH2eA
+-```
+\ No newline at end of file
++```
+diff --git a/bx-mnemonic-new.md b/bx-mnemonic-new.md
+index f785a61..2c18564 100644
+--- a/bx-mnemonic-new.md
++++ b/bx-mnemonic-new.md
+@@ -43,11 +43,10 @@ rival hurdle address inspire tenant almost turkey safe asset step lab boy
+ ### Example 3
+ piped commands, 128 bit seed
+ ```sh
+-$ bx seed -b 128 | bx mnemonic-new
++$ echo 9ddad0863f718f24c1377463c13a8c0d | bx mnemonic-new
+ ```
+ ```
+-36e0ee880a21b1fe4333121499f5d0c9
+-dad alter pear begin brand you art girl behind soul injury napkin
++oven story canoe leave body mystery age update glow antenna perfect bread
+ ```
+ ### Example 4
+ --language es
+@@ -96,4 +95,4 @@ $ bx mnemonic-new 36e0ee880a21b1fe4333121499f5d0c9 -l zh_Hant
+ ```
+ ```
+ 值 所 畢 沒 流 妨 性 守 解 芯 威 隔
+-```
+\ No newline at end of file
++```
+diff --git a/bx-mnemonic-to-seed.md b/bx-mnemonic-to-seed.md
+index 1db11d8..61e49ac 100644
+--- a/bx-mnemonic-to-seed.md
++++ b/bx-mnemonic-to-seed.md
+@@ -117,11 +117,10 @@ WARNING: The specified words are not a valid mnemonic in any supported dictionar
+ ### Example 12
+ piped commands
+ ```sh
+-$ bx seed | bx mnemonic-new | bx mnemonic-to-seed | bx hd-new
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx mnemonic-new | bx mnemonic-to-seed | bx hd-new
+ ```
+ ```
+-655a1ed2d4fef69bb314198c7327f23c
+-grab special regret prepare urge evidence slush lobster midnight odor wish ketchup
+-57bae342ae8e69eb63f17ef993a90a59159e0f78114b602bf0ebabfec0e5d086e883c31975bf03f8a47a32853452623094d1303fd0549745db457145e5756582
+-xprv9s21ZrQH143K43CUCgNp5SmXzg2axQx2P4WupA2zEnKpFM19QfqfdqfpJR3yfzAXZnsHeUaQhWQMwyuqL8DbdeLeCbdMoKNn6pCY4RUn2pK
+-```
+\ No newline at end of file
++canyon duty stage feel aim clarify core spell cool brick lonely weasel pepper jacket solve super bullet valve
++42ec90369d7abb57968afc3c6f13fb1de644fddd30a82f36595973fbc5a72c55c4dd23f5c9229da946594365ac6ac4f1a931fc37a995ed53184d2b2669f08082
++xprv9s21ZrQH143K34tRB6hLshqDytM4AR2yDxdU7CEqbDxzR1cNXuhkQWt28bVWEAxwEtJTHLpnjF3VASwCtac38DnZAXkLJAo8xWzjhRhPPL4
++```
+diff --git a/bx-seed.md b/bx-seed.md
+deleted file mode 100644
+index b71755d..0000000
+--- a/bx-seed.md
++++ /dev/null
+@@ -1,43 +0,0 @@
+-Generate a pseudorandom seed.
+-
+-> WARNING: Pseudorandom seeding can introduce [cryptographic weakness](http://cwe.mitre.org/data/definitions/338.html) into your keys. This command is provided as a convenience.
+-
+-```sh
+-$ bx seed --help
+-```
+-```
+-Usage: bx seed [-h] [--bit_length VALUE] [--config VALUE]                
+-
+-Info: Generate a pseudorandom seed.                                      
+-
+-Options (named):
+-
+--b [--bit_length]    The length of the seed in bits. Must be divisible by
+-                     8 and must not be less than 128, defaults to 192.   
+--c [--config]        The path to the configuration settings file.        
+--h [--help]          Get a description and instructions for this command.
+-```
+-### Example 1
+-192 bit seed
+-```sh
+-$ bx seed
+-```
+-```
+-d915107990a42dfb2ea5762729002d47a4748e0f24aceb61
+-```
+-### Example 2
+-1024 bit seed
+-```sh
+-$ bx seed -b 1024
+-```
+-```
+-273a08cab80ec0326e315b1fe800b63556e3257571cb3d72cf4efc26926b9b73f8808d9cae65b2ba48a19417426a147905fe260338acf7d5f0a214557b440a9e7fb4c344f0867f44cb042b4e434820b9c6f338a136ca120a4324ae717c8f483813a8fbf3854117bd9a37b94811cc51a616a0a534ecb7acabcacc7993252f2c39
+-```
+-### Example 3
+-short seed error
+-```sh
+-$ bx seed -b 32
+-```
+-```
+-The seed size is not supported.
+-```
+\ No newline at end of file
+diff --git a/bx-token-new.md b/bx-token-new.md
+index acecc2c..7f02684 100644
+--- a/bx-token-new.md
++++ b/bx-token-new.md
+@@ -90,9 +90,8 @@ passphraseeJe8PsbqqTpXKHHL5CupNg3hf396MFAHUeFf1k74zFs2pqxM9ARwjKLh4Px1sB
+ ### Example 8
+ piped commands, no lot/sequence (default when salt at least 64 bits)
+ ```sh
+-$ bx seed | bx token-new "my passphrase"
++$ echo 21c89350aa605453cc16892fc3760efc4a2eee33becd1e3e | bx token-new "my passphrase"
+ ```
+ ```
+-f6af40a01b79c95fef5e397eca05e27d7a3d1c35b01108db
+-passphraseryQXuRZZQ3Jw5rAT7m6MzxkGSSRmysq3Ayj9vuEHEnbVPJSmRQ2xYFKDKjGYrq
+-```
+\ No newline at end of file
++passphrasemhsgCKkeXL8SNoBMd4cxVmoLkzmQwD4Z616oMtRDnLdhbvjxW4mzgDXVedcitH
++```
+diff --git a/bx-wrap-decode.md b/bx-wrap-decode.md
+index 85eef8a..ba23fc7 100644
+--- a/bx-wrap-decode.md
++++ b/bx-wrap-decode.md
+@@ -59,4 +59,4 @@ wrapper
+     payload 031bab84e687e36514eeaf5a017c30d32c1f59dd4ea6629da7970ca374513dd006
+     version 42
+ }
+-```
+\ No newline at end of file
++```

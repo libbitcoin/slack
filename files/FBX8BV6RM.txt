@@ -1,0 +1,6 @@
+$ cat archive/error-00002.log                                                                                                                                       
+14:41:40.746129 WARNING [node] ================= startup Tue Jul 24 15:41:40 2018 ==================
+14:41:40.746999 ERROR [node] ================= startup Tue Jul 24 15:41:40 2018 ==================
+14:41:40.747077 FATAL [node] ================= startup Tue Jul 24 15:41:40 2018 ==================
+14:41:40.763334 ERROR [node] Failure starting blockchain.
+14:41:40.763949 ERROR [node] Node failed to start with error, operation failed.

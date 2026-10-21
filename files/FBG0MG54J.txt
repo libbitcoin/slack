@@ -1,0 +1,13 @@
+Interesting, a default install from libbitcoin-server on ubuntu 16.0.4 build without specifying static/shared and building boost/zmq, does in fact hang as described.  I suspect it's a conflict with one of these files:
+
+```
+$ ldd bs | grep -v libbitcoin
+        linux-vdso.so.1 =>  (0x00007ffcbabe4000)
+        libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f90bd4b6000)
+        libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f90bd134000)
+        libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f90bcf1e000)
+        libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f90bcb54000)
+        libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f90bbad3000)
+        /lib64/ld-linux-x86-64.so.2 (0x00007f90be7dc000)
+        librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f90bb3be000)
+```

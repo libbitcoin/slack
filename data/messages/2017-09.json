@@ -1,0 +1,5 @@
+[
+{"blocks": [{"block_id": "M4pd", "elements": [{"elements": [{"text": "This slack channel is too quiet.", "type": "text"}], "type": "rich_text_section"}], "type": "rich_text"}], "text": "This slack channel is too quiet.", "ts": "1504923092.000076", "type": "message", "user": "U6N9XD2FR", "user_profile": {"display_name": "skaht", "name": "skaht", "real_name": "Scott Holben"}},
+{"blocks": [{"block_id": "h1t", "elements": [{"elements": [{"text": "at times :-)", "type": "text"}], "type": "rich_text_section"}], "type": "rich_text"}], "text": "at times :-)", "ts": "1504923354.000088", "type": "message", "user": "U6M711P34", "user_profile": {"display_name": "neillm", "name": "neillm", "real_name": "neillm"}},
+{"subtype": "channel_join", "text": "<@U77PM87BK> has joined the channel", "ts": "1506346705.000722", "type": "message", "user": "U77PM87BK"}
+]

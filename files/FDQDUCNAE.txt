@@ -1,0 +1,99 @@
+08:25:01.054454 DEBUG [server] ================= startup Mon Oct 29 10:25:01 2018 ==================
+08:25:01.054630 INFO [server] ================= startup Mon Oct 29 10:25:01 2018 ==================
+08:25:01.054669 WARNING [server] ================= startup Mon Oct 29 10:25:01 2018 ==================
+08:25:01.054840 ERROR [server] ================= startup Mon Oct 29 10:25:01 2018 ==================
+08:25:01.054872 FATAL [server] ================= startup Mon Oct 29 10:25:01 2018 ==================
+08:25:01.054896 INFO [server] Using config file: "settings.conf"
+08:25:01.054917 INFO [server] Please wait while the server is starting...
+08:25:01.055230 DEBUG [database] Buckets: block [650000], transaction [110000000], spend [250000000], history [107000000]
+08:25:01.056425 DEBUG [database] Mapping: "blockchain/block_table" [5200177] (4096)
+08:25:01.056478 DEBUG [database] Mapping: "blockchain/block_index" [12] (4096)
+08:25:01.057122 DEBUG [database] Mapping: "blockchain/transaction_table" [880000267] (4096)
+08:25:01.057513 DEBUG [database] Mapping: "blockchain/spend_table" [1000000008] (4096)
+08:25:01.057912 DEBUG [database] Mapping: "blockchain/history_table" [428000036] (4096)
+08:25:01.057963 DEBUG [database] Mapping: "blockchain/history_rows" [55] (4096)
+08:25:01.058570 DEBUG [database] Mapping: "blockchain/stealth_rows" [4] (4096)
+08:25:01.059084 INFO [network] Starting manual session.
+08:25:01.059180 INFO [network] Not configured to populate an address pool.
+08:25:01.059234 INFO [server] Seeding is complete.
+08:25:01.059268 INFO [node] Node start height is (0).
+08:25:01.059572 INFO [network] Not configured for accepting incoming connections.
+08:25:01.059622 INFO [network] Starting outbound session.
+08:25:01.059665 WARNING [network] Failure fetching new address: object does not exist
+08:25:01.059770 WARNING [network] Failure fetching new address: object does not exist
+08:25:01.059806 WARNING [network] Failure fetching new address: object does not exist
+08:25:01.059861 WARNING [network] Failure fetching new address: object does not exist
+08:25:01.059902 WARNING [network] Failure fetching new address: object does not exist
+08:25:01.059932 DEBUG [network] Failure connecting outbound: object does not exist
+08:25:01.059964 WARNING [network] Failure fetching new address: object does not exist
+08:25:01.059995 WARNING [network] Failure fetching new address: object does not exist
+08:25:01.060021 WARNING [network] Failure fetching new address: object does not exist
+08:25:01.060045 WARNING [network] Failure fetching new address: object does not exist
+08:25:01.060077 WARNING [network] Failure fetching new address: object does not exist
+08:25:01.060121 DEBUG [network] Failure connecting outbound: object does not exist
+08:25:01.061447 DEBUG [server] Applied address authentication to socket [query]
+08:25:01.061561 INFO [server] Bound public query service to tcp://*:19091
+08:25:01.061694 DEBUG [server] Connected public query worker to inproc://public_query
+08:25:01.061830 DEBUG [server] Applied address authentication to socket [heartbeat]
+08:25:01.061906 INFO [server] Bound public heartbeat service to tcp://*:19092
+08:25:01.062030 DEBUG [server] Applied address authentication to socket [block]
+08:25:01.062121 INFO [server] Bound public block service to tcp://*:19093
+08:25:01.062233 DEBUG [server] Applied address authentication to socket [transaction]
+08:25:01.062314 INFO [server] Bound public transaction service to tcp://*:19094
+08:25:01.062365 INFO [server] Server is started.
+08:25:01.065243 VERBOSE [network] Sent version to [127.0.0.1:18445] (128 bytes)
+08:25:01.065510 DEBUG [network] Peer [127.0.0.1:18445] protocol version (70015) user agent: /Satoshi:0.17.0/
+08:25:01.065550 DEBUG [network] Negotiated protocol version (70013) for [127.0.0.1:18445]
+08:25:01.065596 VERBOSE [network] Received version from [127.0.0.1:18445] (102 bytes)
+08:25:01.065619 VERBOSE [network] Sent verack to [127.0.0.1:18445] (24 bytes)
+08:25:01.065676 INFO [network] Connected manual channel [127.0.0.1:18445] as [127.0.0.1:18445] (1)
+08:25:01.065849 VERBOSE [network] Sent ping to [127.0.0.1:18445] (32 bytes)
+08:25:01.066184 VERBOSE [network] Sent sendheaders to [127.0.0.1:18445] (24 bytes)
+08:25:01.066374 DEBUG [node] Ask [127.0.0.1:18445] for headers after [0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206]
+08:25:01.066485 VERBOSE [network] Sent getheaders to [127.0.0.1:18445] (93 bytes)
+08:25:01.066714 VERBOSE [network] Received verack from [127.0.0.1:18445] (0 bytes)
+08:25:01.066828 VERBOSE [network] Received sendheaders from [127.0.0.1:18445] (0 bytes)
+08:25:01.066897 VERBOSE [network] Received ping from [127.0.0.1:18445] (8 bytes)
+08:25:01.066978 VERBOSE [network] Sent pong to [127.0.0.1:18445] (32 bytes)
+08:25:01.067266 VERBOSE [network] Received getheaders from [127.0.0.1:18445] (613 bytes)
+08:25:01.067278 DEBUG [node] Disallowed get_headers locator size (18) from [127.0.0.1:18445]
+08:25:01.067361 VERBOSE [network] Received feefilter from [127.0.0.1:18445] (8 bytes)
+08:25:01.067419 VERBOSE [network] Received pong from [127.0.0.1:18445] (8 bytes)
+08:25:01.067571 VERBOSE [network] Received headers from [127.0.0.1:18445] (8182 bytes)
+08:25:01.081339 VERBOSE [network] Sent getdata to [127.0.0.1:18445] (3661 bytes)
+08:25:01.082325 DEBUG [node] Rejected block [33639ca8b19abfb9f4a53f320852e06161235ab261477e291d1a0e8bb6634537] from [127.0.0.1:18445] transaction inputs or outputs empty
+08:25:01.082637 DEBUG [network] Stop protocol_version on [127.0.0.1:18445] transaction inputs or outputs empty
+08:25:01.082684 VERBOSE [network] Received block from [127.0.0.1:18445] (262 bytes)
+08:25:01.082743 DEBUG [network] Manual channel stopped: success
+08:25:01.082775 DEBUG [network] Stop protocol_ping on [127.0.0.1:18445] transaction inputs or outputs empty
+08:25:01.082803 DEBUG [network] Stop protocol_reject on [127.0.0.1:18445] transaction inputs or outputs empty
+08:25:01.082823 DEBUG [network] Stop protocol_address on [127.0.0.1:18445] transaction inputs or outputs empty
+08:25:01.082841 DEBUG [network] Stop protocol_block_in on [127.0.0.1:18445] transaction inputs or outputs empty
+08:25:01.082862 DEBUG [network] Stopped block_in protocol for [127.0.0.1:18445].
+08:25:01.082879 DEBUG [network] Stop protocol_block_out on [127.0.0.1:18445] transaction inputs or outputs empty
+08:25:01.082902 DEBUG [network] Stopped block_out protocol for [127.0.0.1:18445].
+08:25:01.082920 DEBUG [network] Stop protocol_transaction_in on [127.0.0.1:18445] transaction inputs or outputs empty
+08:25:01.082936 DEBUG [network] Stopped transaction_in protocol for [127.0.0.1:18445].
+08:25:01.082952 DEBUG [network] Stop protocol_transaction_out on [127.0.0.1:18445] transaction inputs or outputs empty
+08:25:01.082973 DEBUG [network] Stopped transaction_out protocol for [127.0.0.1:18445].
+08:25:01.088129 VERBOSE [network] Sent version to [127.0.0.1:18445] (128 bytes)
+08:25:01.088264 DEBUG [network] Peer [127.0.0.1:18445] protocol version (70015) user agent: /Satoshi:0.17.0/
+08:25:01.088296 DEBUG [network] Negotiated protocol version (70013) for [127.0.0.1:18445]
+08:25:01.088330 VERBOSE [network] Received version from [127.0.0.1:18445] (102 bytes)
+08:25:01.088374 VERBOSE [network] Sent verack to [127.0.0.1:18445] (24 bytes)
+08:25:01.088412 INFO [network] Connected manual channel [127.0.0.1:18445] as [127.0.0.1:18445] (1)
+08:25:01.088552 VERBOSE [network] Sent ping to [127.0.0.1:18445] (32 bytes)
+08:25:01.088585 VERBOSE [network] Sent sendheaders to [127.0.0.1:18445] (24 bytes)
+08:25:01.088568 DEBUG [node] Ask [127.0.0.1:18445] for headers after [0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206]
+08:25:01.088736 VERBOSE [network] Sent getheaders to [127.0.0.1:18445] (93 bytes)
+08:25:01.088748 VERBOSE [network] Received verack from [127.0.0.1:18445] (0 bytes)
+08:25:01.088840 VERBOSE [network] Received sendheaders from [127.0.0.1:18445] (0 bytes)
+08:25:01.088910 VERBOSE [network] Received ping from [127.0.0.1:18445] (8 bytes)
+08:25:01.088977 VERBOSE [network] Sent pong to [127.0.0.1:18445] (32 bytes)
+08:25:01.089040 VERBOSE [network] Received getheaders from [127.0.0.1:18445] (613 bytes)
+08:25:01.089061 DEBUG [node] Disallowed get_headers locator size (18) from [127.0.0.1:18445]
+08:25:01.089117 VERBOSE [network] Received feefilter from [127.0.0.1:18445] (8 bytes)
+08:25:01.089172 VERBOSE [network] Received pong from [127.0.0.1:18445] (8 bytes)
+08:25:01.089319 VERBOSE [network] Received headers from [127.0.0.1:18445] (8182 bytes)
+08:25:01.089801 VERBOSE [network] Sent getdata to [127.0.0.1:18445] (3661 bytes)
+08:25:01.090223 DEBUG [node] Rejected block [33639ca8b19abfb9f4a53f320852e06161235ab261477e291d1a0e8bb6634537] from [127.0.0.1:18445] transaction inputs or outputs empty

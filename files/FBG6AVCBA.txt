@@ -1,0 +1,181 @@
+$ bs --settings
+
+Configuration Settings:
+
+[blockchain]
+# A hash:height checkpoint, multiple entries allowed.
+checkpoint = <value>
+# The number of cores dedicated to block validation, defaults to 0 (physical cores).
+cores = <value>
+# Use high thread priority for block validation, defaults to true.
+priority = <value>
+# The maximum reorganization depth, defaults to 256 (0 for unlimited).
+reorganization_limit = <value>
+# Use libconsensus for script validation if integrated, defaults to false.
+use_libconsensus = <value>
+
+[database]
+# Block hash table size, defaults to 650000.
+block_table_buckets = <value>
+# The maximum number of entries in the unspent outputs cache, defaults to 10000.
+cache_capacity = <value>
+# The blockchain database directory, defaults to 'blockchain'.
+directory = <value>
+# Full database files increase by this percentage, defaults to 50.
+file_growth_rate = <value>
+# Flush each write to disk, defaults to false.
+flush_writes = <value>
+# History hash table size, defaults to 107000000.
+history_table_buckets = <value>
+# Spend hash table size, defaults to 250000000.
+spend_table_buckets = <value>
+# Transaction hash table size, defaults to 110000000.
+transaction_table_buckets = <value>
+
+[fork]
+# Add pay-to-script-hash processing, defaults to true (soft fork).
+bip16 = <value>
+# Disallow collision of unspent transaction hashes, defaults to true (hard fork).
+bip30 = <value>
+# Coinbase input must include block height, defaults to true (soft fork).
+bip34 = <value>
+# Add check locktime verify op code, defaults to true (soft fork).
+bip65 = <value>
+# Require strict signature encoding, defaults to true (soft fork).
+bip66 = <value>
+# Assume bip34, bip65, and bip66 activation if enabled, defaults to true (hard fork).
+bip90 = <value>
+# Allow minimum difficulty blocks, defaults to false.
+easy_blocks = <value>
+
+[log]
+# The log archive directory, defaults to 'archive'.
+archive_directory = <value>
+# The debug log file path, defaults to 'debug.log'.
+debug_file = <value>
+# The error log file path, defaults to 'error.log'.
+error_file = <value>
+# The maximum number of logs to archive, defaults to 0 (maximum).
+maximum_archive_files = <value>
+# The maximum combined size of archived logs, defaults to 0 (maximum).
+maximum_archive_size = <value>
+# The minimum free space required in the archive directory, defaults to 0.
+minimum_free_space = <value>
+# The size at which a log is archived, defaults to 10000000 (0 disables).
+rotation_size = <value>
+# The address of the statistics collection server, defaults to none.
+statistics_server = <value>
+# Enable verbose logging, defaults to false.
+verbose = <value>
+
+[network]
+# IP address to disallow as a peer, multiple entries allowed.
+blacklist = <value>
+# The age limit for any connection, defaults to 60.
+channel_expiration_minutes = <value>
+# The time limit for obtaining seed addresses, defaults to 30.
+channel_germination_seconds = <value>
+# The time limit to complete the connection handshake, defaults to 30.
+channel_handshake_seconds = <value>
+# The time between ping messages, defaults to 5.
+channel_heartbeat_minutes = <value>
+# The inactivity time limit for any connection, defaults to 30.
+channel_inactivity_minutes = <value>
+# The number of concurrent attempts to establish one connection, defaults to 5.
+connect_batch_size = <value>
+# The time limit for connection establishment, defaults to 5.
+connect_timeout_seconds = <value>
+# The maximum number of peer hosts in the pool, defaults to 1000.
+host_pool_capacity = <value>
+# The peer hosts cache file path, defaults to 'hosts.cache'.
+hosts_file = <value>
+# The magic number for message headers, defaults to 3652501241.
+identifier = <value>
+# The target number of incoming network connections, defaults to 0.
+inbound_connections = <value>
+# The port for incoming connections, defaults to 8333.
+inbound_port = <value>
+# The attempt limit for manual connection establishment, defaults to 0 (forever).
+manual_attempt_limit = <value>
+# The target number of outgoing network connections, defaults to 2.
+outbound_connections = <value>
+# A persistent peer node, multiple entries allowed.
+peer = <value>
+# The maximum network protocol version, defaults to 70013.
+protocol_maximum = <value>
+# The minimum network protocol version, defaults to 31402.
+protocol_minimum = <value>
+# A seed node for initializing the host pool, multiple entries allowed.
+seed = <value>
+# The advertised public address of this node, defaults to none.
+self = <value>
+# The services exposed by network connections, defaults to 1 (full node).
+services = <value>
+# The minimum number of threads in the network threadpool, defaults to 0 (physical cores).
+threads = <value>
+# Validate the checksum of network messages, defaults to false.
+validate_checksum = <value>
+
+[node]
+# The time to wait for a requested block, defaults to 60.
+block_latency_seconds = <value>
+# The minimum fee per byte, cumulative for conflicts, defaults to 1.
+byte_fee_satoshis = <value>
+# The minimum output value, defaults to 500.
+minimum_output_satoshis = <value>
+# Disable relay when top block age exceeds, defaults to 24 (0 disables).
+notify_limit_hours = <value>
+# Request transactions on each channel start, defaults to true.
+refresh_transactions = <value>
+# Request that peers relay transactions, defaults to false.
+relay_transactions = <value>
+# The minimum fee per sigop, additional to byte fee, defaults to 100.
+sigop_fee_satoshis = <value>
+
+[server]
+# Blocked client IP address, multiple entries allowed.
+blacklist = <value>
+# Enable the block publishing service, defaults to false.
+block_service_enabled = <value>
+# Allowed client IP address, multiple entries allowed.
+client_address = <value>
+# Allowed Z85-encoded public key of the client, multiple entries allowed.
+client_public_key = <value>
+# The time limit to complete the connection handshake, defaults to 30.
+handshake_seconds = <value>
+# The heartbeat service interval, defaults to 5 (0 disables service).
+heartbeat_service_seconds = <value>
+# The lower limit of address and spend indexing, defaults to 0.
+index_start_height = <value>
+# The public block publishing endpoint, defaults to 'tcp://*:9093'.
+public_block_endpoint = <value>
+# The public heartbeat endpoint, defaults to 'tcp://*:9092'.
+public_heartbeat_endpoint = <value>
+# The public query endpoint, defaults to 'tcp://*:9091'.
+public_query_endpoint = <value>
+# The public transaction publishing endpoint, defaults to 'tcp://*:9094'.
+public_transaction_endpoint = <value>
+# The number of query worker threads per endpoint, defaults to 1 (0 disables service).
+query_workers = <value>
+# Drop messages at this incoming backlog level, defaults to 100.
+receive_high_water = <value>
+# The secure block publishing endpoint, defaults to 'tcp://*:9083'.
+secure_block_endpoint = <value>
+# The secure heartbeat endpoint, defaults to 'tcp://*:9082'.
+secure_heartbeat_endpoint = <value>
+# Disable public endpoints, defaults to false.
+secure_only = <value>
+# The secure query endpoint, defaults to 'tcp://*:9081'.
+secure_query_endpoint = <value>
+# The secure transaction publishing endpoint, defaults to 'tcp://*:9084'.
+secure_transaction_endpoint = <value>
+# Drop messages at this outgoing backlog level, defaults to 100.
+send_high_water = <value>
+# The Z85-encoded private key of the server, enables secure endpoints.
+server_private_key = <value>
+# The query subscription expiration time, defaults to 10 (0 disables expiration).
+subscription_expiration_minutes = <value>
+# The maximum number of query subscriptions, defaults to 1000 (0 disables subscribe).
+subscription_limit = <value>
+# Enable the transaction publishing service, defaults to false.
+transaction_service_enabled = <value>

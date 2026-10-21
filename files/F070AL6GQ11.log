@@ -1,0 +1,1051 @@
+Libbitcoin installer configuration.
+--------------------------------------------------------------------
+OS                    : Darwin
+PARALLEL              : 10
+CC                    : clang
+CXX                   : clang++
+CPPFLAGS              : 
+CFLAGS                : 
+CXXFLAGS              : 
+LDFLAGS               : 
+LDLIBS                : 
+WITH_ICU              : 
+WITH_PNG              : 
+WITH_QRENCODE         : 
+BUILD_ICU             : 
+BUILD_ZLIB            : 
+BUILD_PNG             : 
+BUILD_QRENCODE        : 
+BUILD_BOOST           : yes
+PREFIX                : /Users/richphillips/bx/
+BUILD_DIR             : build-libbitcoin-explorer
+DISABLE_SHARED        : yes
+DISABLE_STATIC        : 
+with_boost            : --with-boost=/Users/richphillips/bx/
+with_pkgconfigdir     : --with-pkgconfigdir=/Users/richphillips/bx//lib/pkgconfig
+--------------------------------------------------------------------
+Initialized empty Git repository in /Users/richphillips/libbitcoin-explorer-3.2.0/build-libbitcoin-explorer/.git/
+
+********************** Download boost_1_85_0.tar.bz2 **********************
+
+Libbitcoin boost configuration.
+--------------------------------------------------------------------
+variant               : release
+threading             : multi
+toolset               : clang
+cxxflags              : 
+linkflags             : 
+link                  : static
+boost.locale.iconv    : on
+boost.locale.posix    : on
+-sNO_BZIP2            : 1
+-sICU_PATH            : 
+-sICU_LINK            : 
+-sZLIB_LIBPATH        : /Users/richphillips/bx//lib
+-sZLIB_INCLUDE        : /Users/richphillips/bx//include
+-j                    : 10
+-d0                   : [supress informational messages]
+-q                    : [stop at the first error]
+--reconfigure         : [ignore cached configuration]
+--prefix              : /Users/richphillips/bx/
+BOOST_OPTIONS         : --with-chrono --with-date_time --with-filesystem --with-iostreams --with-locale --with-log --with-program_options --with-regex --with-system --with-thread --with-test
+--------------------------------------------------------------------
+Building B2 engine..
+
+###
+###
+### Using 'clang' toolset.
+###
+###
+
+Apple clang version 15.0.0 (clang-1500.3.9.4)
+Target: arm64-apple-darwin23.4.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+###
+###
+
+> clang++ -x c++ -std=c++11 -O3 -s -Wno-deprecated-declarations -DNDEBUG bindjam.cpp builtins.cpp class.cpp command.cpp compile.cpp constants.cpp cwd.cpp debug.cpp debugger.cpp execcmd.cpp execnt.cpp execunix.cpp filent.cpp filesys.cpp fileunix.cpp frames.cpp function.cpp glob.cpp hash.cpp hcache.cpp hdrmacro.cpp headers.cpp jam_strings.cpp jam.cpp jamgram.cpp lists.cpp make.cpp make1.cpp md5.cpp mem.cpp modules.cpp native.cpp option.cpp output.cpp parse.cpp pathnt.cpp pathsys.cpp pathunix.cpp regexp.cpp rules.cpp scan.cpp search.cpp startup.cpp tasks.cpp timestamp.cpp value.cpp variable.cpp w32_getreg.cpp mod_jam_builtin.cpp mod_jam_class.cpp mod_jam_errors.cpp mod_jam_modules.cpp mod_order.cpp mod_path.cpp mod_property_set.cpp mod_regex.cpp mod_sequence.cpp mod_set.cpp mod_string.cpp mod_summary.cpp mod_sysinfo.cpp mod_version.cpp -o b2
+
+Failed to build B2 build engine
+Libbitcoin installer configuration.
+--------------------------------------------------------------------
+OS                    : Darwin
+PARALLEL              : 10
+CC                    : clang
+CXX                   : clang++
+CPPFLAGS              : 
+CFLAGS                : 
+CXXFLAGS              : 
+LDFLAGS               : 
+LDLIBS                : 
+WITH_ICU              : 
+WITH_PNG              : 
+WITH_QRENCODE         : 
+BUILD_ICU             : 
+BUILD_ZLIB            : 
+BUILD_PNG             : 
+BUILD_QRENCODE        : 
+BUILD_BOOST           : yes
+PREFIX                : /Users/richphillips/bx/
+BUILD_DIR             : build-libbitcoin-explorer
+DISABLE_SHARED        : yes
+DISABLE_STATIC        : 
+with_boost            : --with-boost=/Users/richphillips/bx/
+with_pkgconfigdir     : --with-pkgconfigdir=/Users/richphillips/bx//lib/pkgconfig
+--------------------------------------------------------------------
+Initialized empty Git repository in /Users/richphillips/libbitcoin-explorer-3.2.0/build-libbitcoin-explorer/.git/
+
+********************** Download boost_1_85_0.tar.bz2 **********************
+
+Libbitcoin boost configuration.
+--------------------------------------------------------------------
+variant               : release
+threading             : multi
+toolset               : clang
+cxxflags              : 
+linkflags             : 
+link                  : static
+boost.locale.iconv    : on
+boost.locale.posix    : on
+-sNO_BZIP2            : 1
+-sICU_PATH            : 
+-sICU_LINK            : 
+-sZLIB_LIBPATH        : /Users/richphillips/bx//lib
+-sZLIB_INCLUDE        : /Users/richphillips/bx//include
+-j                    : 10
+-d0                   : [supress informational messages]
+-q                    : [stop at the first error]
+--reconfigure         : [ignore cached configuration]
+--prefix              : /Users/richphillips/bx/
+BOOST_OPTIONS         : --with-chrono --with-date_time --with-filesystem --with-iostreams --with-locale --with-log --with-program_options --with-regex --with-system --with-thread --with-test
+--------------------------------------------------------------------
+Building B2 engine..
+
+###
+###
+### Using 'clang' toolset.
+###
+###
+
+Apple clang version 15.0.0 (clang-1500.3.9.4)
+Target: arm64-apple-darwin23.4.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+###
+###
+
+> clang++ -x c++ -std=c++11 -O3 -s -Wno-deprecated-declarations -DNDEBUG bindjam.cpp builtins.cpp class.cpp command.cpp compile.cpp constants.cpp cwd.cpp debug.cpp debugger.cpp execcmd.cpp execnt.cpp execunix.cpp filent.cpp filesys.cpp fileunix.cpp frames.cpp function.cpp glob.cpp hash.cpp hcache.cpp hdrmacro.cpp headers.cpp jam_strings.cpp jam.cpp jamgram.cpp lists.cpp make.cpp make1.cpp md5.cpp mem.cpp modules.cpp native.cpp option.cpp output.cpp parse.cpp pathnt.cpp pathsys.cpp pathunix.cpp regexp.cpp rules.cpp scan.cpp search.cpp startup.cpp tasks.cpp timestamp.cpp value.cpp variable.cpp w32_getreg.cpp mod_jam_builtin.cpp mod_jam_class.cpp mod_jam_errors.cpp mod_jam_modules.cpp mod_order.cpp mod_path.cpp mod_property_set.cpp mod_regex.cpp mod_sequence.cpp mod_set.cpp mod_string.cpp mod_summary.cpp mod_sysinfo.cpp mod_version.cpp -o b2
+tools/build/src/engine/b2
+Unicode/ICU support for Boost.Regex?... not found.
+Generating B2 configuration in project-config.jam for clang...
+
+Bootstrapping is done. To build, run:
+
+    ./b2
+    
+To generate header files, run:
+
+    ./b2 headers
+
+The configuration generated uses clang to build by default. If that is
+unintended either use the --with-toolset option or adjust configuration, by
+editing 'project-config.jam'.
+
+Further information:
+
+   - Command line help:
+     ./b2 --help
+     
+   - Getting started guide: 
+     http://www.boost.org/more/getting_started/unix-variants.html
+     
+   - B2 documentation:
+     http://www.boost.org/build/
+
+Performing configuration checks
+
+    - default address-model    : 64-bit [1]
+    - default architecture     : arm [1]
+    - cxx11_hdr_ratio          : yes [2]
+    - cxx11_template_aliases   : yes [2]
+    - cxx11_decltype           : yes [2]
+    - cxx11_char16_t           : yes [2]
+    - cxx11_char32_t           : yes [2]
+    - has std::atomic_ref      : no [2]
+    - has statx                : no [2]
+    - has statx syscall        : no [2]
+    - has init_priority attribute : yes [2]
+    - has stat::st_blksize     : no [2]
+    - has stat::st_mtim        : no [2]
+    - has stat::st_mtimensec   : no [2]
+    - has stat::st_mtimespec   : yes [2]
+    - has stat::st_birthtim    : no [2]
+    - has stat::st_birthtimensec : no [2]
+    - has stat::st_birthtimespec : yes [2]
+    - has fdopendir(O_NOFOLLOW) : yes [2]
+    - has dirent::d_type       : yes [2]
+    - has POSIX *at APIs       : no [2]
+    - has fallocate            : no [2]
+    - cxx11_static_assert      : yes [2]
+    - cxx11_rvalue_references  : yes [2]
+    - cxx11_scoped_enums       : yes [2]
+    - cxx11_noexcept           : yes [2]
+    - cxx11_nullptr            : yes [2]
+    - cxx11_defaulted_functions : yes [2]
+    - cxx11_defaulted_moves    : yes [2]
+    - cxx11_deleted_functions  : yes [2]
+    - cxx11_function_template_default_args : yes [2]
+    - cxx11_final              : yes [2]
+    - cxx11_override           : yes [2]
+    - zlib                     : yes [3]
+    - lzma                     : no [3]
+    - zstd                     : no [3]
+    - has_lzma_cputhreads builds : no [2]
+    - icu                      : no [2]
+    - iconv (libc)             : no [2]
+    - iconv (separate)         : yes [2]
+    - cxx11_auto_declarations  : yes [2]
+    - cxx11_hdr_functional     : yes [2]
+    - cxx11_hdr_type_traits    : yes [2]
+    - cxx11_range_based_for    : yes [2]
+    - cxx11_smart_ptr          : yes [2]
+    - cxx11_variadic_templates : yes [2]
+    - native atomic int32 supported : yes [2]
+    - native syslog supported  : yes [2]
+    - pthread supports robust mutexes : no [2]
+    - Boost.Regex is header-only : yes [2]
+    - lockfree boost::atomic_flag : yes [2]
+    - cxx11_lambdas            : yes [2]
+    - has_icu builds           : no [2]
+    - BOOST_COMP_GNUC >= 4.3.0 : no [2]
+
+[1] clang-15
+[2] clang-darwin-15/release/boost.locale.iconv-on/boost.locale.posix-on/cxxstd-11-iso/link-static/threading-multi/visibility-hidden
+[3] link-static
+
+Component configuration:
+
+    - atomic                   : not building
+    - charconv                 : not building
+    - chrono                   : building
+    - cobalt                   : not building
+    - container                : not building
+    - context                  : not building
+    - contract                 : not building
+    - coroutine                : not building
+    - date_time                : building
+    - exception                : not building
+    - fiber                    : not building
+    - filesystem               : building
+    - graph                    : not building
+    - graph_parallel           : not building
+    - headers                  : not building
+    - iostreams                : building
+    - json                     : not building
+    - locale                   : building
+    - log                      : building
+    - math                     : not building
+    - mpi                      : not building
+    - nowide                   : not building
+    - program_options          : building
+    - python                   : not building
+    - random                   : not building
+    - regex                    : building
+    - serialization            : not building
+    - stacktrace               : not building
+    - system                   : building
+    - test                     : building
+    - thread                   : building
+    - timer                    : not building
+    - type_erasure             : not building
+    - url                      : not building
+    - wave                     : not building
+
+
+********************** Download zeromq/libzmq/master **********************
+
+glibtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'config'.
+glibtoolize: copying file 'config/ltmain.sh'
+glibtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'config'.
+glibtoolize: copying file 'config/libtool.m4'
+glibtoolize: copying file 'config/ltoptions.m4'
+glibtoolize: copying file 'config/ltsugar.m4'
+glibtoolize: copying file 'config/ltversion.m4'
+glibtoolize: copying file 'config/lt~obsolete.m4'
+configure options:
+--disable-shared
+--prefix=/Users/richphillips/bx/
+--enable-static
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... mkdir -p
+checking for gawk... no
+checking for mawk... no
+checking for nawk... no
+checking for awk... awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether UID '502' is supported by ustar format... yes
+checking whether GID '20' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc... clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether clang accepts -g... yes
+checking for clang option to enable C11 features... none needed
+checking whether clang understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of clang... gcc3
+checking whether C compiler accepts -std=c11... yes
+checking whether the compiler supports GNU C++... yes
+checking whether clang++ accepts -g... yes
+checking for clang++ option to enable C++11 features... -std=gnu++11
+checking dependency style of clang++ -std=gnu++11... gcc3
+checking for a sed that does not truncate output... /usr/bin/sed
+checking whether to build with code coverage support... no
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for gawk... (cached) awk
+checking for pkg-config... /opt/homebrew/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking build system type... aarch64-apple-darwin23.4.0
+checking host system type... aarch64-apple-darwin23.4.0
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by clang... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 786432
+checking how to convert aarch64-apple-darwin23.4.0 file names to aarch64-apple-darwin23.4.0 format... func_convert_file_noop
+checking how to convert aarch64-apple-darwin23.4.0 file names to toolchain format... func_convert_file_noop
+checking for /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... dlltool
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from clang object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dsymutil... dsymutil
+checking for nmedit... nmedit
+checking for lipo... lipo
+checking for otool... otool
+checking for otool64... no
+checking for -single_module linker flag... ld: warning: -single_module is obsolete
+no
+checking for -exported_symbols_list linker flag... yes
+checking for -force_load linker flag... yes
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if clang supports -fno-rtti -fno-exceptions... yes
+checking for clang option to produce PIC... -fno-common -DPIC
+checking if clang PIC flag -fno-common -DPIC works... yes
+checking if clang static flag -static works... no
+checking if clang supports -c -o file.o... yes
+checking if clang supports -c -o file.o... (cached) yes
+checking whether the clang linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... darwin23.4.0 dyld
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... clang++ -std=gnu++11 -E
+checking for ld used by clang++ -std=gnu++11... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+checking whether the clang++ -std=gnu++11 linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking for clang++ -std=gnu++11 option to produce PIC... -fno-common -DPIC
+checking if clang++ -std=gnu++11 PIC flag -fno-common -DPIC works... yes
+checking if clang++ -std=gnu++11 static flag -static works... no
+checking if clang++ -std=gnu++11 supports -c -o file.o... yes
+checking if clang++ -std=gnu++11 supports -c -o file.o... (cached) yes
+checking whether the clang++ -std=gnu++11 linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... darwin23.4.0 dyld
+checking how to hardcode library paths into programs... immediate
+checking for valgrind... no
+checking linker version script flag... unsupported
+checking for working posix_memalign... yes
+checking whether clang++ -std=gnu++11 supports C++11 features by default... yes
+checking whether the C compiler works... yes
+checking whether we are using Intel C compiler... no
+checking whether we are using Sun Studio C compiler... no
+checking whether we are using clang C compiler... yes
+checking whether we are using gcc >= 4 C compiler... yes
+checking whether the C++ compiler works... yes
+checking whether we are using Intel C++ compiler... no
+checking whether we are using Sun Studio C++ compiler... no
+checking whether we are using clang C++ compiler... yes
+checking whether we are using gcc >= 4 C++ compiler... yes
+checking whether to enable debugging information... no
+checking whether to enable code coverage... no
+checking if TIPC is available and supports nonblocking connect... no
+checking whether to enable TSan... no
+checking whether to enable ASan... no
+checking for pthread_create in -lpthread... yes
+checking for clock_gettime in -lrt... no
+checking whether C++ compiler supports -fvisibility=hidden... yes
+checking whether C++ compiler supports dso visibility... yes
+checking for asciidoctor... no
+checking whether to build documentation... no
+checking whether to install manpages... no
+configure: Choosing I/O thread polling system from 'kqueue epoll devpoll pollset poll select'...
+configure: Using 'kqueue' I/O thread polling system
+configure: Using 'poll' zmq_poll(er)_* API polling system
+configure: Building with zmq_ppoll
+checking for getconf... getconf
+configure: Using "64" bytes alignment for lock-free data structures
+checking for condition_variable... yes
+configure: Using "auto" condition variable implementation.
+checking for egrep... (cached) /usr/bin/grep -E
+checking for errno.h... yes
+checking for time.h... yes
+checking for unistd.h... (cached) yes
+checking for limits.h... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for arpa/inet.h... yes
+checking for netinet/tcp.h... yes
+checking for netinet/in.h... yes
+checking for sys/socket.h... yes
+checking for sys/time.h... yes
+checking for ifaddrs.h... yes
+checking for sys/uio.h... yes
+checking for sys/eventfd.h... no
+checking for clang++ -std=gnu++11 options needed to detect all undeclared functions... none needed
+checking whether SO_PEERCRED is declared... no
+checking whether LOCAL_PEERCRED is declared... no
+checking for _Bool... no
+checking for stdbool.h that conforms to C99 or later... yes
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for size_t... yes
+checking for ssize_t... yes
+checking for sys/time.h... (cached) yes
+checking for uint32_t... yes
+checking for working volatile... yes
+configure: Using built-in SHA1
+checking "with_norm_ext = no"... no
+checking how to enable additional warnings for C++ compiler... -Wall
+checking how to turn warnings to errors in C++ compiler... -Werror
+checking whether C++ compiler accepts -Watomic-alignment... yes
+checking whether compiler supports __atomic_Xxx intrinsics... yes
+checking return type of signal handlers... void
+checking for perror... yes
+checking for gettimeofday... yes
+checking for clock_gettime... yes
+checking for memset... yes
+checking for socket... yes
+checking for getifaddrs... yes
+checking for freeifaddrs... yes
+checking for mkdtemp... yes
+checking for accept4... no
+checking for alloca.h... yes
+checking whether fork is available... yes
+checking whether strnlen is available... yes
+checking whether if_nametoindex is available... yes
+checking for libbsd... no
+checking whether strlcpy is available... yes
+checking whether signature of pthread_setname_np() has 1 argument... yes
+checking whether signature of pthread_setname_np() has 2 arguments... no
+checking whether signature of pthread_setname_np() has 3 arguments... no
+checking whether pthread_set_name_np() exists... no
+checking whether pthread_setaffinity_np() exists... no
+checking whether SOCK_CLOEXEC is supported... no
+checking whether O_CLOEXEC is supported... yes
+checking whether SO_BINDTODEVICE is supported... no
+checking whether SO_KEEPALIVE is supported... yes
+checking whether TCP_KEEPCNT is supported... yes
+checking whether TCP_KEEPIDLE is supported... no
+checking whether TCP_KEEPINTVL is supported... yes
+checking whether TCP_KEEPALIVE is supported... yes
+checking whether SO_PRIORITY is supported... no
+checking whether getrandom is supported... no
+checking for ./.git... yes
+configure: Building stable and legacy API + draft API
+checking for libunwind... no
+configure: Using radix tree implementation to manage subscriptions
+checking for clang-format... no
+checking whether C compiler accepts -Wtautological-constant-compare... yes
+checking whether C++ compiler accepts -Wtautological-constant-compare... yes
+checking whether C compiler accepts -ffat-lto-objects... no
+checking whether C++ compiler accepts -ffat-lto-objects... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/libzmq.pc
+config.status: creating doc/Makefile
+config.status: creating builds/Makefile
+config.status: creating builds/deprecated-msvc/Makefile
+config.status: creating src/platform.hpp
+config.status: executing depfiles commands
+config.status: executing libtool commands
+Making all in doc
+make[1]: Nothing to be done for `all'.
+  CXX      perf/local_lat.o
+  CXX      perf/remote_lat.o
+  CXX      perf/local_thr.o
+  CXX      perf/remote_thr.o
+  CXX      perf/inproc_lat.o
+  CXX      perf/inproc_thr.o
+  CXX      perf/proxy_thr.o
+  CXX      perf/benchmark_radix_tree-benchmark_radix_tree.o
+  CC       external/unity/unity.o
+  CXX      src/libzmq_la-address.lo
+  CXX      src/libzmq_la-channel.lo
+  CXX      src/libzmq_la-client.lo
+  CXX      src/libzmq_la-clock.lo
+  CXX      src/libzmq_la-ctx.lo
+  CXX      src/libzmq_la-curve_client.lo
+  CXX      src/libzmq_la-curve_mechanism_base.lo
+  CXX      src/libzmq_la-curve_server.lo
+  CXX      src/libzmq_la-dealer.lo
+  CXX      src/libzmq_la-devpoll.lo
+  CXX      src/libzmq_la-dgram.lo
+  CXX      src/libzmq_la-dish.lo
+  CXX      src/libzmq_la-dist.lo
+  CXX      src/libzmq_la-endpoint.lo
+  CXX      src/libzmq_la-epoll.lo
+  CXX      src/libzmq_la-err.lo
+  CXX      src/libzmq_la-fq.lo
+  CXX      src/libzmq_la-gather.lo
+  CXX      src/libzmq_la-gssapi_mechanism_base.lo
+  CXX      src/libzmq_la-gssapi_client.lo
+  CXX      src/libzmq_la-gssapi_server.lo
+  CXX      src/libzmq_la-io_object.lo
+  CXX      src/libzmq_la-io_thread.lo
+  CXX      src/libzmq_la-ip.lo
+  CXX      src/libzmq_la-ip_resolver.lo
+  CXX      src/libzmq_la-ipc_address.lo
+  CXX      src/libzmq_la-ipc_connecter.lo
+  CXX      src/libzmq_la-ipc_listener.lo
+  CXX      src/libzmq_la-kqueue.lo
+  CXX      src/libzmq_la-lb.lo
+  CXX      src/libzmq_la-mailbox.lo
+  CXX      src/libzmq_la-mailbox_safe.lo
+  CXX      src/libzmq_la-mechanism.lo
+  CXX      src/libzmq_la-mechanism_base.lo
+  CXX      src/libzmq_la-metadata.lo
+  CXX      src/libzmq_la-msg.lo
+  CXX      src/libzmq_la-mtrie.lo
+  CXX      src/libzmq_la-norm_engine.lo
+  CXX      src/libzmq_la-null_mechanism.lo
+  CXX      src/libzmq_la-object.lo
+  CXX      src/libzmq_la-options.lo
+  CXX      src/libzmq_la-own.lo
+  CXX      src/libzmq_la-pair.lo
+  CXX      src/libzmq_la-peer.lo
+  CXX      src/libzmq_la-pgm_receiver.lo
+  CXX      src/libzmq_la-pgm_sender.lo
+  CXX      src/libzmq_la-pgm_socket.lo
+  CXX      src/libzmq_la-pipe.lo
+  CXX      src/libzmq_la-plain_client.lo
+  CXX      src/libzmq_la-plain_server.lo
+  CXX      src/libzmq_la-poll.lo
+  CXX      src/libzmq_la-poller_base.lo
+  CXX      src/libzmq_la-polling_util.lo
+  CXX      src/libzmq_la-pollset.lo
+  CXX      src/libzmq_la-precompiled.lo
+  CXX      src/libzmq_la-proxy.lo
+  CXX      src/libzmq_la-pub.lo
+  CXX      src/libzmq_la-pull.lo
+  CXX      src/libzmq_la-push.lo
+  CXX      src/libzmq_la-radio.lo
+  CXX      src/libzmq_la-radix_tree.lo
+  CXX      src/libzmq_la-random.lo
+  CXX      src/libzmq_la-raw_decoder.lo
+  CXX      src/libzmq_la-raw_encoder.lo
+  CXX      src/libzmq_la-raw_engine.lo
+  CXX      src/libzmq_la-reaper.lo
+  CXX      src/libzmq_la-rep.lo
+  CXX      src/libzmq_la-req.lo
+  CXX      src/libzmq_la-router.lo
+  CXX      src/libzmq_la-scatter.lo
+  CXX      src/libzmq_la-select.lo
+  CXX      src/libzmq_la-server.lo
+  CXX      src/libzmq_la-session_base.lo
+  CXX      src/libzmq_la-signaler.lo
+  CXX      src/libzmq_la-socket_base.lo
+  CXX      src/libzmq_la-socks.lo
+  CXX      src/libzmq_la-socks_connecter.lo
+  CXX      src/libzmq_la-stream.lo
+  CXX      src/libzmq_la-stream_connecter_base.lo
+  CXX      src/libzmq_la-stream_listener_base.lo
+  CXX      src/libzmq_la-stream_engine_base.lo
+  CXX      src/libzmq_la-sub.lo
+  CXX      src/libzmq_la-tcp.lo
+  CXX      src/libzmq_la-tcp_address.lo
+  CXX      src/libzmq_la-tcp_connecter.lo
+  CXX      src/libzmq_la-tcp_listener.lo
+  CXX      src/libzmq_la-thread.lo
+  CXX      src/libzmq_la-timers.lo
+  CXX      src/libzmq_la-tipc_address.lo
+  CXX      src/libzmq_la-tipc_connecter.lo
+  CXX      src/libzmq_la-tipc_listener.lo
+  CXX      src/libzmq_la-trie.lo
+  CXX      src/libzmq_la-udp_address.lo
+  CXX      src/libzmq_la-udp_engine.lo
+  CXX      src/libzmq_la-v1_decoder.lo
+  CXX      src/libzmq_la-v2_decoder.lo
+  CXX      src/libzmq_la-v1_encoder.lo
+  CXX      src/libzmq_la-v2_encoder.lo
+  CXX      src/libzmq_la-v3_1_encoder.lo
+  CXX      src/libzmq_la-vmci.lo
+  CXX      src/libzmq_la-vmci_address.lo
+  CXX      src/libzmq_la-vmci_connecter.lo
+  CXX      src/libzmq_la-vmci_listener.lo
+  CXX      src/libzmq_la-xpub.lo
+  CXX      src/libzmq_la-xsub.lo
+  CXX      src/libzmq_la-zmq.lo
+  CXX      src/libzmq_la-zmq_utils.lo
+  CXX      src/libzmq_la-decoder_allocators.lo
+  CXX      src/libzmq_la-socket_poller.lo
+  CXX      src/libzmq_la-zap_client.lo
+  CXX      src/libzmq_la-zmtp_engine.lo
+  CXX      src/libzmq_la-ws_address.lo
+  CXX      src/libzmq_la-wss_address.lo
+  CXX      src/libzmq_la-ws_connecter.lo
+  CXX      src/libzmq_la-ws_decoder.lo
+  CXX      src/libzmq_la-ws_encoder.lo
+  CXX      src/libzmq_la-ws_engine.lo
+  CXX      src/libzmq_la-ws_listener.lo
+  CC       external/sha1/src_libzmq_la-sha1.lo
+  AR       external/unity/libunity.a
+  CXX      tests/libtestutil_a-testutil.o
+  CXX      tests/libtestutil_a-testutil_monitoring.o
+  CXX      tests/libtestutil_a-testutil_security.o
+  CXX      tests/libtestutil_a-testutil_unity.o
+  AR       tests/libtestutil.a
+  CXXLD    src/libzmq.la
+  CXXLD    perf/remote_lat
+  CXXLD    perf/local_thr
+  CXXLD    perf/local_lat
+  CXXLD    perf/benchmark_radix_tree
+  CXXLD    perf/inproc_lat
+  CXXLD    perf/proxy_thr
+  CXXLD    perf/remote_thr
+  CXXLD    perf/inproc_thr
+Making install in doc
+make[2]: Nothing to be done for `install-exec-am'.
+ mkdir -p '/Users/richphillips/bx/lib'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   src/libzmq.la '/Users/richphillips/bx/lib'
+libtool: install: /usr/bin/install -c src/.libs/libzmq.lai /Users/richphillips/bx/lib/libzmq.la
+libtool: install: /usr/bin/install -c src/.libs/libzmq.a /Users/richphillips/bx/lib/libzmq.a
+libtool: install: chmod 644 /Users/richphillips/bx/lib/libzmq.a
+libtool: install: ranlib /Users/richphillips/bx/lib/libzmq.a
+ mkdir -p '/Users/richphillips/bx/include'
+ /usr/bin/install -c -m 644 include/zmq.h include/zmq_utils.h '/Users/richphillips/bx/include'
+ mkdir -p '/Users/richphillips/bx/lib/pkgconfig'
+ /usr/bin/install -c -m 644 src/libzmq.pc '/Users/richphillips/bx/lib/pkgconfig'
+
+********************** Download libbitcoin/secp256k1/version4 **********************
+
+glibtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+glibtoolize: copying file 'build-aux/ltmain.sh'
+glibtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'build-aux/m4'.
+glibtoolize: copying file 'build-aux/m4/libtool.m4'
+glibtoolize: copying file 'build-aux/m4/ltoptions.m4'
+glibtoolize: copying file 'build-aux/m4/ltsugar.m4'
+glibtoolize: copying file 'build-aux/m4/ltversion.m4'
+glibtoolize: copying file 'build-aux/m4/lt~obsolete.m4'
+configure options:
+--disable-tests
+--enable-module-recovery
+--disable-shared
+--prefix=/Users/richphillips/bx/
+--enable-static
+checking build system type... aarch64-apple-darwin23.4.0
+checking host system type... aarch64-apple-darwin23.4.0
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... mkdir -p
+checking for gawk... no
+checking for mawk... no
+checking for nawk... no
+checking for awk... awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking how to print strings... printf
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether clang accepts -g... yes
+checking for clang option to enable C11 features... none needed
+checking whether clang understands -c and -o together... yes
+checking dependency style of clang... gcc3
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by clang... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 786432
+checking how to convert aarch64-apple-darwin23.4.0 file names to aarch64-apple-darwin23.4.0 format... func_convert_file_noop
+checking how to convert aarch64-apple-darwin23.4.0 file names to toolchain format... func_convert_file_noop
+checking for /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from clang object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dsymutil... dsymutil
+checking for nmedit... nmedit
+checking for lipo... lipo
+checking for otool... otool
+checking for otool64... no
+checking for -single_module linker flag... ld: warning: -single_module is obsolete
+no
+checking for -exported_symbols_list linker flag... yes
+checking for -force_load linker flag... yes
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if clang supports -fno-rtti -fno-exceptions... yes
+checking for clang option to produce PIC... -fno-common -DPIC
+checking if clang PIC flag -fno-common -DPIC works... yes
+checking if clang static flag -static works... no
+checking if clang supports -c -o file.o... yes
+checking if clang supports -c -o file.o... (cached) yes
+checking whether the clang linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... darwin23.4.0 dyld
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking whether make supports nested variables... (cached) yes
+checking for pkg-config... /opt/homebrew/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for ar... /usr/bin/ar
+checking for ranlib... /usr/bin/ranlib
+checking for strip... /usr/bin/strip
+checking how to run the C preprocessor... clang -E
+checking for gcc... gcc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking how to run the C preprocessor... gcc -E
+checking dependency style of clang... gcc3
+checking for brew... /opt/homebrew/bin/brew
+checking if clang supports -std=c89 -pedantic -Wall -Wextra -Wcast-align -Wnested-externs -Wshadow -Wstrict-prototypes -Wno-unused-function -Wno-long-long -Wno-overlength-strings... yes
+checking if clang supports -fvisibility=hidden... yes
+checking for __int128... yes
+checking for __builtin_expect... yes
+checking native compiler: gcc... ok
+checking for x86_64 assembly availability... no
+checking for gmp.h... no
+checking for javac... /usr/bin/javac
+checking jni headers... none
+checking whether byte ordering is bigendian... no
+configure: Using static precomputation: yes
+configure: Using assembly optimizations: no
+configure: Using field implementation: 64bit
+configure: Using bignum implementation: no
+configure: Using scalar implementation: 64bit
+configure: Using endomorphism optimizations: no
+configure: Building for coverage analysis: no
+configure: Building ECDH module: no
+configure: Building ECDSA pubkey recovery module: yes
+configure: Using jni: no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libsecp256k1.pc
+config.status: creating src/libsecp256k1-config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+gcc -I. -g -O2 -Wall -Wextra -Wno-unused-function -c src/gen_context.c -o gen_context.o
+  CC       src/exhaustive_tests-tests_exhaustive.o
+gcc gen_context.o -o gen_context
+./gen_context
+  CC       src/libsecp256k1_la-secp256k1.lo
+  CCLD     exhaustive_tests
+  CCLD     libsecp256k1.la
+ mkdir -p '/Users/richphillips/bx/lib'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   libsecp256k1.la '/Users/richphillips/bx/lib'
+libtool: install: /usr/bin/install -c .libs/libsecp256k1.lai /Users/richphillips/bx/lib/libsecp256k1.la
+libtool: install: /usr/bin/install -c .libs/libsecp256k1.a /Users/richphillips/bx/lib/libsecp256k1.a
+libtool: install: chmod 644 /Users/richphillips/bx/lib/libsecp256k1.a
+libtool: install: /usr/bin/ranlib /Users/richphillips/bx/lib/libsecp256k1.a
+ mkdir -p '/Users/richphillips/bx/include'
+ /usr/bin/install -c -m 644 include/secp256k1.h include/secp256k1_recovery.h '/Users/richphillips/bx/include'
+ mkdir -p '/Users/richphillips/bx/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libsecp256k1.pc '/Users/richphillips/bx/lib/pkgconfig'
+
+********************** Download libbitcoin/libbitcoin/version3 **********************
+
+glibtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+glibtoolize: copying file 'build-aux/ltmain.sh'
+glibtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+glibtoolize: copying file 'm4/libtool.m4'
+glibtoolize: copying file 'm4/ltoptions.m4'
+glibtoolize: copying file 'm4/ltsugar.m4'
+glibtoolize: copying file 'm4/ltversion.m4'
+glibtoolize: copying file 'm4/lt~obsolete.m4'
+configure options:
+--without-tests
+--without-examples
+--with-boost=/Users/richphillips/bx/
+--with-pkgconfigdir=/Users/richphillips/bx//lib/pkgconfig
+--disable-shared
+--prefix=/Users/richphillips/bx/
+--enable-static
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... mkdir -p
+checking for gawk... no
+checking for mawk... no
+checking for nawk... no
+checking for awk... awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C++... yes
+checking whether clang++ accepts -g... yes
+checking for clang++ option to enable C++11 features... -std=gnu++11
+checking dependency style of clang++ -std=gnu++11... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for gcc... clang
+checking whether the compiler supports GNU C... yes
+checking whether clang accepts -g... yes
+checking for clang option to enable C11 features... none needed
+checking whether clang understands -c and -o together... yes
+checking dependency style of clang... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... aarch64-apple-darwin23.4.0
+checking host system type... aarch64-apple-darwin23.4.0
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by clang... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 786432
+checking how to convert aarch64-apple-darwin23.4.0 file names to aarch64-apple-darwin23.4.0 format... func_convert_file_noop
+checking how to convert aarch64-apple-darwin23.4.0 file names to toolchain format... func_convert_file_noop
+checking for /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from clang object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dsymutil... dsymutil
+checking for nmedit... nmedit
+checking for lipo... lipo
+checking for otool... otool
+checking for otool64... no
+checking for -single_module linker flag... ld: warning: -single_module is obsolete
+no
+checking for -exported_symbols_list linker flag... yes
+checking for -force_load linker flag... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if clang supports -fno-rtti -fno-exceptions... yes
+checking for clang option to produce PIC... -fno-common -DPIC
+checking if clang PIC flag -fno-common -DPIC works... yes
+checking if clang static flag -static works... no
+checking if clang supports -c -o file.o... yes
+checking if clang supports -c -o file.o... (cached) yes
+checking whether the clang linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... darwin23.4.0 dyld
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... clang++ -std=gnu++11 -E
+checking for ld used by clang++ -std=gnu++11... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+checking whether the clang++ -std=gnu++11 linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking for clang++ -std=gnu++11 option to produce PIC... -fno-common -DPIC
+checking if clang++ -std=gnu++11 PIC flag -fno-common -DPIC works... yes
+checking if clang++ -std=gnu++11 static flag -static works... no
+checking if clang++ -std=gnu++11 supports -c -o file.o... yes
+checking if clang++ -std=gnu++11 supports -c -o file.o... (cached) yes
+checking whether the clang++ -std=gnu++11 linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... darwin23.4.0 dyld
+checking how to hardcode library paths into programs... immediate
+checking whether the compiler supports GNU C++... (cached) yes
+checking whether clang++ -std=gnu++11 accepts -g... (cached) yes
+checking for clang++ -std=gnu++11 option to enable C++11 features... (cached) -std=gnu++11
+checking dependency style of clang++ -std=gnu++11 -std=gnu++11... (cached) gcc3
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking whether make supports nested variables... (cached) yes
+checking for pkg-config... /opt/homebrew/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether clang++ -std=gnu++11 -std=gnu++11 supports C++11 features with -std=c++11... yes
+checking --with-pkgconfigdir option... /Users/richphillips/bx//lib/pkgconfig
+checking --with-tests option... no
+checking --with-examples option... no
+checking --with-icu option... no
+checking --enable-ndebug option... yes
+checking --enable-isystem option... no
+checking whether C++ compiler accepts -std=c++11... yes
+checking whether C++ compiler accepts -Wall... yes
+checking whether C++ compiler accepts -Wall... (cached) yes
+checking whether C++ compiler accepts -Wextra... yes
+checking whether C++ compiler accepts -Wextra... (cached) yes
+checking whether C++ compiler accepts -Wpedantic... yes
+checking whether C++ compiler accepts -Wpedantic... (cached) yes
+checking whether C++ compiler accepts -Wno-reorder... yes
+checking whether C++ compiler accepts -Wno-missing-field-initializers... yes
+checking whether C++ compiler accepts -Wno-missing-braces... yes
+checking whether C++ compiler accepts -Wno-comment... yes
+checking whether C++ compiler accepts -Wno-deprecated-copy... yes
+checking whether C++ compiler accepts -Wno-mismatched-tags... yes
+checking whether the linker accepts -no_fixup_chains... no
+checking whether the linker accepts -fstack-protector... yes
+checking whether the linker accepts -fstack-protector-all... yes
+checking whether C++ compiler accepts -Wno-long-long... yes
+checking for boostlib >= 1.73.0 (107300) includes in "/Users/richphillips/bx//include"... yes
+checking for boostlib >= 1.73.0 (107300) lib path in "/Users/richphillips/bx//lib/aarch64-darwin23.4.0"... no
+checking for boostlib >= 1.73.0 (107300) lib path in "/Users/richphillips/bx//lib64"... no
+checking for boostlib >= 1.73.0 (107300) lib path in "/Users/richphillips/bx//lib"... yes
+checking for boostlib >= 1.73.0 (107300)... yes
+configure: boost_CPPFLAGS : -I/Users/richphillips/bx//include
+configure: boost_ISYS_CPPFLAGS : -isystem/Users/richphillips/bx//include
+configure: boost_LDFLAGS : -L/Users/richphillips/bx//lib
+configure: boost_BUILD_CPPFLAGS : -I/Users/richphillips/bx//include
+checking whether the Boost::Chrono library is available... yes
+checking for exit in -lboost_chrono... yes
+configure: boost_chrono_LIBS : -lboost_chrono
+checking whether the Boost::Date_Time library is available... yes
+checking for exit in -lboost_date_time... yes
+configure: boost_date_time_LIBS : -lboost_date_time
+checking whether the Boost::Filesystem library is available... yes
+checking for exit in -lboost_filesystem... yes
+configure: boost_filesystem_LIBS : -lboost_filesystem
+checking whether the Boost::IOStreams library is available... yes
+checking for exit in -lboost_iostreams... yes
+configure: boost_iostreams_LIBS : -lboost_iostreams
+checking whether the Boost::Locale library is available... yes
+checking for exit in -lboost_locale... yes
+configure: boost_locale_LIBS : -lboost_locale
+checking whether the Boost::Log library is available... yes
+checking for exit in -lboost_log... yes
+checking for exit in -lboost_log_setup... yes
+configure: boost_log_setup_LIBS : -lboost_log_setup
+checking whether the Boost::Log library is available... (cached) yes
+checking for exit in -lboost_log... (cached) yes
+configure: boost_log_LIBS : -lboost_log
+checking whether the Boost::Program_Options library is available... yes
+checking for exit in -lboost_program_options... yes
+configure: boost_program_options_LIBS : -lboost_program_options
+checking whether the Boost::Regex library is available... yes
+checking for exit in -lboost_regex... yes
+configure: boost_regex_LIBS : -lboost_regex
+checking whether the Boost::System library is available... yes
+checking for exit in -lboost_system... yes
+configure: boost_system_LIBS : -lboost_system
+checking whether the Boost::Thread library is available... yes
+checking for exit in -lboost_thread... yes
+configure: boost_thread_LIBS : -lboost_thread -lpthread
+checking how to run the C preprocessor... clang -E
+checking for egrep -e... (cached) /usr/bin/grep -E
+checking whether clang is Clang... yes
+checking whether pthreads work with "-pthread" and "-lpthread"... yes
+checking whether Clang needs flag to prevent "argument unused" warning when linking with -pthread... no
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking whether more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+configure: pthread_CPPFLAGS : 
+configure: pthread_ISYS_CPPFLAGS : 
+configure: pthread_BUILD_CPPFLAGS : 
+configure: pthread_LIBS : -lpthread
+configure: rt_LIBS : 
+configure: icu_i18n_BUILD_CPPFLAGS : 
+configure: dl_LIBS : 
+checking for libsecp256k1 >= 0.1.0.19... no
+parallel-tests: installing 'build-aux/test-driver'
+configure: WARNING: you should use --build, --host, --target
+configure: WARNING: you should use --build, --host, --target
+configure: error: libsecp256k1 >= 0.1.0.19 is required but was not found.

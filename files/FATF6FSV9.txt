@@ -1,0 +1,2 @@
+src/math/elliptic_curve.cpp:24:10: fatal error: secp256k1_recovery.h: No such file or directory
+ #include <secp256k1_recovery.h>

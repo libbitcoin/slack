@@ -1,0 +1,53 @@
+
+```(gdb) r --run_test=block_database_tests
+Starting program: /home/kulpreet/projects/libbitcoin/v4/libbitcoin-database/test/.libs/libbitcoin-database-test --run_test=block_database_tests
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Running 5 test cases...
+entering ..block_database__get__empty_database__false
+leaving ..block_database__get__empty_database__false
+entering ..block_database__store__only_genesis_no_index__height_not_available
+leaving ..block_database__store__only_genesis_no_index__height_not_available
+entering ..block_database__index___only_genesis_candidate__height_available
+libbitcoin-database-test: tpp.c:84: __pthread_tpp_change_priority: Assertion `new_prio == -1 || (new_prio >= fifo_min_prio && new_prio <= fifo_max_prio)' failed.
+
+Program received signal SIGABRT, Aborted.
+__GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+51      ../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+(gdb) bt
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff61a3801 in __GI_abort () at abort.c:79
+#2  0x00007ffff619339a in __assert_fail_base (fmt=0x7ffff631a7d8 "%s%s%s:%u: %s%sAssertion `%s' failed.\n%n", assertion=assertion@entry=0x7ffff6b09c60 "new_prio == -1 || (new_prio >= fifo_min_prio && new_prio <= fifo_max_prio)", 
+    file=file@entry=0x7ffff6b09c54 "tpp.c", line=line@entry=84, function=function@entry=0x7ffff6b09d10 <__PRETTY_FUNCTION__.7568> "__pthread_tpp_change_priority") at assert.c:92
+#3  0x00007ffff6193412 in __GI___assert_fail (assertion=assertion@entry=0x7ffff6b09c60 "new_prio == -1 || (new_prio >= fifo_min_prio && new_prio <= fifo_max_prio)", file=file@entry=0x7ffff6b09c54 "tpp.c", line=line@entry=84, 
+    function=function@entry=0x7ffff6b09d10 <__PRETTY_FUNCTION__.7568> "__pthread_tpp_change_priority") at assert.c:101
+#4  0x00007ffff6b0855f in __pthread_tpp_change_priority (previous_prio=previous_prio@entry=-1, new_prio=new_prio@entry=0) at tpp.c:82
+#5  0x00007ffff6afea98 in __pthread_mutex_lock_full (mutex=0x7fffffffb018) at ../nptl/pthread_mutex_lock.c:541
+#6  0x00007ffff6aff055 in __GI___pthread_mutex_lock (mutex=mutex@entry=0x7fffffffb018) at ../nptl/pthread_mutex_lock.c:71
+#7  0x00007ffff7bb76c9 in boost::pthread::pthread_mutex_scoped_lock::pthread_mutex_scoped_lock (m_=0x7fffffffb018, this=<synthetic pointer>) at /usr/include/boost/thread/pthread/pthread_mutex_scoped_lock.hpp:26
+#8  boost::condition_variable::notify_all (this=0x7fffffffb018) at /usr/include/boost/thread/pthread/condition_variable.hpp:136
+#9  boost::shared_mutex::release_waiters (this=0x7fffffffafe8) at /usr/include/boost/thread/pthread/shared_mutex.hpp:168
+#10 boost::shared_mutex::unlock_and_lock_upgrade (this=0x7fffffffafe8) at /usr/include/boost/thread/pthread/shared_mutex.hpp:519
+#11 libbitcoin::database::file_storage::reserve (this=0x7fffffffaf90, size=4143, expansion=<optimised out>) at src/memory/file_storage.cpp:376
+#12 0x00007ffff7bb7911 in libbitcoin::database::file_storage::reserve (this=<optimised out>, size=<optimised out>) at src/memory/file_storage.cpp:333
+#13 0x00005555555fb579 in libbitcoin::database::record_manager<unsigned int>::allocate (this=0x7fffffffb268, count=1) at ./include/bitcoin/database/impl/record_manager.ipp:126
+#14 0x00007ffff7bae261 in libbitcoin::database::list_element<libbitcoin::database::record_manager<unsigned int>, unsigned int, std::array<unsigned char, 32ul> >::create(std::array<unsigned char, 32ul> const&, std::function<void (libbitcoin::serializer<unsigned char*>&)>) (write=..., key=..., this=0x7fffffffad80) at ./include/bitcoin/database/impl/list_element.ipp:93
+#15 libbitcoin::database::block_database::store (this=this@entry=0x7fffffffaf90, header=..., height=<optimised out>, height@entry=100, median_time_past=<optimised out>, median_time_past@entry=0, checksum=<optimised out>, checksum@entry=0, tx_start=<optimised out>, 
+    tx_start@entry=0, tx_count=<optimised out>, state=<optimised out>) at src/databases/block_database.cpp:239
+#16 0x00007ffff7bae373 in libbitcoin::database::block_database::store (this=this@entry=0x7fffffffaf90, header=..., height=height@entry=100, median_time_past=median_time_past@entry=0) at src/databases/block_database.cpp:251
+#17 0x00005555555ac355 in block_database_tests::block_database__index___only_genesis_candidate__height_available::test_method (this=this@entry=0x7fffffffc08c) at test/databases/block_database.cpp:109
+#18 0x00005555555b03a9 in block_database_tests::block_database__index___only_genesis_candidate__height_available_invoker () at test/databases/block_database.cpp:96
+#19 0x00007ffff78e1fbe in boost::detail::function::function_obj_invoker0<boost::detail::forward, int>::invoke(boost::detail::function::function_buffer&) () from /usr/local/lib/libboost_unit_test_framework.so.1.62.0
+#20 0x00007ffff78e13fd in boost::execution_monitor::catch_signals(boost::function<int ()> const&) () from /usr/local/lib/libboost_unit_test_framework.so.1.62.0
+#21 0x00007ffff78e14e1 in boost::execution_monitor::execute(boost::function<int ()> const&) () from /usr/local/lib/libboost_unit_test_framework.so.1.62.0
+#22 0x00007ffff78e1c5d in boost::execution_monitor::vexecute(boost::function<void ()> const&) () from /usr/local/lib/libboost_unit_test_framework.so.1.62.0
+#23 0x00007ffff791015b in boost::unit_test::unit_test_monitor_t::execute_and_translate(boost::function<void ()> const&, unsigned int) () from /usr/local/lib/libboost_unit_test_framework.so.1.62.0
+#24 0x00007ffff78ec5da in boost::unit_test::framework::state::execute_test_tree(unsigned long, unsigned int, boost::unit_test::framework::state::random_generator_helper const*) () from /usr/local/lib/libboost_unit_test_framework.so.1.62.0
+#25 0x00007ffff78ec7bd in boost::unit_test::framework::state::execute_test_tree(unsigned long, unsigned int, boost::unit_test::framework::state::random_generator_helper const*) () from /usr/local/lib/libboost_unit_test_framework.so.1.62.0
+#26 0x00007ffff78ec7bd in boost::unit_test::framework::state::execute_test_tree(unsigned long, unsigned int, boost::unit_test::framework::state::random_generator_helper const*) () from /usr/local/lib/libboost_unit_test_framework.so.1.62.0
+#27 0x00007ffff78e4ea0 in boost::unit_test::framework::run(unsigned long, bool) () from /usr/local/lib/libboost_unit_test_framework.so.1.62.0
+#28 0x00007ffff790df3f in boost::unit_test::unit_test_main(bool (*)(), int, char**) () from /usr/local/lib/libboost_unit_test_framework.so.1.62.0
+#29 0x00007ffff6184b97 in __libc_start_main (main=0x55555556a740 <main(int, char**)>, argc=2, argv=0x7fffffffd6e8, init=<optimised out>, fini=<optimised out>, rtld_fini=<optimised out>, stack_end=0x7fffffffd6d8) at ../csu/libc-start.c:310
+#30 0x000055555557ab5a in _start ()
+(gdb) q
+```

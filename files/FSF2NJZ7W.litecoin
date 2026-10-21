@@ -1,0 +1,287 @@
+# Libbitcoin Server configuration file
+
+[log]
+# The debug log file path, defaults to 'debug.log'.
+debug_file = debug.log
+# The error log file path, defaults to 'error.log'.
+error_file = error.log
+# The log archive directory, defaults to 'archive'.
+archive_directory = archive.litecoin
+# The size at which a log is archived, defaults to 10000000 (0 disables).
+rotation_size = 10000000
+# The minimum free space required in the archive directory, defaults to 0.
+minimum_free_space = 0
+# The maximum combined size of archived logs, defaults to 0 (maximum).
+maximum_archive_size = 0
+# The maximum number of logs to archive, defaults to 0 (maximum).
+maximum_archive_files = 10
+# The address of the statistics collection server, defaults to none.
+statistics_server = 0.0.0.0:0
+# Enable verbose logging, defaults to false.
+verbose = false
+
+[bitcoin]
+# The activation time for bip16 in unix time, defaults to 1333238400.
+bip16_activation_time = 1333238400
+# The hash:height checkpoint for bip34 activation, defaults to 000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8:227931.
+bip34_active_checkpoint = fa09d204a83a768ed5a7c8d441fa62f2043abf420cff1226c7b4329aeb9d51cf:710000
+# The block height to freeze the bip34 softfork as in bip90, defaults to 227931.
+bip34_freeze = 710000
+# The block height to freeze the bip65 softfork as in bip90, defaults to 388381.
+bip65_freeze = 1201535
+# The block height to freeze the bip66 softfork as in bip90, defaults to 363725.
+bip66_freeze = 1201535
+# The hash:height checkpoint for bip9 bit0 activation, defaults to 000000000000000004a1b34462cb8aeebd5799177f7a29cf28f2d1961716b5b5:419328.
+bip9_bit0_active_checkpoint = 2985cdced60b267cf1c78ff009d4ae037300ecc2d751a4b01a9f2705bbe05db7:21111
+# The hash:height checkpoint for bip9 bit1 activation, defaults to 0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893:481824.
+bip9_bit1_active_checkpoint = b50ce9202c152e481ca509156028af954654ed13e4b0656eb497554aa753db0b:1201535
+# The target block period in seconds, defaults to 600.
+block_spacing_seconds = 150
+# The genesis block.
+genesis_block = 010000000000000000000000000000000000000000000000000000000000000000000000d9ced4ed1130f7b7faad9be25323ffafa33232a17c3edf6cfd97bee6bafbdd97b9aa8e4ef0ff0f1ecd513f7c0101000000010000000000000000000000000000000000000000000000000000000000000000ffffffff4804ffff001d0104404e592054696d65732030352f4f63742f32303131205374657665204a6f62732c204170706c65e280997320566973696f6e6172792c2044696573206174203536ffffffff0100f2052a010000004341040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9ac00000000
+# The proof of work limit, defaults to 486604799.
+proof_of_work_limit = 504365055
+# The difficulty retargeting period in seconds, defaults to 1209600.
+retargeting_interval_seconds = 302400
+# The subsidy halving period in number of blocks, defaults to 210000.
+subsidy_interval = 840000
+
+[network]
+# The minimum number of threads in the network threadpool, defaults to 0 (physical cores).
+threads = 0
+# The maximum network protocol version, defaults to 70013.
+protocol_maximum = 70013
+# The minimum network protocol version, defaults to 31402.
+protocol_minimum = 31402
+# The services exposed by network connections, defaults to 9 (full node, witness).
+services = 9
+# The advertised services that cause a peer to be dropped, defaults to 176.
+invalid_services = 176
+# The magic number for message headers, defaults to 3652501241 (use 118034699 for testnet).
+identifier = 3686187259
+# Validate the checksum of network messages, defaults to false.
+validate_checksum = false
+# The port for incoming connections, defaults to 8333 (use 18333 for testnet).
+inbound_port = 19333
+# The target number of incoming network connections, defaults to 100.
+inbound_connections = 0
+# The target number of outgoing network connections, defaults to 8.
+outbound_connections = 0
+# The attempt limit for manual connection establishment, defaults to 0 (forever).
+manual_attempt_limit = 0
+# The number of concurrent attempts to establish one connection, defaults to 5.
+connect_batch_size = 5
+# The time limit for connection establishment, defaults to 5.
+connect_timeout_seconds = 5
+# The time limit to complete the connection handshake, defaults to 30.
+channel_handshake_seconds = 30
+# The time limit for obtaining seed addresses, defaults to 30.
+channel_germination_seconds = 30
+# The time between ping messages, defaults to 5.
+channel_heartbeat_minutes = 5
+# The inactivity time limit for any connection, defaults to 30.
+channel_inactivity_minutes = 30
+# The age limit for any connection, defaults to 1440.
+channel_expiration_minutes = 1440
+# The maximum number of peer hosts in the pool, defaults to 10000.
+host_pool_capacity = 10000
+# The peer hosts cache file path, defaults to 'hosts.cache'.
+hosts_file = hosts.cache
+# The advertised public address of this node, defaults to none.
+self = 0.0.0.0:0
+# IP address to disallow as a peer, multiple entries allowed.
+#blacklist = 127.0.0.1
+# A persistent peer node, multiple entries allowed.
+peer = localhost:9333
+# A seed node for initializing the host pool, multiple entries allowed.
+seed = seed-a.litecoin.loshan.co.uk:9333
+seed = dnsseed.thrasher.io:9333
+seed = dnsseed.litecointools.com:9333
+seed = dnsseed.litecoinpool.org:9333
+seed = dnsseed.koin-project.com:9333
+
+[database]
+# The blockchain database directory, defaults to 'blockchain'.
+directory = blockchain-litecoin
+# Flush each write to disk, defaults to false.
+flush_writes = false
+# The maximum number of entries in the unspent outputs cache, defaults to 10000.
+cache_capacity = 5000
+# Full database files increase by this percentage, defaults to 5.
+file_growth_rate = 5
+# Block hash table size, defaults to 650000.
+block_table_buckets = 650000
+# Transaction hash table size, defaults to 110000000.
+transaction_table_buckets = 110000000
+# Address hash table size, defaults to 107000000.
+payment_table_buckets = 107000000
+# Block table minimum file size, defaults to 80000000 (use 42 for testnet).
+block_table_size = 80000000
+# Candidate index minimum file size, defaults to 3000000 (use 42 for testnet).
+candidate_index_size = 3000000
+# Confirmed index minimum file size, defaults to 3000000 (use 42 for testnet).
+confirmed_index_size = 3000000
+# Transaction index minimum file size, defaults to 3000000000 (use 42 for testnet).
+transaction_index_size = 3000000000
+# Transaction table minimum file size, defaults to 220000000000 (use 42 for testnet).
+transaction_table_size = 220000000000
+# Address index minimum file size, defaults to 100000000000 (use 42 for testnet).
+payment_index_size = 100000000000
+# Address table minimum file size, defaults to 100000000 (use 42 for testnet).
+payment_table_size = 100000000
+
+[blockchain]
+# The number of cores dedicated to block validation, defaults to 0 (physical cores).
+cores = 0
+# Use high thread priority for block validation, defaults to true.
+priority = true
+# Use libconsensus for script validation if integrated, defaults to false.
+use_libconsensus = true
+# The maximum reorganization depth, defaults to 0 (unlimited).
+reorganization_limit = 0
+# The maximum number of blocks to buffer, defaults to 0 (none).
+block_buffer_limit = 0
+# A hash:height checkpoint, multiple entries allowed, defaults shown.
+# A hash:height checkpoint, multiple entries allowed.
+checkpoint = 12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2:0
+
+[fork]
+# Require difficult blocks, defaults to true (use false for testnet).
+difficult = true
+# Retarget difficulty, defaults to true (use false for regtest).
+retarget = true
+# Add pay-to-script-hash processing, defaults to true (soft fork).
+bip16 = true
+# Disallow collision of unspent transaction hashes, defaults to true (soft fork).
+bip30 = true
+# Require coinbase input includes block height, defaults to true (soft fork).
+bip34 = true
+# Require strict signature encoding, defaults to true (soft fork).
+bip66 = true
+# Add check-locktime-verify op code, defaults to true (soft fork).
+bip65 = true
+# Assume bip34, bip65, and bip66 activation if enabled, defaults to true (hard fork).
+bip90 = true
+# Add relative locktime enforcement, defaults to true (soft fork).
+bip68 = true
+# Add check-sequence-verify op code, defaults to true (soft fork).
+bip112 = true
+# Use median time past for locktime, defaults to true (soft fork).
+bip113 = true
+# Segregated witness consensus layer, defaults to true (soft fork).
+bip141 = true
+# Version 0 transaction digest, defaults to true (soft fork).
+bip143 = true
+# Prevent dummy value malleability, defaults to true (soft fork).
+bip147 = true
+# Fix time warp bug, defaults to false (hard fork).
+time_warp_patch = true
+# Fix target overflow for very low difficulty, defaults to false (hard fork).
+retarget_overflow_patch = true
+# Use scrypt hashing for proof of work, defaults to false (hard fork).
+scrypt_proof_of_work = true
+
+[node]
+# The response rate standard deviation below which a peer is dropped, defaults to 1.5.
+maximum_deviation = 1.5
+# The maximum time to wait for a requested block, defaults to 5.
+block_latency_seconds = 5
+# Disable relay when top block age exceeds, defaults to 24 (0 disables).
+notify_limit_hours = 24
+# The minimum fee per byte, cumulative for conflicts, defaults to 1.
+byte_fee_satoshis = 1
+# The minimum fee per sigop, additional to byte fee, defaults to 100.
+sigop_fee_satoshis = 100
+# The minimum output value, defaults to 500.
+minimum_output_satoshis = 500
+# Request that peers relay transactions, defaults to true.
+relay_transactions = true
+# Request transactions on each channel start, defaults to false.
+refresh_transactions = false
+
+[server]
+# Enable payment indexing, defaults to true.
+index_payments = true
+# Drop messages at this outgoing backlog level, defaults to 100.
+send_high_water = 100
+# Drop messages at this incoming backlog level, defaults to 100.
+receive_high_water = 100
+# The time limit to complete the connection handshake, defaults to 30.
+handshake_seconds = 30
+# Disable public endpoints, defaults to false.
+secure_only = false
+# The number of query worker threads per endpoint, defaults to 1 (0 disables service).
+query_workers = 1
+# The maximum number of query subscriptions, defaults to 1000 (0 disables subscribe).
+subscription_limit = 1000
+# The query subscription expiration time, defaults to 10 (0 disables expiration).
+subscription_expiration_minutes = 10
+# The heartbeat service interval, defaults to 5 (0 disables service).
+heartbeat_service_seconds = 5
+# Enable the block publishing service, defaults to true.
+block_service_enabled = true
+# Enable the transaction publishing service, defaults to true.
+transaction_service_enabled = true
+# Allowed client IP address, multiple entries allowed.
+#client_address = 127.0.0.1
+# Blocked client IP address, multiple entries allowed.
+#blacklist = 127.0.0.1
+
+[websockets]
+# The secure query websocket endpoint, defaults to 'tcp://*:9061'.
+secure_query_endpoint = tcp://*:59061
+# The secure heartbeat websocket endpoint, defaults to 'tcp://*:9062'.
+secure_heartbeat_endpoint = tcp://*:59062
+# The secure block publishing websocket endpoint, defaults to 'tcp://*:9063'.
+secure_block_endpoint = tcp://*:59063
+# The secure transaction publishing websocket endpoint, defaults to 'tcp://*:9064'.
+secure_transaction_endpoint = tcp://*:59064
+# The public query websocket endpoint, defaults to 'tcp://*:9071'.
+public_query_endpoint = tcp://*:59071
+# The public heartbeat websocket endpoint, defaults to 'tcp://*:9072'.
+public_heartbeat_endpoint = tcp://*:59072
+# The public block publishing websocket endpoint, defaults to 'tcp://*:9073'.
+public_block_endpoint = tcp://*:59073
+# The public transaction publishing websocket endpoint, defaults to 'tcp://*:9074'.
+public_transaction_endpoint = tcp://*:59074
+# Enable websocket endpoints, defaults to true.
+enabled = true
+# The optional directory for serving files via HTTP/S, defaults to '' (unused).
+#root = web
+# The SSL certificate authority file, defaults to '' (unused), enables secure endpoints.
+#ca_certificate = secure/ca.pem
+# The SSL private key file, defaults to '' (unused), enables secure endpoints.
+#server_private_key = secure/key.pem
+# The SSL certificate file, defaults to '' (unused), enables secure endpoints.
+#server_certificate = secure/server.pem
+# Allowed websocket origin, multiple entries allowed.
+origin = http://localhost:59071
+origin = http://localhost:59072
+origin = http://localhost:59073
+origin = http://localhost:59074
+origin = https://localhost:59061
+origin = https://localhost:59062
+origin = https://localhost:59063
+origin = https://localhost:59064
+
+[zeromq]
+# The secure query zeromq endpoint, defaults to 'tcp://*:9081'.
+secure_query_endpoint = tcp://*:59081
+# The secure heartbeat zeromq endpoint, defaults to 'tcp://*:9082'.
+secure_heartbeat_endpoint = tcp://*:59082
+# The secure block publishing zeromq endpoint, defaults to 'tcp://*:9083'.
+secure_block_endpoint = tcp://*:59083
+# The secure transaction publishing zeromq endpoint, defaults to 'tcp://*:9084'.
+secure_transaction_endpoint = tcp://*:59084
+# The public query zeromq endpoint, defaults to 'tcp://*:9091'.
+public_query_endpoint = tcp://*:59091
+# The public heartbeat zeromq endpoint, defaults to 'tcp://*:9092'.
+public_heartbeat_endpoint = tcp://*:59092
+# The public block publishing zeromq endpoint, defaults to 'tcp://*:9093'.
+public_block_endpoint = tcp://*:59093
+# The public transaction publishing zeromq endpoint, defaults to 'tcp://*:9094'.
+public_transaction_endpoint = tcp://*:59094
+# The Z85-encoded private key of the server, enables secure endpoints.
+#server_private_key =
+# Allowed Z85-encoded public key of the client, multiple entries allowed.
+#client_public_key =

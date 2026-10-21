@@ -1,0 +1,2 @@
+checking for boostlib >= 1.62.0... configure: We could not detect the boost libraries (version 1.62 or higher). If you have a staged boost library (still not installed) please specify $BOOST_ROOT in your environment and do not give a PATH to --with-boost option.  If you are sure you have boost installed, then check your version number looking in <boost/version.hpp>. See http://randspringer.de/boost for more documentation.
+configure: error: Boost 1.62.0 or later is required but was not found.

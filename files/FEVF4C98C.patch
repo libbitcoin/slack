@@ -1,0 +1,128 @@
+diff --git a/Javascript-Query-Example.md b/Javascript-Query-Example.md
+new file mode 100644
+index 0000000..e333142
+--- /dev/null
++++ b/Javascript-Query-Example.md
+@@ -0,0 +1,75 @@
++### Fetch transaction:
++```js
++const zmq = require('zeromq');
++const pystruct = require('python-struct');
++const requester = zmq.socket('req');
++
++const endpoint = 'tcp://mainnet.libbitcoin.net:9091';
++
++requester.on('message', function(command, identifier, buffer) {
++  console.log(buffer.toString('hex').substr(8));
++  requester.close();
++});
++
++requester.setsockopt(zmq.ZMQ_RCVTIMEO, 5000);
++requester.setsockopt(zmq.ZMQ_SNDTIMEO, 5000);
++requester.connect(endpoint);
++
++const txhash = '60e030aba2f593caf913a7d96880ff227143bfc370d03dbaee37d582801ebd83';
++requester.send('blockchain.fetch_transaction2', zmq.ZMQ_SNDMORE);
++requester.send(pystruct.pack('I', 42), zmq.ZMQ_SNDMORE);
++requester.send(Buffer.from(txhash.match(/.{1,2}/g).reverse().join(''), 'hex'));
++
++```
++Output:
++```
++010000000181d06e4403b989d1e003def4944080e9537ef38e219f58a3856333050d72fe4a080000008b483045022100943e28772ef850587034b447a76c1eb918d63c82a4619a01a34cf32dee13807a02204cbe75c49f8ced0ebc373a6d8e7cb7ecab31369861d8997873b94bac13c379b3014104dbfb10dd8a498b3431f4c7041bbba82aa33146d40b7def4315e9e6df7424d527e762042f9fcc5450cbfc5f849bd3dace5cc9d9b3be8fadc3de92f96e303cf599ffffffff02a8101300000000001976a914b4dc57e35f93de9ec155872c1ad0136134fb08b188acbbe633000000000017a91461ec8bf07c6a3a04a08d1251d70178c1b3d273cc8700000000
++```
++
++### Fetch block header
++```js
++const zmq = require('zeromq');
++const pystruct = require('python-struct');
++const requester = zmq.socket('req');
++
++const endpoint = 'tcp://mainnet.libbitcoin.net:9091';
++
++requester.on('message', function(command, identifier, buffer) {
++  console.log({
++    'command': command.toString(),
++    'identifier': identifier.readUInt32LE(),
++    'code': buffer.readUInt32LE(0),
++    'version': buffer.readInt32LE(4),
++    'prev_block': buffer.slice(8, 40).toString('hex').match(/.{1,2}/g).reverse().join(''),
++    'merkle_root': buffer.slice(40, 72).toString('hex').match(/.{1,2}/g).reverse().join(''),
++    'timestamp': buffer.readUInt32LE(72),
++    'bits': buffer.readUInt32LE(76),
++    'nonce': buffer.readUInt32LE(80)
++  });
++
++  requester.close();
++});
++
++requester.setsockopt(zmq.ZMQ_SNDTIMEO, 5000);
++requester.setsockopt(zmq.ZMQ_RCVTIMEO, 5000);
++requester.connect(endpoint);
++
++requester.send('blockchain.fetch_block_header', zmq.ZMQ_SNDMORE);
++requester.send(pystruct.pack('I', 42), zmq.ZMQ_SNDMORE);
++requester.send(pystruct.pack('I', 123456));
++
++```
++Output:
++```js
++{
++  command: 'blockchain.fetch_block_header',
++  identifier: 42,
++  code: 0,
++  version: 1,
++  prev_block: '0000000000000b60bc96a44724fd72daf9b92cf8ad00510b5224c6253ac40095',
++  merkle_root: '0e60651a9934e8f0decd1c5fde39309e48fca0cd1c84a21ddfde95033762d86c',
++  timestamp: 1305200806,
++  bits: 443192243,
++  nonce: 2436437219
++}
++```
+\ No newline at end of file
+diff --git a/Javascript-Subscription-Examples.md b/Javascript-Subscription-Examples.md
+new file mode 100644
+index 0000000..b9bb323
+--- /dev/null
++++ b/Javascript-Subscription-Examples.md
+@@ -0,0 +1,26 @@
++Libbitcoin server currently allows subscriptions for service Heartbeats, Blocks, and Transactions.  An example Javascript listener client is shown below, with sample output.
++
++### Heartbeat Subscription
++```js
++const zmq = require('zeromq');
++const subscriber = zmq.socket('sub');
++
++const endpoint = 'tcp://mainnet.libbitcoin.net:9092';
++
++subscriber.on('message', function(sequence, buffer) {
++  console.log({
++    'sequence': sequence.readUInt16LE(0),
++    'height': buffer.readUInt32LE(0)
++  });
++});
++
++subscriber.setsockopt(zmq.ZMQ_TCP_KEEPALIVE, 1);
++subscriber.setsockopt(zmq.ZMQ_SUBSCRIBE, Buffer.alloc(0));
++subscriber.connect(endpoint);
++
++```
++Output:
++```
++{ sequence: 61577, height: 1447978 }
++{ sequence: 61578, height: 1447978 }
++```
+\ No newline at end of file
+diff --git a/_Sidebar.md b/_Sidebar.md
+index b93bb6e..176176c 100644
+--- a/_Sidebar.md
++++ b/_Sidebar.md
+@@ -16,6 +16,8 @@
+   * [Round Robin Queries](Round-Robin-Queries)
+   * [Python Query Example](Python-Query-Example)
+   * [Python Subscriptions](Python-Subscription-Examples)
++  * [Javascript Query Example](Javascript-Query-Example)
++  * [Javascript Subscriptions](Javascript-Subscription-Examples)
+   * [Query Service](Query-Service)
+   * [Heartbeat Service](Heartbeat-Service)
+   * [Block Service](Block-Service)

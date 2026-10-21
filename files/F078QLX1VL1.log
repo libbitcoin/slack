@@ -1,0 +1,1675 @@
+libbitcoin-node installer configuration.
+--------------------------------------------------------------------
+OS                    : Linux
+PARALLEL              : 4
+CC                    : 
+CXX                   : 
+CPPFLAGS              : 
+CFLAGS                : -O3
+CXXFLAGS              : -O3
+LDFLAGS               : 
+LDLIBS                : 
+WITH_ICU              : 
+BUILD_ICU             : 
+BUILD_BOOST           : yes
+BOOST_ROOT            : /home/tester/gitprojects2/libbitcoin4
+BUILD_DIR             : build-libbitcoin-node
+PREFIX                : /home/tester/gitprojects2/libbitcoin4
+DISABLE_SHARED        : yes
+DISABLE_STATIC        : 
+with_boost            : --with-boost=/home/tester/gitprojects2/libbitcoin4
+with_pkgconfigdir     : --with-pkgconfigdir=/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig
+--------------------------------------------------------------------
+
+********************** Initialize git **********************
+Initialized new git repository in /home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/.git/
+
+********************** Preparing to acquire icu4c-55_2-src.tgz **********************
+Skipping unpack of icu4c-55_2-src.tgz...
+
+********************** Rationalize ICU detection. **********************
+
+********************** Preparing to acquire boost_1_78_0.tar.bz2 **********************
+Downloading boost_1_78_0.tar.bz2...
+Completed download and extraction successfully.
+
+********************** Preparing to build boost_1_78_0.tar.bz2 **********************
+Libbitcoin boost configuration.
+--------------------------------------------------------------------
+variant               : release
+threading             : multi
+toolset               : 
+cxxflags              : 
+linkflags             : 
+link                  : static
+boost.locale.iconv    : on
+boost.locale.posix    : on
+-sNO_BZIP2            : 1
+-sNO_ZSTD             : 1
+-sICU_PATH            : 
+-j                    : 4
+-d0                   : [supress informational messages]
+-q                    : [stop at the first error]
+--reconfigure         : [ignore cached configuration]
+--prefix              : /home/tester/gitprojects2/libbitcoin4
+BOOST_OPTIONS         : --with-chrono --with-iostreams --with-json --with-locale --with-program_options --with-regex --with-system --with-thread --with-test
+--------------------------------------------------------------------
+
+###
+###
+### Using 'gcc' toolset.
+###
+###
+
+g++ (Debian 12.2.0-14) 12.2.0
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+
+###
+###
+
+> g++ -x c++ -std=c++11 -w -O2 -s -DNDEBUG builtins.cpp class.cpp command.cpp compile.cpp constants.cpp cwd.cpp debug.cpp debugger.cpp execcmd.cpp execnt.cpp execunix.cpp filesys.cpp filent.cpp fileunix.cpp frames.cpp function.cpp glob.cpp hash.cpp hcache.cpp hdrmacro.cpp headers.cpp jam_strings.cpp jam.cpp jamgram.cpp lists.cpp make.cpp make1.cpp md5.cpp mem.cpp modules.cpp native.cpp object.cpp option.cpp output.cpp parse.cpp pathnt.cpp pathsys.cpp pathunix.cpp regexp.cpp rules.cpp scan.cpp search.cpp startup.cpp subst.cpp sysinfo.cpp timestamp.cpp variable.cpp w32_getreg.cpp modules/order.cpp modules/path.cpp modules/property-set.cpp modules/regex.cpp modules/sequence.cpp modules/set.cpp -o b2
+> cp b2 bjam
+Unicode/ICU support for Boost.Regex?... /usr
+Generating B2 configuration in project-config.jam for gcc...
+
+Bootstrapping is done. To build, run:
+
+    ./b2
+    
+To generate header files, run:
+
+    ./b2 headers
+
+The configuration generated uses gcc to build by default. If that is
+unintended either use the --with-toolset option or adjust configuration, by
+editing 'project-config.jam'.
+
+Further information:
+
+   - Command line help:
+     ./b2 --help
+     
+   - Getting started guide: 
+     http://www.boost.org/more/getting_started/unix-variants.html
+     
+   - B2 documentation:
+     http://www.boost.org/build/
+
+Performing configuration checks
+
+    - default address-model    : 64-bit [1]
+    - default architecture     : x86 [1]
+    - zlib                     : yes [2]
+    - lzma                     : yes [2]
+    - lzma                     : yes (cached) [2]
+    - has_lzma_cputhreads builds : yes [3]
+    - cxx11_constexpr          : yes [3]
+    - cxx11_decltype           : yes [3]
+    - cxx11_hdr_tuple          : yes [3]
+    - cxx11_template_aliases   : yes [3]
+    - cxx11_variadic_templates : yes [3]
+    - cxx11_basic_alignas      : yes [3]
+    - iconv (libc)             : yes [3]
+    - icu                      : yes [3]
+    - lockfree boost::atomic_flag : yes [3]
+    - has_icu builds           : yes [3]
+    - BOOST_COMP_GNUC >= 4.3.0 : yes [3]
+
+[1] gcc-12
+[2] link-static
+[3] gcc-12/release/boost.locale.iconv-on/boost.locale.posix-on/cxxstd-11-iso/link-static/threadapi-pthread/threading-multi/visibility-hidden
+
+Component configuration:
+
+    - atomic                   : not building
+    - chrono                   : building
+    - container                : not building
+    - context                  : not building
+    - contract                 : not building
+    - coroutine                : not building
+    - date_time                : not building
+    - exception                : not building
+    - fiber                    : not building
+    - filesystem               : not building
+    - graph                    : not building
+    - graph_parallel           : not building
+    - headers                  : not building
+    - iostreams                : building
+    - json                     : building
+    - locale                   : building
+    - log                      : not building
+    - math                     : not building
+    - mpi                      : not building
+    - nowide                   : not building
+    - program_options          : building
+    - python                   : not building
+    - random                   : not building
+    - regex                    : building
+    - serialization            : not building
+    - stacktrace               : not building
+    - system                   : building
+    - test                     : building
+    - thread                   : building
+    - timer                    : not building
+    - type_erasure             : not building
+    - wave                     : not building
+
+
+********************** Preparing to acquire libbitcoin/secp256k1/version8 **********************
+Cloning libbitcoin/secp256k1/version8...
+
+********************** Preparing to build secp256k1 **********************
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+libtoolize: copying file 'build-aux/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'build-aux/m4'.
+libtoolize: copying file 'build-aux/m4/libtool.m4'
+libtoolize: copying file 'build-aux/m4/ltoptions.m4'
+libtoolize: copying file 'build-aux/m4/ltsugar.m4'
+libtoolize: copying file 'build-aux/m4/ltversion.m4'
+libtoolize: copying file 'build-aux/m4/lt~obsolete.m4'
+configure options:
+--disable-tests
+--enable-experimental
+--enable-module-recovery
+--enable-module-schnorrsig
+--prefix=/home/tester/gitprojects2/libbitcoin4
+--enable-ndebug
+--disable-shared
+--enable-avx2
+--enable-sse4
+--enable-static
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking how to print strings... printf
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... yes
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking whether make supports nested variables... (cached) yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for ar... /usr/bin/ar
+checking for ranlib... /usr/bin/ranlib
+checking for strip... /usr/bin/strip
+checking for gcc option to accept ISO C89... (cached) none needed
+checking dependency style of gcc... gcc3
+checking if gcc supports -Werror=unknown-warning-option... no
+checking if gcc supports -std=c89 -pedantic -Wno-long-long -Wnested-externs -Wshadow -Wstrict-prototypes -Wundef... yes
+checking if gcc supports -Wno-overlength-strings... yes
+checking if gcc supports -Wall... yes
+checking if gcc supports -Wno-unused-function... yes
+checking if gcc supports -Wextra... yes
+checking if gcc supports -Wcast-align... yes
+checking if gcc supports -Wcast-align=strict... yes
+checking if gcc supports -Wconditional-uninitialized... no
+checking if gcc supports -fvisibility=hidden... yes
+checking for x86_64 assembly availability... yes
+configure: ******
+configure: WARNING: experimental build
+configure: Experimental features do not have stable APIs or properties, and may not be safe for production use.
+configure: Building extrakeys module: yes
+configure: Building schnorrsig module: yes
+configure: ******
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libsecp256k1.pc
+config.status: creating src/libsecp256k1-config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+Build Options:
+  with external callbacks = no
+  with benchmarks         = yes
+  with tests              = no
+  with coverage           = no
+  module ecdh             = no
+  module recovery         = yes
+  module extrakeys        = yes
+  module schnorrsig       = yes
+
+  asm                     = x86_64
+  ecmult window size      = 15
+  ecmult gen prec. bits   = 4
+
+  valgrind                = yes
+  CC                      = gcc
+  CPPFLAGS                =   -w
+  SECP_CFLAGS             = -O2  -std=c89 -pedantic -Wno-long-long -Wnested-externs -Wshadow -Wstrict-prototypes -Wundef -Wno-overlength-strings -Wall -Wno-unused-function -Wextra -Wcast-align -Wcast-align=strict -fvisibility=hidden 
+  CFLAGS                  = -O3
+  LDFLAGS                 = 
+make  all-am
+make[1]: ingresso nella directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/secp256k1»
+  CC       src/bench.o
+  CC       src/libsecp256k1_la-secp256k1.lo
+  CC       src/libsecp256k1_precomputed_la-precomputed_ecmult.lo
+  CC       src/libsecp256k1_precomputed_la-precomputed_ecmult_gen.lo
+  CC       src/bench_internal-bench_internal.o
+  CC       src/bench_ecmult-bench_ecmult.o
+  CC       src/exhaustive_tests-tests_exhaustive.o
+  CCLD     libsecp256k1_precomputed.la
+  CCLD     libsecp256k1.la
+  CCLD     bench
+  CCLD     bench_internal
+  CCLD     bench_ecmult
+  CCLD     exhaustive_tests
+make[1]: uscita dalla directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/secp256k1»
+make  install-am
+make[1]: ingresso nella directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/secp256k1»
+make[2]: ingresso nella directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/secp256k1»
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   libsecp256k1.la '/home/tester/gitprojects2/libbitcoin4/lib'
+libtool: install: /usr/bin/install -c .libs/libsecp256k1.lai /home/tester/gitprojects2/libbitcoin4/lib/libsecp256k1.la
+libtool: install: /usr/bin/install -c .libs/libsecp256k1.a /home/tester/gitprojects2/libbitcoin4/lib/libsecp256k1.a
+libtool: install: chmod 644 /home/tester/gitprojects2/libbitcoin4/lib/libsecp256k1.a
+libtool: install: /usr/bin/ranlib /home/tester/gitprojects2/libbitcoin4/lib/libsecp256k1.a
+libtool: finish: PATH="/home/tester/.pyenv/plugins/pyenv-virtualenv/shims:/home/tester/.pyenv/shims:/home/tester/.pyenv/bin:/home/tester/anaconda3/bin:/home/tester/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/tester/.local/bin:/sbin" ldconfig -n /home/tester/gitprojects2/libbitcoin4/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/tester/gitprojects2/libbitcoin4/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include'
+ /usr/bin/install -c -m 644 include/secp256k1.h include/secp256k1_preallocated.h include/secp256k1_recovery.h include/secp256k1_extrakeys.h include/secp256k1_schnorrsig.h '/home/tester/gitprojects2/libbitcoin4/include'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libsecp256k1.pc '/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig'
+make[2]: uscita dalla directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/secp256k1»
+make[1]: uscita dalla directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/secp256k1»
+
+********************** Preparing to acquire libbitcoin/libbitcoin-system/master **********************
+Cloning libbitcoin/libbitcoin-system/master...
+
+********************** Preparing to build libbitcoin-system **********************
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+libtoolize: copying file 'build-aux/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure options:
+--without-tests
+--without-examples
+--with-boost=/home/tester/gitprojects2/libbitcoin4
+--with-pkgconfigdir=/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig
+--prefix=/home/tester/gitprojects2/libbitcoin4
+--enable-ndebug
+--disable-shared
+--enable-avx2
+--enable-sse4
+--enable-static
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether we are using the GNU C++ compiler... (cached) yes
+checking whether g++ accepts -g... (cached) yes
+checking dependency style of g++... (cached) gcc3
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking whether make supports nested variables... (cached) yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether g++ supports C++20 features with -std=c++20... yes
+checking --with-pkgconfigdir option... /home/tester/gitprojects2/libbitcoin4/lib/pkgconfig
+checking --with-tests option... no
+checking --with-examples option... no
+checking --with-icu option... no
+checking --enable-avx2 option... yes
+checking --enable-avx512 option... no
+checking --enable-sse4 option... yes
+checking --enable-shani option... no
+checking --enable-ndebug option... yes
+checking --enable-isystem option... no
+checking whether C++ compiler accepts -std=c++20... yes
+checking whether C++ compiler accepts -Wall... yes
+checking whether C++ compiler accepts -Wall... (cached) yes
+checking whether C++ compiler accepts -Wextra... yes
+checking whether C++ compiler accepts -Wextra... (cached) yes
+checking whether C++ compiler accepts -Wno-reorder... yes
+checking whether C++ compiler accepts -Wno-missing-field-initializers... yes
+checking whether C++ compiler accepts -Wno-missing-braces... yes
+checking whether C++ compiler accepts -Wno-comment... yes
+checking whether C++ compiler accepts -Wno-deprecated-copy... yes
+checking whether C++ compiler accepts -Wno-ignored-attributes... yes
+checking whether the linker accepts -no_fixup_chains... no
+checking whether the linker accepts -fstack-protector... yes
+checking whether the linker accepts -fstack-protector-all... yes
+checking whether C++ compiler accepts -Wno-long-long... yes
+checking whether C++ compiler accepts -fno-var-tracking-assignments... yes
+checking whether C++ compiler accepts -mavx -mavx2... yes
+checking whether C++ compiler accepts -msse4.1... yes
+checking for boostlib >= 1.76.0 (107600) includes in "/home/tester/gitprojects2/libbitcoin4/include"... yes
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib/x86_64-linux-gnu"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib64"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/libx32"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib"... yes
+checking for boostlib >= 1.76.0 (107600)... yes
+configure: boost_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+configure: boost_ISYS_CPPFLAGS : -isystem/home/tester/gitprojects2/libbitcoin4/include
+configure: boost_LDFLAGS : -L/home/tester/gitprojects2/libbitcoin4/lib
+configure: boost_BUILD_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+checking whether the Boost::Chrono library is available... yes
+checking for exit in -lboost_chrono... yes
+configure: boost_chrono_LIBS : -lboost_chrono
+checking whether the Boost::IOStreams library is available... yes
+checking for exit in -lboost_iostreams... yes
+configure: boost_iostreams_LIBS : -lboost_iostreams
+checking whether the Boost::JSON library is available... yes
+checking for exit in -lboost_json... yes
+configure: boost_json_LIBS : -lboost_json
+checking whether the Boost::Locale library is available... yes
+checking for exit in -lboost_locale... yes
+configure: boost_locale_LIBS : -lboost_locale
+checking whether the Boost::Program_Options library is available... yes
+checking for exit in -lboost_program_options... yes
+configure: boost_program_options_LIBS : -lboost_program_options
+checking whether the Boost::System library is available... yes
+checking for exit in -lboost_system... yes
+configure: boost_system_LIBS : -lboost_system
+checking whether the Boost::Thread library is available... yes
+checking for exit in -lboost_thread... yes
+configure: boost_thread_LIBS : -lboost_thread -lpthread
+checking how to run the C preprocessor... gcc -E
+checking whether gcc is Clang... no
+checking whether pthreads work with "-pthread" and "-lpthread"... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking whether more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+configure: pthread_CPPFLAGS : 
+configure: pthread_ISYS_CPPFLAGS : 
+configure: pthread_BUILD_CPPFLAGS : 
+configure: pthread_LIBS : -lpthread
+checking for clock_gettime in -lrt... yes
+configure: rt_LIBS : -lrt
+configure: icu_i18n_BUILD_CPPFLAGS : 
+checking for dlopen in -ldl... yes
+configure: dl_LIBS : -ldl
+checking for libsecp256k1 >= 0.1.0.20... yes
+configure: secp256k1_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+configure: secp256k1_ISYS_CPPFLAGS : -isystem/home/tester/gitprojects2/libbitcoin4/include 
+configure: secp256k1_OTHER_CFLAGS : 
+configure: secp256k1_INCLUDEDIR : /home/tester/gitprojects2/libbitcoin4/include
+configure: secp256k1_LIBS : -L/home/tester/gitprojects2/libbitcoin4/lib -lsecp256k1
+configure: secp256k1_BUILD_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libbitcoin-system.pc
+config.status: executing depfiles commands
+config.status: executing libtool commands
+  CXX      src/libbitcoin_system_la-define.lo
+  CXX      src/libbitcoin_system_la-settings.lo
+  CXX      src/chain/libbitcoin_system_la-block.lo
+  CXX      src/chain/libbitcoin_system_la-chain_state.lo
+  CXX      src/chain/libbitcoin_system_la-checkpoint.lo
+  CXX      src/chain/libbitcoin_system_la-context.lo
+  CXX      src/chain/libbitcoin_system_la-header.lo
+  CXX      src/chain/libbitcoin_system_la-input.lo
+  CXX      src/chain/libbitcoin_system_la-operation.lo
+  CXX      src/chain/libbitcoin_system_la-output.lo
+  CXX      src/chain/libbitcoin_system_la-point.lo
+  CXX      src/chain/libbitcoin_system_la-script.lo
+  CXX      src/chain/libbitcoin_system_la-transaction.lo
+  CXX      src/chain/libbitcoin_system_la-witness.lo
+  CXX      src/chain/enums/libbitcoin_system_la-opcode.lo
+  CXX      src/config/libbitcoin_system_la-base16.lo
+  CXX      src/config/libbitcoin_system_la-base2.lo
+  CXX      src/config/libbitcoin_system_la-base32.lo
+  CXX      src/config/libbitcoin_system_la-base58.lo
+  CXX      src/config/libbitcoin_system_la-base64.lo
+  CXX      src/config/libbitcoin_system_la-base85.lo
+  CXX      src/config/libbitcoin_system_la-block.lo
+  CXX      src/config/libbitcoin_system_la-hash160.lo
+  CXX      src/config/libbitcoin_system_la-hash256.lo
+  CXX      src/config/libbitcoin_system_la-header.lo
+  CXX      src/config/libbitcoin_system_la-input.lo
+  CXX      src/config/libbitcoin_system_la-output.lo
+  CXX      src/config/libbitcoin_system_la-parameter.lo
+  CXX      src/config/libbitcoin_system_la-parser.lo
+  CXX      src/config/libbitcoin_system_la-point.lo
+  CXX      src/config/libbitcoin_system_la-printer.lo
+  CXX      src/config/libbitcoin_system_la-script.lo
+  CXX      src/config/libbitcoin_system_la-transaction.lo
+  CXX      src/crypto/libbitcoin_system_la-aes256.lo
+  CXX      src/crypto/libbitcoin_system_la-der_parser.lo
+  CXX      src/crypto/libbitcoin_system_la-ec_context.lo
+  CXX      src/crypto/libbitcoin_system_la-golomb_coding.lo
+  CXX      src/crypto/libbitcoin_system_la-pseudo_random.lo
+  CXX      src/crypto/libbitcoin_system_la-ring_signature.lo
+  CXX      src/crypto/libbitcoin_system_la-secp256k1.lo
+  CXX      src/data/libbitcoin_system_la-data_chunk.lo
+  CXX      src/data/libbitcoin_system_la-string.lo
+  CXX      src/endian/libbitcoin_system_la-endian.lo
+  CXX      src/error/libbitcoin_system_la-block_error_t.lo
+  CXX      src/error/libbitcoin_system_la-error_t.lo
+  CXX      src/error/libbitcoin_system_la-errorno_t.lo
+  CXX      src/error/libbitcoin_system_la-op_error_t.lo
+  CXX      src/error/libbitcoin_system_la-script_error_t.lo
+  CXX      src/error/libbitcoin_system_la-transaction_error_t.lo
+  CXX      src/hash/libbitcoin_system_la-accumulator.lo
+  CXX      src/hash/libbitcoin_system_la-checksum.lo
+  CXX      src/hash/libbitcoin_system_la-siphash.lo
+  CXX      src/hash/vectorization/libbitcoin_system_la-sha256_1_native.lo
+  CXX      src/hash/vectorization/libbitcoin_system_la-sha256_2_shani.lo
+  CXX      src/hash/vectorization/libbitcoin_system_la-sha256_4_neon.lo
+  CXX      src/hash/vectorization/libbitcoin_system_la-sha256_4_sse4.lo
+  CXX      src/hash/vectorization/libbitcoin_system_la-sha256_4_sse41.lo
+  CXX      src/hash/vectorization/libbitcoin_system_la-sha256_8_avx2.lo
+  CXX      src/math/libbitcoin_system_la-math.lo
+  CXX      src/radix/libbitcoin_system_la-base_10.lo
+  CXX      src/radix/libbitcoin_system_la-base_2048.lo
+  CXX      src/radix/libbitcoin_system_la-base_32.lo
+  CXX      src/radix/libbitcoin_system_la-base_58.lo
+  CXX      src/radix/libbitcoin_system_la-base_64.lo
+  CXX      src/radix/libbitcoin_system_la-base_85.lo
+  CXX      src/serial/libbitcoin_system_la-props.lo
+  CXX      src/stream/libbitcoin_system_la-binary.lo
+  CXX      src/unicode/libbitcoin_system_la-ascii.lo
+  CXX      src/unicode/libbitcoin_system_la-code_points.lo
+  CXX      src/unicode/libbitcoin_system_la-conversion.lo
+  CXX      src/unicode/libbitcoin_system_la-normalization.lo
+  CXX      src/unicode/utf8_everywhere/libbitcoin_system_la-console_streambuf.lo
+  CXX      src/unicode/utf8_everywhere/libbitcoin_system_la-environment.lo
+  CXX      src/unicode/utf8_everywhere/libbitcoin_system_la-ifstream.lo
+  CXX      src/unicode/utf8_everywhere/libbitcoin_system_la-ofstream.lo
+  CXX      src/unicode/utf8_everywhere/libbitcoin_system_la-paths.lo
+  CXX      src/unicode/utf8_everywhere/libbitcoin_system_la-stdio.lo
+  CXX      src/unicode/utf8_everywhere/libbitcoin_system_la-unicode_istream.lo
+  CXX      src/unicode/utf8_everywhere/libbitcoin_system_la-unicode_ostream.lo
+  CXX      src/unicode/utf8_everywhere/libbitcoin_system_la-unicode_streambuf.lo
+  CXX      src/wallet/libbitcoin_system_la-context.lo
+  CXX      src/wallet/libbitcoin_system_la-message.lo
+  CXX      src/wallet/libbitcoin_system_la-neutrino_filter.lo
+  CXX      src/wallet/libbitcoin_system_la-point_value.lo
+  CXX      src/wallet/libbitcoin_system_la-points_value.lo
+  CXX      src/wallet/addresses/libbitcoin_system_la-bitcoin_uri.lo
+  CXX      src/wallet/addresses/libbitcoin_system_la-payment_address.lo
+  CXX      src/wallet/addresses/libbitcoin_system_la-qr_code.lo
+  CXX      src/wallet/addresses/libbitcoin_system_la-stealth_address.lo
+  CXX      src/wallet/addresses/libbitcoin_system_la-stealth_receiver.lo
+  CXX      src/wallet/addresses/libbitcoin_system_la-stealth_sender.lo
+  CXX      src/wallet/addresses/libbitcoin_system_la-tiff.lo
+  CXX      src/wallet/addresses/libbitcoin_system_la-uri.lo
+  CXX      src/wallet/addresses/libbitcoin_system_la-witness_address.lo
+  CC       src/wallet/addresses/qrencode/libbitcoin_system_la-bitstream.lo
+  CC       src/wallet/addresses/qrencode/libbitcoin_system_la-mask.lo
+  CC       src/wallet/addresses/qrencode/libbitcoin_system_la-mmask.lo
+  CC       src/wallet/addresses/qrencode/libbitcoin_system_la-mqrspec.lo
+  CC       src/wallet/addresses/qrencode/libbitcoin_system_la-qrencode.lo
+  CC       src/wallet/addresses/qrencode/libbitcoin_system_la-qrinput.lo
+  CC       src/wallet/addresses/qrencode/libbitcoin_system_la-qrspec.lo
+  CC       src/wallet/addresses/qrencode/libbitcoin_system_la-rsecc.lo
+  CC       src/wallet/addresses/qrencode/libbitcoin_system_la-split.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-ec_point.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-ec_private.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-ec_public.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-ec_scalar.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-ek_private.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-ek_public.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-ek_token.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-encrypted_keys.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-hd_private.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-hd_public.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-mini_keys.lo
+  CXX      src/wallet/keys/libbitcoin_system_la-stealth.lo
+  CXX      src/wallet/keys/parse_encrypted_keys/libbitcoin_system_la-parse_encrypted_private.lo
+  CXX      src/wallet/keys/parse_encrypted_keys/libbitcoin_system_la-parse_encrypted_public.lo
+  CXX      src/wallet/keys/parse_encrypted_keys/libbitcoin_system_la-parse_encrypted_token.lo
+  CXX      src/wallet/mnemonics/libbitcoin_system_la-electrum.lo
+  CXX      src/wallet/mnemonics/libbitcoin_system_la-electrum_v1.lo
+  CXX      src/wallet/mnemonics/libbitcoin_system_la-mnemonic.lo
+  CXX      src/words/libbitcoin_system_la-languages.lo
+  CXX      src/words/catalogs/libbitcoin_system_la-electrum.lo
+  CXX      src/words/catalogs/libbitcoin_system_la-electrum_v1.lo
+  CXX      src/words/catalogs/libbitcoin_system_la-mnemonic.lo
+  CXXLD    src/libbitcoin-system.la
+copying selected object files to avoid basename conflicts...
+make[1]: ingresso nella directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-system»
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   src/libbitcoin-system.la '/home/tester/gitprojects2/libbitcoin4/lib'
+libtool: install: /usr/bin/install -c src/.libs/libbitcoin-system.lai /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-system.la
+libtool: install: /usr/bin/install -c src/.libs/libbitcoin-system.a /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-system.a
+libtool: install: chmod 644 /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-system.a
+libtool: install: ranlib /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-system.a
+libtool: finish: PATH="/home/tester/.pyenv/plugins/pyenv-virtualenv/shims:/home/tester/.pyenv/shims:/home/tester/.pyenv/bin:/home/tester/anaconda3/bin:/home/tester/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/tester/.local/bin:/sbin" ldconfig -n /home/tester/gitprojects2/libbitcoin4/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/tester/gitprojects2/libbitcoin4/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/share/doc/libbitcoin-system'
+ /usr/bin/install -c -m 644 AUTHORS COPYING ChangeLog INSTALL NEWS README '/home/tester/gitprojects2/libbitcoin4/share/doc/libbitcoin-system'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin'
+ /usr/bin/install -c -m 644 include/bitcoin/system.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system'
+ /usr/bin/install -c -m 644 include/bitcoin/system/boost.hpp include/bitcoin/system/constants.hpp include/bitcoin/system/constraints.hpp include/bitcoin/system/define.hpp include/bitcoin/system/exceptions.hpp include/bitcoin/system/forks.hpp include/bitcoin/system/funclets.hpp include/bitcoin/system/have.hpp include/bitcoin/system/literals.hpp include/bitcoin/system/settings.hpp include/bitcoin/system/typelets.hpp include/bitcoin/system/types.hpp include/bitcoin/system/version.hpp include/bitcoin/system/warnings.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/chain'
+ /usr/bin/install -c -m 644 include/bitcoin/system/chain/block.hpp include/bitcoin/system/chain/chain.hpp include/bitcoin/system/chain/chain_state.hpp include/bitcoin/system/chain/checkpoint.hpp include/bitcoin/system/chain/compact.hpp include/bitcoin/system/chain/context.hpp include/bitcoin/system/chain/header.hpp include/bitcoin/system/chain/input.hpp include/bitcoin/system/chain/operation.hpp include/bitcoin/system/chain/output.hpp include/bitcoin/system/chain/point.hpp include/bitcoin/system/chain/prevout.hpp include/bitcoin/system/chain/script.hpp include/bitcoin/system/chain/stripper.hpp include/bitcoin/system/chain/transaction.hpp include/bitcoin/system/chain/witness.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/chain'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/chain/enums'
+ /usr/bin/install -c -m 644 include/bitcoin/system/chain/enums/coverage.hpp include/bitcoin/system/chain/enums/flags.hpp include/bitcoin/system/chain/enums/magic_numbers.hpp include/bitcoin/system/chain/enums/numbers.hpp include/bitcoin/system/chain/enums/opcode.hpp include/bitcoin/system/chain/enums/policy.hpp include/bitcoin/system/chain/enums/script_pattern.hpp include/bitcoin/system/chain/enums/script_version.hpp include/bitcoin/system/chain/enums/selection.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/chain/enums'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/config'
+ /usr/bin/install -c -m 644 include/bitcoin/system/config/base16.hpp include/bitcoin/system/config/base2.hpp include/bitcoin/system/config/base32.hpp include/bitcoin/system/config/base58.hpp include/bitcoin/system/config/base64.hpp include/bitcoin/system/config/base85.hpp include/bitcoin/system/config/block.hpp include/bitcoin/system/config/config.hpp include/bitcoin/system/config/hash160.hpp include/bitcoin/system/config/hash256.hpp include/bitcoin/system/config/header.hpp include/bitcoin/system/config/input.hpp include/bitcoin/system/config/output.hpp include/bitcoin/system/config/parameter.hpp include/bitcoin/system/config/parser.hpp include/bitcoin/system/config/point.hpp include/bitcoin/system/config/printer.hpp include/bitcoin/system/config/script.hpp include/bitcoin/system/config/transaction.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/config'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/crypto'
+ /usr/bin/install -c -m 644 include/bitcoin/system/crypto/aes256.hpp include/bitcoin/system/crypto/crypto.hpp include/bitcoin/system/crypto/der_parser.hpp include/bitcoin/system/crypto/golomb_coding.hpp include/bitcoin/system/crypto/pseudo_random.hpp include/bitcoin/system/crypto/ring_signature.hpp include/bitcoin/system/crypto/secp256k1.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/crypto'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/data'
+ /usr/bin/install -c -m 644 include/bitcoin/system/data/array_cast.hpp include/bitcoin/system/data/byte_cast.hpp include/bitcoin/system/data/collection.hpp include/bitcoin/system/data/data.hpp include/bitcoin/system/data/data_array.hpp include/bitcoin/system/data/data_chunk.hpp include/bitcoin/system/data/data_reference.hpp include/bitcoin/system/data/data_slab.hpp include/bitcoin/system/data/data_slice.hpp include/bitcoin/system/data/exclusive_slice.hpp include/bitcoin/system/data/external_ptr.hpp include/bitcoin/system/data/iterable.hpp include/bitcoin/system/data/memory.hpp include/bitcoin/system/data/no_fill_allocator.hpp include/bitcoin/system/data/string.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/data'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/endian'
+ /usr/bin/install -c -m 644 include/bitcoin/system/endian/batch.hpp include/bitcoin/system/endian/endian.hpp include/bitcoin/system/endian/integers.hpp include/bitcoin/system/endian/integrals.hpp include/bitcoin/system/endian/minimal.hpp include/bitcoin/system/endian/nominal.hpp include/bitcoin/system/endian/stream.hpp include/bitcoin/system/endian/swaps.hpp include/bitcoin/system/endian/uintx_t.hpp include/bitcoin/system/endian/unsafe.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/endian'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/error'
+ /usr/bin/install -c -m 644 include/bitcoin/system/error/block_error_t.hpp include/bitcoin/system/error/error.hpp include/bitcoin/system/error/error_t.hpp include/bitcoin/system/error/errorno_t.hpp include/bitcoin/system/error/macros.hpp include/bitcoin/system/error/op_error_t.hpp include/bitcoin/system/error/script_error_t.hpp include/bitcoin/system/error/transaction_error_t.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/error'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/hash'
+ /usr/bin/install -c -m 644 include/bitcoin/system/hash/accumulator.hpp include/bitcoin/system/hash/algorithm.hpp include/bitcoin/system/hash/algorithms.hpp include/bitcoin/system/hash/checksum.hpp include/bitcoin/system/hash/functions.hpp include/bitcoin/system/hash/hash.hpp include/bitcoin/system/hash/hmac.hpp include/bitcoin/system/hash/pbkd.hpp include/bitcoin/system/hash/scrypt.hpp include/bitcoin/system/hash/siphash.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/hash'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/hash/rmd'
+ /usr/bin/install -c -m 644 include/bitcoin/system/hash/rmd/algorithm.hpp include/bitcoin/system/hash/rmd/rmd.hpp include/bitcoin/system/hash/rmd/rmd128.hpp include/bitcoin/system/hash/rmd/rmd160.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/hash/rmd'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/hash/sha'
+ /usr/bin/install -c -m 644 include/bitcoin/system/hash/sha/algorithm.hpp include/bitcoin/system/hash/sha/sha.hpp include/bitcoin/system/hash/sha/sha160.hpp include/bitcoin/system/hash/sha/sha256.hpp include/bitcoin/system/hash/sha/sha512.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/hash/sha'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/chain'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/chain/compact.ipp include/bitcoin/system/impl/chain/operation.ipp include/bitcoin/system/impl/chain/script.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/chain'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/data'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/data/array_cast.ipp include/bitcoin/system/impl/data/byte_cast.ipp include/bitcoin/system/impl/data/collection.ipp include/bitcoin/system/impl/data/data_array.ipp include/bitcoin/system/impl/data/data_reference.ipp include/bitcoin/system/impl/data/data_slab.ipp include/bitcoin/system/impl/data/data_slice.ipp include/bitcoin/system/impl/data/external_ptr.ipp include/bitcoin/system/impl/data/memory.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/data'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/endian'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/endian/batch.ipp include/bitcoin/system/impl/endian/integers.ipp include/bitcoin/system/impl/endian/integrals.ipp include/bitcoin/system/impl/endian/minimal.ipp include/bitcoin/system/impl/endian/nominal.ipp include/bitcoin/system/impl/endian/stream.ipp include/bitcoin/system/impl/endian/swaps.ipp include/bitcoin/system/impl/endian/uintx_t.ipp include/bitcoin/system/impl/endian/unsafe.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/endian'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/hash'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/hash/accumulator.ipp include/bitcoin/system/impl/hash/checksum.ipp include/bitcoin/system/impl/hash/functions.ipp include/bitcoin/system/impl/hash/hmac.ipp include/bitcoin/system/impl/hash/pbkd.ipp include/bitcoin/system/impl/hash/scrypt.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/hash'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/hash/rmd'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/hash/rmd/algorithm.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/hash/rmd'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/hash/sha'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/hash/sha/algorithm.ipp include/bitcoin/system/impl/hash/sha/algorithm_compression.ipp include/bitcoin/system/impl/hash/sha/algorithm_vectorization.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/hash/sha'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/machine'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/machine/interpreter.ipp include/bitcoin/system/impl/machine/number.ipp include/bitcoin/system/impl/machine/program.ipp include/bitcoin/system/impl/machine/stack.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/machine'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/math'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/math/addition.ipp include/bitcoin/system/impl/math/bits.ipp include/bitcoin/system/impl/math/bytes.ipp include/bitcoin/system/impl/math/byteswap.ipp include/bitcoin/system/impl/math/cast.ipp include/bitcoin/system/impl/math/division.ipp include/bitcoin/system/impl/math/limits.ipp include/bitcoin/system/impl/math/logarithm.ipp include/bitcoin/system/impl/math/multiplication.ipp include/bitcoin/system/impl/math/overflow.ipp include/bitcoin/system/impl/math/power.ipp include/bitcoin/system/impl/math/rotate.ipp include/bitcoin/system/impl/math/sign.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/math'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/radix'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/radix/base_16.ipp include/bitcoin/system/impl/radix/base_2n.ipp include/bitcoin/system/impl/radix/base_58.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/radix'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/serial'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/serial/deserialize.ipp include/bitcoin/system/impl/serial/serialize.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/serial'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/stream'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/stream/device.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/stream'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/stream/iostream'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/stream/iostream/iostream.ipp include/bitcoin/system/impl/stream/iostream/istream.ipp include/bitcoin/system/impl/stream/iostream/ostream.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/stream/iostream'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/stream/streamers'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/stream/streamers/bit_reader.ipp include/bitcoin/system/impl/stream/streamers/bit_writer.ipp include/bitcoin/system/impl/stream/streamers/byte_reader.ipp include/bitcoin/system/impl/stream/streamers/byte_writer.ipp include/bitcoin/system/impl/stream/streamers/sha256_writer.ipp include/bitcoin/system/impl/stream/streamers/sha256x2_writer.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/stream/streamers'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/wallet/addresses'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/wallet/addresses/checked.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/wallet/addresses'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/words'
+ /usr/bin/install -c -m 644 include/bitcoin/system/impl/words/dictionaries.ipp include/bitcoin/system/impl/words/dictionary.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/impl/words'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/intrinsics'
+ /usr/bin/install -c -m 644 include/bitcoin/system/intrinsics/byteswap.hpp include/bitcoin/system/intrinsics/haves.hpp include/bitcoin/system/intrinsics/intrinsics.hpp include/bitcoin/system/intrinsics/rotate.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/intrinsics'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/intrinsics/arm'
+ /usr/bin/install -c -m 644 include/bitcoin/system/intrinsics/arm/arm.hpp include/bitcoin/system/intrinsics/arm/functional.hpp include/bitcoin/system/intrinsics/arm/sha.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/intrinsics/arm'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/intrinsics/xcpu'
+ /usr/bin/install -c -m 644 include/bitcoin/system/intrinsics/xcpu/cpuid.hpp include/bitcoin/system/intrinsics/xcpu/defines.hpp include/bitcoin/system/intrinsics/xcpu/functional_128.hpp include/bitcoin/system/intrinsics/xcpu/functional_256.hpp include/bitcoin/system/intrinsics/xcpu/functional_512.hpp include/bitcoin/system/intrinsics/xcpu/sha.hpp include/bitcoin/system/intrinsics/xcpu/xcpu.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/intrinsics/xcpu'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/machine'
+ /usr/bin/install -c -m 644 include/bitcoin/system/machine/interpreter.hpp include/bitcoin/system/machine/machine.hpp include/bitcoin/system/machine/number.hpp include/bitcoin/system/machine/program.hpp include/bitcoin/system/machine/stack.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/machine'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/math'
+ /usr/bin/install -c -m 644 include/bitcoin/system/math/addition.hpp include/bitcoin/system/math/bits.hpp include/bitcoin/system/math/bytes.hpp include/bitcoin/system/math/byteswap.hpp include/bitcoin/system/math/cast.hpp include/bitcoin/system/math/division.hpp include/bitcoin/system/math/functional.hpp include/bitcoin/system/math/limits.hpp include/bitcoin/system/math/logarithm.hpp include/bitcoin/system/math/math.hpp include/bitcoin/system/math/multiplication.hpp include/bitcoin/system/math/overflow.hpp include/bitcoin/system/math/power.hpp include/bitcoin/system/math/rotate.hpp include/bitcoin/system/math/sign.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/math'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/radix'
+ /usr/bin/install -c -m 644 include/bitcoin/system/radix/base_10.hpp include/bitcoin/system/radix/base_16.hpp include/bitcoin/system/radix/base_2048.hpp include/bitcoin/system/radix/base_2n.hpp include/bitcoin/system/radix/base_32.hpp include/bitcoin/system/radix/base_58.hpp include/bitcoin/system/radix/base_64.hpp include/bitcoin/system/radix/base_85.hpp include/bitcoin/system/radix/radix.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/radix'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/serial'
+ /usr/bin/install -c -m 644 include/bitcoin/system/serial/deserialize.hpp include/bitcoin/system/serial/props.hpp include/bitcoin/system/serial/serial.hpp include/bitcoin/system/serial/serialize.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/serial'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/stream'
+ /usr/bin/install -c -m 644 include/bitcoin/system/stream/binary.hpp include/bitcoin/system/stream/device.hpp include/bitcoin/system/stream/make_stream.hpp include/bitcoin/system/stream/make_streamer.hpp include/bitcoin/system/stream/stream.hpp include/bitcoin/system/stream/stream_result.hpp include/bitcoin/system/stream/streamers.hpp include/bitcoin/system/stream/streams.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/stream'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/stream/devices'
+ /usr/bin/install -c -m 644 include/bitcoin/system/stream/devices/copy_sink.hpp include/bitcoin/system/stream/devices/copy_source.hpp include/bitcoin/system/stream/devices/flip_sink.hpp include/bitcoin/system/stream/devices/push_sink.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/stream/devices'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/stream/iostream'
+ /usr/bin/install -c -m 644 include/bitcoin/system/stream/iostream/iostream.hpp include/bitcoin/system/stream/iostream/istream.hpp include/bitcoin/system/stream/iostream/ostream.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/stream/iostream'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/stream/streamers'
+ /usr/bin/install -c -m 644 include/bitcoin/system/stream/streamers/bit_flipper.hpp include/bitcoin/system/stream/streamers/bit_reader.hpp include/bitcoin/system/stream/streamers/bit_writer.hpp include/bitcoin/system/stream/streamers/byte_flipper.hpp include/bitcoin/system/stream/streamers/byte_reader.hpp include/bitcoin/system/stream/streamers/byte_writer.hpp include/bitcoin/system/stream/streamers/sha256_writer.hpp include/bitcoin/system/stream/streamers/sha256x2_writer.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/stream/streamers'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/stream/streamers/interfaces'
+ /usr/bin/install -c -m 644 include/bitcoin/system/stream/streamers/interfaces/bitflipper.hpp include/bitcoin/system/stream/streamers/interfaces/bitreader.hpp include/bitcoin/system/stream/streamers/interfaces/bitwriter.hpp include/bitcoin/system/stream/streamers/interfaces/byteflipper.hpp include/bitcoin/system/stream/streamers/interfaces/bytereader.hpp include/bitcoin/system/stream/streamers/interfaces/bytewriter.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/stream/streamers/interfaces'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/unicode'
+ /usr/bin/install -c -m 644 include/bitcoin/system/unicode/ascii.hpp include/bitcoin/system/unicode/code_points.hpp include/bitcoin/system/unicode/conversion.hpp include/bitcoin/system/unicode/normalization.hpp include/bitcoin/system/unicode/unicode.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/unicode'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/unicode/utf8_everywhere'
+ /usr/bin/install -c -m 644 include/bitcoin/system/unicode/utf8_everywhere/console_streambuf.hpp include/bitcoin/system/unicode/utf8_everywhere/environment.hpp include/bitcoin/system/unicode/utf8_everywhere/ifstream.hpp include/bitcoin/system/unicode/utf8_everywhere/ofstream.hpp include/bitcoin/system/unicode/utf8_everywhere/paths.hpp include/bitcoin/system/unicode/utf8_everywhere/stdio.hpp include/bitcoin/system/unicode/utf8_everywhere/unicode_istream.hpp include/bitcoin/system/unicode/utf8_everywhere/unicode_ostream.hpp include/bitcoin/system/unicode/utf8_everywhere/unicode_streambuf.hpp include/bitcoin/system/unicode/utf8_everywhere/utf8_everywhere.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/unicode/utf8_everywhere'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/wallet'
+ /usr/bin/install -c -m 644 include/bitcoin/system/wallet/context.hpp include/bitcoin/system/wallet/message.hpp include/bitcoin/system/wallet/neutrino_filter.hpp include/bitcoin/system/wallet/point_value.hpp include/bitcoin/system/wallet/points_value.hpp include/bitcoin/system/wallet/wallet.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/wallet'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/wallet/addresses'
+ /usr/bin/install -c -m 644 include/bitcoin/system/wallet/addresses/bitcoin_uri.hpp include/bitcoin/system/wallet/addresses/checked.hpp include/bitcoin/system/wallet/addresses/payment_address.hpp include/bitcoin/system/wallet/addresses/qr_code.hpp include/bitcoin/system/wallet/addresses/stealth_address.hpp include/bitcoin/system/wallet/addresses/stealth_receiver.hpp include/bitcoin/system/wallet/addresses/stealth_sender.hpp include/bitcoin/system/wallet/addresses/tiff.hpp include/bitcoin/system/wallet/addresses/uri.hpp include/bitcoin/system/wallet/addresses/uri_reader.hpp include/bitcoin/system/wallet/addresses/witness_address.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/wallet/addresses'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/wallet/keys'
+ /usr/bin/install -c -m 644 include/bitcoin/system/wallet/keys/ec_point.hpp include/bitcoin/system/wallet/keys/ec_private.hpp include/bitcoin/system/wallet/keys/ec_public.hpp include/bitcoin/system/wallet/keys/ec_scalar.hpp include/bitcoin/system/wallet/keys/ek_private.hpp include/bitcoin/system/wallet/keys/ek_public.hpp include/bitcoin/system/wallet/keys/ek_token.hpp include/bitcoin/system/wallet/keys/encrypted_keys.hpp include/bitcoin/system/wallet/keys/hd_private.hpp include/bitcoin/system/wallet/keys/hd_public.hpp include/bitcoin/system/wallet/keys/mini_keys.hpp include/bitcoin/system/wallet/keys/stealth.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/wallet/keys'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/wallet/mnemonics'
+ /usr/bin/install -c -m 644 include/bitcoin/system/wallet/mnemonics/electrum.hpp include/bitcoin/system/wallet/mnemonics/electrum_v1.hpp include/bitcoin/system/wallet/mnemonics/mnemonic.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/wallet/mnemonics'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/words'
+ /usr/bin/install -c -m 644 include/bitcoin/system/words/dictionaries.hpp include/bitcoin/system/words/dictionary.hpp include/bitcoin/system/words/language.hpp include/bitcoin/system/words/languages.hpp include/bitcoin/system/words/words.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/words'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/words/catalogs'
+ /usr/bin/install -c -m 644 include/bitcoin/system/words/catalogs/electrum.hpp include/bitcoin/system/words/catalogs/electrum_v1.hpp include/bitcoin/system/words/catalogs/mnemonic.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/system/words/catalogs'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libbitcoin-system.pc '/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig'
+make[1]: uscita dalla directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-system»
+
+********************** Preparing to acquire libbitcoin/libbitcoin-network/master **********************
+Cloning libbitcoin/libbitcoin-network/master...
+
+********************** Preparing to build libbitcoin-network **********************
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+libtoolize: copying file 'build-aux/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure options:
+--without-tests
+--with-boost=/home/tester/gitprojects2/libbitcoin4
+--with-pkgconfigdir=/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig
+--prefix=/home/tester/gitprojects2/libbitcoin4
+--enable-ndebug
+--disable-shared
+--enable-avx2
+--enable-sse4
+--enable-static
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether we are using the GNU C++ compiler... (cached) yes
+checking whether g++ accepts -g... (cached) yes
+checking dependency style of g++... (cached) gcc3
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking whether make supports nested variables... (cached) yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether g++ supports C++20 features with -std=c++20... yes
+checking --with-pkgconfigdir option... /home/tester/gitprojects2/libbitcoin4/lib/pkgconfig
+checking --with-tests option... no
+checking --enable-ndebug option... yes
+checking --enable-isystem option... no
+checking whether C++ compiler accepts -std=c++20... yes
+checking whether C++ compiler accepts -Wall... yes
+checking whether C++ compiler accepts -Wall... (cached) yes
+checking whether C++ compiler accepts -Wextra... yes
+checking whether C++ compiler accepts -Wextra... (cached) yes
+checking whether C++ compiler accepts -Wno-reorder... yes
+checking whether C++ compiler accepts -Wno-missing-field-initializers... yes
+checking whether C++ compiler accepts -Wno-missing-braces... yes
+checking whether C++ compiler accepts -Wno-comment... yes
+checking whether C++ compiler accepts -Wno-deprecated-copy... yes
+checking whether the linker accepts -no_fixup_chains... no
+checking whether the linker accepts -fstack-protector... yes
+checking whether the linker accepts -fstack-protector-all... yes
+checking for boostlib >= 1.76.0 (107600) includes in "/home/tester/gitprojects2/libbitcoin4/include"... yes
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib/x86_64-linux-gnu"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib64"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/libx32"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib"... yes
+checking for boostlib >= 1.76.0 (107600)... yes
+configure: boost_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+configure: boost_ISYS_CPPFLAGS : -isystem/home/tester/gitprojects2/libbitcoin4/include
+configure: boost_LDFLAGS : -L/home/tester/gitprojects2/libbitcoin4/lib
+configure: boost_BUILD_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+configure: boost_regex_LIBS : 
+checking for libbitcoin-system >= 4.0.0... yes
+configure: bitcoin_system_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+configure: bitcoin_system_ISYS_CPPFLAGS : -isystem/home/tester/gitprojects2/libbitcoin4/include 
+configure: bitcoin_system_OTHER_CFLAGS : 
+configure: bitcoin_system_INCLUDEDIR : /home/tester/gitprojects2/libbitcoin4/include
+configure: bitcoin_system_LIBS : -L/home/tester/gitprojects2/libbitcoin4/lib -lbitcoin-system -lboost_chrono -lboost_iostreams -lboost_json -lboost_locale -lboost_program_options -lboost_system -lboost_thread -lpthread -lrt -ldl -lsecp256k1
+configure: bitcoin_system_BUILD_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libbitcoin-network.pc
+config.status: executing depfiles commands
+config.status: executing libtool commands
+  CXX      src/libbitcoin_network_la-error.lo
+  CXX      src/libbitcoin_network_la-p2p.lo
+  CXX      src/libbitcoin_network_la-settings.lo
+  CXX      src/async/libbitcoin_network_la-thread.lo
+  CXX      src/async/libbitcoin_network_la-threadpool.lo
+  CXX      src/async/libbitcoin_network_la-time.lo
+  CXX      src/config/libbitcoin_network_la-address.lo
+  CXX      src/config/libbitcoin_network_la-authority.lo
+  CXX      src/config/libbitcoin_network_la-endpoint.lo
+  CXX      src/config/libbitcoin_network_la-utilities.lo
+  CXX      src/log/libbitcoin_network_la-capture.lo
+  CXX      src/log/libbitcoin_network_la-logger.lo
+  CXX      src/log/libbitcoin_network_la-reporter.lo
+  CXX      src/messages/libbitcoin_network_la-address.lo
+  CXX      src/messages/libbitcoin_network_la-address_item.lo
+  CXX      src/messages/libbitcoin_network_la-alert.lo
+  CXX      src/messages/libbitcoin_network_la-alert_item.lo
+  CXX      src/messages/libbitcoin_network_la-block.lo
+  CXX      src/messages/libbitcoin_network_la-bloom_filter_add.lo
+  CXX      src/messages/libbitcoin_network_la-bloom_filter_clear.lo
+  CXX      src/messages/libbitcoin_network_la-bloom_filter_load.lo
+  CXX      src/messages/libbitcoin_network_la-client_filter.lo
+  CXX      src/messages/libbitcoin_network_la-client_filter_checkpoint.lo
+  CXX      src/messages/libbitcoin_network_la-client_filter_headers.lo
+  CXX      src/messages/libbitcoin_network_la-compact_block.lo
+  CXX      src/messages/libbitcoin_network_la-compact_block_item.lo
+  CXX      src/messages/libbitcoin_network_la-compact_transactions.lo
+  CXX      src/messages/libbitcoin_network_la-fee_filter.lo
+  CXX      src/messages/libbitcoin_network_la-get_address.lo
+  CXX      src/messages/libbitcoin_network_la-get_blocks.lo
+  CXX      src/messages/libbitcoin_network_la-get_client_filter_checkpoint.lo
+  CXX      src/messages/libbitcoin_network_la-get_client_filter_headers.lo
+  CXX      src/messages/libbitcoin_network_la-get_client_filters.lo
+  CXX      src/messages/libbitcoin_network_la-get_compact_transactions.lo
+  CXX      src/messages/libbitcoin_network_la-get_data.lo
+  CXX      src/messages/libbitcoin_network_la-get_headers.lo
+  CXX      src/messages/libbitcoin_network_la-headers.lo
+  CXX      src/messages/libbitcoin_network_la-heading.lo
+  CXX      src/messages/libbitcoin_network_la-inventory.lo
+  CXX      src/messages/libbitcoin_network_la-inventory_item.lo
+  CXX      src/messages/libbitcoin_network_la-memory_pool.lo
+  CXX      src/messages/libbitcoin_network_la-merkle_block.lo
+  CXX      src/messages/libbitcoin_network_la-message.lo
+  CXX      src/messages/libbitcoin_network_la-not_found.lo
+  CXX      src/messages/libbitcoin_network_la-ping.lo
+  CXX      src/messages/libbitcoin_network_la-pong.lo
+  CXX      src/messages/libbitcoin_network_la-reject.lo
+  CXX      src/messages/libbitcoin_network_la-send_compact.lo
+  CXX      src/messages/libbitcoin_network_la-send_headers.lo
+  CXX      src/messages/libbitcoin_network_la-transaction.lo
+  CXX      src/messages/libbitcoin_network_la-version.lo
+  CXX      src/messages/libbitcoin_network_la-version_acknowledge.lo
+  CXX      src/net/libbitcoin_network_la-acceptor.lo
+  CXX      src/net/libbitcoin_network_la-broadcaster.lo
+  CXX      src/net/libbitcoin_network_la-channel.lo
+  CXX      src/net/libbitcoin_network_la-connector.lo
+  CXX      src/net/libbitcoin_network_la-deadline.lo
+  CXX      src/net/libbitcoin_network_la-distributor.lo
+  CXX      src/net/libbitcoin_network_la-hosts.lo
+  CXX      src/net/libbitcoin_network_la-proxy.lo
+  CXX      src/net/libbitcoin_network_la-socket.lo
+  CXX      src/protocols/libbitcoin_network_la-protocol.lo
+  CXX      src/protocols/libbitcoin_network_la-protocol_address_in_31402.lo
+  CXX      src/protocols/libbitcoin_network_la-protocol_address_out_31402.lo
+  CXX      src/protocols/libbitcoin_network_la-protocol_alert_31402.lo
+  CXX      src/protocols/libbitcoin_network_la-protocol_ping_31402.lo
+  CXX      src/protocols/libbitcoin_network_la-protocol_ping_60001.lo
+  CXX      src/protocols/libbitcoin_network_la-protocol_reject_70002.lo
+  CXX      src/protocols/libbitcoin_network_la-protocol_seed_31402.lo
+  CXX      src/protocols/libbitcoin_network_la-protocol_version_31402.lo
+  CXX      src/protocols/libbitcoin_network_la-protocol_version_70001.lo
+  CXX      src/protocols/libbitcoin_network_la-protocol_version_70002.lo
+  CXX      src/sessions/libbitcoin_network_la-session.lo
+  CXX      src/sessions/libbitcoin_network_la-session_inbound.lo
+  CXX      src/sessions/libbitcoin_network_la-session_manual.lo
+  CXX      src/sessions/libbitcoin_network_la-session_outbound.lo
+  CXX      src/sessions/libbitcoin_network_la-session_seed.lo
+  CXXLD    src/libbitcoin-network.la
+copying selected object files to avoid basename conflicts...
+make[1]: ingresso nella directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-network»
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   src/libbitcoin-network.la '/home/tester/gitprojects2/libbitcoin4/lib'
+libtool: install: /usr/bin/install -c src/.libs/libbitcoin-network.lai /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-network.la
+libtool: install: /usr/bin/install -c src/.libs/libbitcoin-network.a /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-network.a
+libtool: install: chmod 644 /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-network.a
+libtool: install: ranlib /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-network.a
+libtool: finish: PATH="/home/tester/.pyenv/plugins/pyenv-virtualenv/shims:/home/tester/.pyenv/shims:/home/tester/.pyenv/bin:/home/tester/anaconda3/bin:/home/tester/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/tester/.local/bin:/sbin" ldconfig -n /home/tester/gitprojects2/libbitcoin4/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/tester/gitprojects2/libbitcoin4/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/share/doc/libbitcoin-network'
+ /usr/bin/install -c -m 644 AUTHORS COPYING ChangeLog INSTALL NEWS README '/home/tester/gitprojects2/libbitcoin4/share/doc/libbitcoin-network'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin'
+ /usr/bin/install -c -m 644 include/bitcoin/network.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network'
+ /usr/bin/install -c -m 644 include/bitcoin/network/boost.hpp include/bitcoin/network/define.hpp include/bitcoin/network/error.hpp include/bitcoin/network/p2p.hpp include/bitcoin/network/settings.hpp include/bitcoin/network/version.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/async'
+ /usr/bin/install -c -m 644 include/bitcoin/network/async/asio.hpp include/bitcoin/network/async/async.hpp include/bitcoin/network/async/desubscriber.hpp include/bitcoin/network/async/enable_shared_from_base.hpp include/bitcoin/network/async/handlers.hpp include/bitcoin/network/async/subscriber.hpp include/bitcoin/network/async/thread.hpp include/bitcoin/network/async/threadpool.hpp include/bitcoin/network/async/time.hpp include/bitcoin/network/async/unsubscriber.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/async'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/async/races'
+ /usr/bin/install -c -m 644 include/bitcoin/network/async/races/race_all.hpp include/bitcoin/network/async/races/race_quality.hpp include/bitcoin/network/async/races/race_speed.hpp include/bitcoin/network/async/races/race_unity.hpp include/bitcoin/network/async/races/race_volume.hpp include/bitcoin/network/async/races/races.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/async/races'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/config'
+ /usr/bin/install -c -m 644 include/bitcoin/network/config/address.hpp include/bitcoin/network/config/authority.hpp include/bitcoin/network/config/config.hpp include/bitcoin/network/config/endpoint.hpp include/bitcoin/network/config/utilities.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/config'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/impl/async'
+ /usr/bin/install -c -m 644 include/bitcoin/network/impl/async/desubscriber.ipp include/bitcoin/network/impl/async/enable_shared_from_base.ipp include/bitcoin/network/impl/async/subscriber.ipp include/bitcoin/network/impl/async/unsubscriber.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/impl/async'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/impl/async/races'
+ /usr/bin/install -c -m 644 include/bitcoin/network/impl/async/races/race_all.ipp include/bitcoin/network/impl/async/races/race_quality.ipp include/bitcoin/network/impl/async/races/race_speed.ipp include/bitcoin/network/impl/async/races/race_unity.ipp include/bitcoin/network/impl/async/races/race_volume.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/impl/async/races'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/log'
+ /usr/bin/install -c -m 644 include/bitcoin/network/log/capture.hpp include/bitcoin/network/log/levels.hpp include/bitcoin/network/log/log.hpp include/bitcoin/network/log/logger.hpp include/bitcoin/network/log/reporter.hpp include/bitcoin/network/log/timer.hpp include/bitcoin/network/log/tracker.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/log'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/messages'
+ /usr/bin/install -c -m 644 include/bitcoin/network/messages/address.hpp include/bitcoin/network/messages/address_item.hpp include/bitcoin/network/messages/alert.hpp include/bitcoin/network/messages/alert_item.hpp include/bitcoin/network/messages/block.hpp include/bitcoin/network/messages/bloom_filter_add.hpp include/bitcoin/network/messages/bloom_filter_clear.hpp include/bitcoin/network/messages/bloom_filter_load.hpp include/bitcoin/network/messages/client_filter.hpp include/bitcoin/network/messages/client_filter_checkpoint.hpp include/bitcoin/network/messages/client_filter_headers.hpp include/bitcoin/network/messages/compact_block.hpp include/bitcoin/network/messages/compact_block_item.hpp include/bitcoin/network/messages/compact_transactions.hpp include/bitcoin/network/messages/fee_filter.hpp include/bitcoin/network/messages/get_address.hpp include/bitcoin/network/messages/get_blocks.hpp include/bitcoin/network/messages/get_client_filter_checkpoint.hpp include/bitcoin/network/messages/get_client_filter_headers.hpp include/bitcoin/network/messages/get_client_filters.hpp include/bitcoin/network/messages/get_compact_transactions.hpp include/bitcoin/network/messages/get_data.hpp include/bitcoin/network/messages/get_headers.hpp include/bitcoin/network/messages/headers.hpp include/bitcoin/network/messages/heading.hpp include/bitcoin/network/messages/inventory.hpp include/bitcoin/network/messages/inventory_item.hpp include/bitcoin/network/messages/memory_pool.hpp include/bitcoin/network/messages/merkle_block.hpp include/bitcoin/network/messages/message.hpp include/bitcoin/network/messages/messages.hpp include/bitcoin/network/messages/not_found.hpp include/bitcoin/network/messages/ping.hpp include/bitcoin/network/messages/pong.hpp include/bitcoin/network/messages/reject.hpp include/bitcoin/network/messages/send_compact.hpp include/bitcoin/network/messages/send_headers.hpp include/bitcoin/network/messages/transaction.hpp include/bitcoin/network/messages/version.hpp include/bitcoin/network/messages/version_acknowledge.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/messages'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/messages/enums'
+ /usr/bin/install -c -m 644 include/bitcoin/network/messages/enums/identifier.hpp include/bitcoin/network/messages/enums/level.hpp include/bitcoin/network/messages/enums/magic_numbers.hpp include/bitcoin/network/messages/enums/service.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/messages/enums'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/net'
+ /usr/bin/install -c -m 644 include/bitcoin/network/net/acceptor.hpp include/bitcoin/network/net/broadcaster.hpp include/bitcoin/network/net/channel.hpp include/bitcoin/network/net/connector.hpp include/bitcoin/network/net/deadline.hpp include/bitcoin/network/net/distributor.hpp include/bitcoin/network/net/hosts.hpp include/bitcoin/network/net/net.hpp include/bitcoin/network/net/proxy.hpp include/bitcoin/network/net/socket.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/net'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/protocols'
+ /usr/bin/install -c -m 644 include/bitcoin/network/protocols/protocol.hpp include/bitcoin/network/protocols/protocol_address_in_31402.hpp include/bitcoin/network/protocols/protocol_address_out_31402.hpp include/bitcoin/network/protocols/protocol_alert_31402.hpp include/bitcoin/network/protocols/protocol_ping_31402.hpp include/bitcoin/network/protocols/protocol_ping_60001.hpp include/bitcoin/network/protocols/protocol_reject_70002.hpp include/bitcoin/network/protocols/protocol_seed_31402.hpp include/bitcoin/network/protocols/protocol_version_31402.hpp include/bitcoin/network/protocols/protocol_version_70001.hpp include/bitcoin/network/protocols/protocol_version_70002.hpp include/bitcoin/network/protocols/protocols.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/protocols'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/sessions'
+ /usr/bin/install -c -m 644 include/bitcoin/network/sessions/session.hpp include/bitcoin/network/sessions/session_inbound.hpp include/bitcoin/network/sessions/session_manual.hpp include/bitcoin/network/sessions/session_outbound.hpp include/bitcoin/network/sessions/session_seed.hpp include/bitcoin/network/sessions/sessions.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/network/sessions'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libbitcoin-network.pc '/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig'
+make[1]: uscita dalla directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-network»
+
+********************** Preparing to acquire libbitcoin/libbitcoin-database/master **********************
+Cloning libbitcoin/libbitcoin-database/master...
+
+********************** Preparing to build libbitcoin-database **********************
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+libtoolize: copying file 'build-aux/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure options:
+--without-tests
+--without-tools
+--with-boost=/home/tester/gitprojects2/libbitcoin4
+--with-pkgconfigdir=/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig
+--prefix=/home/tester/gitprojects2/libbitcoin4
+--enable-ndebug
+--disable-shared
+--enable-avx2
+--enable-sse4
+--enable-static
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether we are using the GNU C++ compiler... (cached) yes
+checking whether g++ accepts -g... (cached) yes
+checking dependency style of g++... (cached) gcc3
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking whether make supports nested variables... (cached) yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether g++ supports C++20 features with -std=c++20... yes
+checking --with-pkgconfigdir option... /home/tester/gitprojects2/libbitcoin4/lib/pkgconfig
+checking --with-tests option... no
+checking --with-tools option... no
+checking --enable-ndebug option... yes
+checking --enable-isystem option... no
+checking whether C++ compiler accepts -std=c++20... yes
+checking whether C++ compiler accepts -Wall... yes
+checking whether C++ compiler accepts -Wall... (cached) yes
+checking whether C++ compiler accepts -Wextra... yes
+checking whether C++ compiler accepts -Wextra... (cached) yes
+checking whether C++ compiler accepts -Wno-reorder... yes
+checking whether C++ compiler accepts -Wno-missing-field-initializers... yes
+checking whether C++ compiler accepts -Wno-missing-braces... yes
+checking whether C++ compiler accepts -Wno-comment... yes
+checking whether C++ compiler accepts -Wno-deprecated-copy... yes
+checking whether the linker accepts -no_fixup_chains... no
+checking whether the linker accepts -fstack-protector... yes
+checking whether the linker accepts -fstack-protector-all... yes
+checking for boostlib >= 1.76.0 (107600) includes in "/home/tester/gitprojects2/libbitcoin4/include"... yes
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib/x86_64-linux-gnu"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib64"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/libx32"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib"... yes
+checking for boostlib >= 1.76.0 (107600)... yes
+configure: boost_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+configure: boost_ISYS_CPPFLAGS : -isystem/home/tester/gitprojects2/libbitcoin4/include
+configure: boost_LDFLAGS : -L/home/tester/gitprojects2/libbitcoin4/lib
+configure: boost_BUILD_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+checking for libbitcoin-system >= 4.0.0... yes
+configure: bitcoin_system_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+configure: bitcoin_system_ISYS_CPPFLAGS : -isystem/home/tester/gitprojects2/libbitcoin4/include 
+configure: bitcoin_system_OTHER_CFLAGS : 
+configure: bitcoin_system_INCLUDEDIR : /home/tester/gitprojects2/libbitcoin4/include
+configure: bitcoin_system_LIBS : -L/home/tester/gitprojects2/libbitcoin4/lib -lbitcoin-system -lboost_chrono -lboost_iostreams -lboost_json -lboost_locale -lboost_program_options -lboost_system -lboost_thread -lpthread -lrt -ldl -lsecp256k1
+configure: bitcoin_system_BUILD_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libbitcoin-database.pc
+config.status: executing depfiles commands
+config.status: executing libtool commands
+  CXX      src/libbitcoin_database_la-error.lo
+  CXX      src/libbitcoin_database_la-settings.lo
+  CXX      src/file/libbitcoin_database_la-rotator.lo
+  CXX      src/file/libbitcoin_database_la-utilities.lo
+  CXX      src/locks/libbitcoin_database_la-file_lock.lo
+  CXX      src/locks/libbitcoin_database_la-flush_lock.lo
+  CXX      src/locks/libbitcoin_database_la-interprocess_lock.lo
+  CXX      src/memory/libbitcoin_database_la-map.lo
+  CXX      src/memory/libbitcoin_database_la-utilities.lo
+  CC       src/memory/mman-win32/libbitcoin_database_la-mman.lo
+  CXXLD    src/libbitcoin-database.la
+copying selected object files to avoid basename conflicts...
+make[1]: ingresso nella directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-database»
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   src/libbitcoin-database.la '/home/tester/gitprojects2/libbitcoin4/lib'
+libtool: install: /usr/bin/install -c src/.libs/libbitcoin-database.lai /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-database.la
+libtool: install: /usr/bin/install -c src/.libs/libbitcoin-database.a /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-database.a
+libtool: install: chmod 644 /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-database.a
+libtool: install: ranlib /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-database.a
+libtool: finish: PATH="/home/tester/.pyenv/plugins/pyenv-virtualenv/shims:/home/tester/.pyenv/shims:/home/tester/.pyenv/bin:/home/tester/anaconda3/bin:/home/tester/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/tester/.local/bin:/sbin" ldconfig -n /home/tester/gitprojects2/libbitcoin4/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/tester/gitprojects2/libbitcoin4/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/share/doc/libbitcoin-database'
+ /usr/bin/install -c -m 644 AUTHORS COPYING ChangeLog INSTALL NEWS README '/home/tester/gitprojects2/libbitcoin4/share/doc/libbitcoin-database'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin'
+ /usr/bin/install -c -m 644 include/bitcoin/database.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database'
+ /usr/bin/install -c -m 644 include/bitcoin/database/association.hpp include/bitcoin/database/associations.hpp include/bitcoin/database/boost.hpp include/bitcoin/database/define.hpp include/bitcoin/database/error.hpp include/bitcoin/database/query.hpp include/bitcoin/database/settings.hpp include/bitcoin/database/store.hpp include/bitcoin/database/version.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/file'
+ /usr/bin/install -c -m 644 include/bitcoin/database/file/file.hpp include/bitcoin/database/file/rotator.hpp include/bitcoin/database/file/utilities.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/file'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/impl'
+ /usr/bin/install -c -m 644 include/bitcoin/database/impl/store.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/impl'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/impl/memory'
+ /usr/bin/install -c -m 644 include/bitcoin/database/impl/memory/accessor.ipp include/bitcoin/database/impl/memory/simple_reader.ipp include/bitcoin/database/impl/memory/simple_writer.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/impl/memory'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/impl/primitives'
+ /usr/bin/install -c -m 644 include/bitcoin/database/impl/primitives/arraymap.ipp include/bitcoin/database/impl/primitives/hashmap.ipp include/bitcoin/database/impl/primitives/head.ipp include/bitcoin/database/impl/primitives/iterator.ipp include/bitcoin/database/impl/primitives/linkage.ipp include/bitcoin/database/impl/primitives/manager.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/impl/primitives'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/impl/query'
+ /usr/bin/install -c -m 644 include/bitcoin/database/impl/query/archive.ipp include/bitcoin/database/impl/query/confirm.ipp include/bitcoin/database/impl/query/context.ipp include/bitcoin/database/impl/query/extent.ipp include/bitcoin/database/impl/query/initialize.ipp include/bitcoin/database/impl/query/optional.ipp include/bitcoin/database/impl/query/query.ipp include/bitcoin/database/impl/query/translate.ipp include/bitcoin/database/impl/query/validate.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/impl/query'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/locks'
+ /usr/bin/install -c -m 644 include/bitcoin/database/locks/file_lock.hpp include/bitcoin/database/locks/flush_lock.hpp include/bitcoin/database/locks/interprocess_lock.hpp include/bitcoin/database/locks/locks.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/locks'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/memory'
+ /usr/bin/install -c -m 644 include/bitcoin/database/memory/accessor.hpp include/bitcoin/database/memory/finalizer.hpp include/bitcoin/database/memory/map.hpp include/bitcoin/database/memory/memory.hpp include/bitcoin/database/memory/reader.hpp include/bitcoin/database/memory/simple_reader.hpp include/bitcoin/database/memory/simple_writer.hpp include/bitcoin/database/memory/streamers.hpp include/bitcoin/database/memory/utilities.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/memory'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/memory/interfaces'
+ /usr/bin/install -c -m 644 include/bitcoin/database/memory/interfaces/memory.hpp include/bitcoin/database/memory/interfaces/storage.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/memory/interfaces'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/primitives'
+ /usr/bin/install -c -m 644 include/bitcoin/database/primitives/arraymap.hpp include/bitcoin/database/primitives/hashmap.hpp include/bitcoin/database/primitives/head.hpp include/bitcoin/database/primitives/iterator.hpp include/bitcoin/database/primitives/linkage.hpp include/bitcoin/database/primitives/manager.hpp include/bitcoin/database/primitives/primitives.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/primitives'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/tables'
+ /usr/bin/install -c -m 644 include/bitcoin/database/tables/context.hpp include/bitcoin/database/tables/event.hpp include/bitcoin/database/tables/schema.hpp include/bitcoin/database/tables/table.hpp include/bitcoin/database/tables/tables.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/tables'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/tables/archives'
+ /usr/bin/install -c -m 644 include/bitcoin/database/tables/archives/header.hpp include/bitcoin/database/tables/archives/input.hpp include/bitcoin/database/tables/archives/output.hpp include/bitcoin/database/tables/archives/point.hpp include/bitcoin/database/tables/archives/puts.hpp include/bitcoin/database/tables/archives/spend.hpp include/bitcoin/database/tables/archives/transaction.hpp include/bitcoin/database/tables/archives/txs.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/tables/archives'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/tables/caches'
+ /usr/bin/install -c -m 644 include/bitcoin/database/tables/caches/validated_bk.hpp include/bitcoin/database/tables/caches/validated_tx.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/tables/caches'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/tables/indexes'
+ /usr/bin/install -c -m 644 include/bitcoin/database/tables/indexes/height.hpp include/bitcoin/database/tables/indexes/strong_tx.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/tables/indexes'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/tables/optionals'
+ /usr/bin/install -c -m 644 include/bitcoin/database/tables/optionals/address.hpp include/bitcoin/database/tables/optionals/bootstrap.hpp include/bitcoin/database/tables/optionals/buffer.hpp include/bitcoin/database/tables/optionals/neutrino.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/database/tables/optionals'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libbitcoin-database.pc '/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig'
+make[1]: uscita dalla directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-database»
+
+********************** Preparing to acquire libbitcoin/libbitcoin-node/master **********************
+Cloning libbitcoin/libbitcoin-node/master...
+
+********************** Preparing to build libbitcoin-node **********************
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+libtoolize: copying file 'build-aux/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure options:
+--with-boost=/home/tester/gitprojects2/libbitcoin4
+--with-pkgconfigdir=/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig
+--prefix=/home/tester/gitprojects2/libbitcoin4
+--enable-ndebug
+--disable-shared
+--enable-avx2
+--enable-sse4
+--enable-static
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... gcc
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether we are using the GNU C++ compiler... (cached) yes
+checking whether g++ accepts -g... (cached) yes
+checking dependency style of g++... (cached) gcc3
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking whether make supports nested variables... (cached) yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether g++ supports C++20 features with -std=c++20... yes
+checking --with-bash-completiondir option... no
+checking --with-pkgconfigdir option... /home/tester/gitprojects2/libbitcoin4/lib/pkgconfig
+checking --with-tests option... yes
+checking --with-console option... yes
+checking --enable-ndebug option... yes
+checking --enable-isystem option... no
+checking whether C++ compiler accepts -std=c++20... yes
+checking whether C++ compiler accepts -Wall... yes
+checking whether C++ compiler accepts -Wall... (cached) yes
+checking whether C++ compiler accepts -Wextra... yes
+checking whether C++ compiler accepts -Wextra... (cached) yes
+checking whether C++ compiler accepts -Wno-reorder... yes
+checking whether C++ compiler accepts -Wno-missing-field-initializers... yes
+checking whether C++ compiler accepts -Wno-missing-braces... yes
+checking whether C++ compiler accepts -Wno-comment... yes
+checking whether C++ compiler accepts -Wno-deprecated-copy... yes
+checking whether the linker accepts -no_fixup_chains... no
+checking whether the linker accepts -fstack-protector... yes
+checking whether the linker accepts -fstack-protector-all... yes
+checking for boostlib >= 1.76.0 (107600) includes in "/home/tester/gitprojects2/libbitcoin4/include"... yes
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib/x86_64-linux-gnu"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib64"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/libx32"... no
+checking for boostlib >= 1.76.0 (107600) lib path in "/home/tester/gitprojects2/libbitcoin4/lib"... yes
+checking for boostlib >= 1.76.0 (107600)... yes
+configure: boost_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+configure: boost_ISYS_CPPFLAGS : -isystem/home/tester/gitprojects2/libbitcoin4/include
+configure: boost_LDFLAGS : -L/home/tester/gitprojects2/libbitcoin4/lib
+configure: boost_BUILD_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+checking whether the Boost::Unit_Test_Framework library is available... yes
+configure: boost_unit_test_framework_LIBS : -lboost_unit_test_framework
+configure: bash_completion_BUILD_CPPFLAGS : 
+checking for libbitcoin-database >= 4.0.0... yes
+configure: bitcoin_database_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+configure: bitcoin_database_ISYS_CPPFLAGS : -isystem/home/tester/gitprojects2/libbitcoin4/include 
+configure: bitcoin_database_OTHER_CFLAGS : 
+configure: bitcoin_database_INCLUDEDIR : /home/tester/gitprojects2/libbitcoin4/include
+configure: bitcoin_database_LIBS : -L/home/tester/gitprojects2/libbitcoin4/lib -lbitcoin-database -lbitcoin-system -lboost_chrono -lboost_iostreams -lboost_json -lboost_locale -lboost_program_options -lboost_system -lboost_thread -lpthread -lrt -ldl -lsecp256k1
+configure: bitcoin_database_BUILD_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+checking for libbitcoin-network >= 4.0.0... yes
+configure: bitcoin_network_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+configure: bitcoin_network_ISYS_CPPFLAGS : -isystem/home/tester/gitprojects2/libbitcoin4/include 
+configure: bitcoin_network_OTHER_CFLAGS : 
+configure: bitcoin_network_INCLUDEDIR : /home/tester/gitprojects2/libbitcoin4/include
+configure: bitcoin_network_LIBS : -L/home/tester/gitprojects2/libbitcoin4/lib -lbitcoin-network -lbitcoin-system -lboost_chrono -lboost_iostreams -lboost_json -lboost_locale -lboost_program_options -lboost_system -lboost_thread -lpthread -lrt -ldl -lsecp256k1
+configure: bitcoin_network_BUILD_CPPFLAGS : -I/home/tester/gitprojects2/libbitcoin4/include
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libbitcoin-node.pc
+config.status: executing depfiles commands
+config.status: executing libtool commands
+  CXX      console/bn-executor.o
+  CXX      console/bn-main.o
+  CXX      console/bn-stack_trace.o
+  CXX      src/libbitcoin_node_la-configuration.lo
+  CXX      src/libbitcoin_node_la-error.lo
+  CXX      src/libbitcoin_node_la-full_node.lo
+  CXX      src/libbitcoin_node_la-parser.lo
+  CXX      src/libbitcoin_node_la-settings.lo
+  CXX      src/chasers/libbitcoin_node_la-chaser.lo
+  CXX      src/chasers/libbitcoin_node_la-chaser_block.lo
+  CXX      src/chasers/libbitcoin_node_la-chaser_check.lo
+  CXX      src/chasers/libbitcoin_node_la-chaser_confirm.lo
+  CXX      src/chasers/libbitcoin_node_la-chaser_header.lo
+  CXX      src/chasers/libbitcoin_node_la-chaser_snapshot.lo
+  CXX      src/chasers/libbitcoin_node_la-chaser_storage.lo
+  CXX      src/chasers/libbitcoin_node_la-chaser_template.lo
+  CXX      src/chasers/libbitcoin_node_la-chaser_transaction.lo
+  CXX      src/chasers/libbitcoin_node_la-chaser_validate.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol_block_in.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol_block_in_31800.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol_block_out.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol_header_in_31800.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol_header_in_70012.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol_header_out_31800.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol_header_out_70012.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol_observer.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol_performer.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol_transaction_in.lo
+  CXX      src/protocols/libbitcoin_node_la-protocol_transaction_out.lo
+  CXX      src/sessions/libbitcoin_node_la-session.lo
+  CXX      src/sessions/libbitcoin_node_la-session_inbound.lo
+  CXX      src/sessions/libbitcoin_node_la-session_manual.lo
+  CXX      src/sessions/libbitcoin_node_la-session_outbound.lo
+  CXXLD    src/libbitcoin-node.la
+  CXXLD    console/bn
+make  test/libbitcoin-node-test
+make[1]: ingresso nella directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-node»
+  CXX      test/libbitcoin_node_test-configuration.o
+  CXX      test/libbitcoin_node_test-error.o
+  CXX      test/libbitcoin_node_test-main.o
+  CXX      test/libbitcoin_node_test-node.o
+  CXX      test/libbitcoin_node_test-settings.o
+  CXX      test/libbitcoin_node_test-test.o
+  CXX      test/chasers/libbitcoin_node_test-chaser.o
+  CXX      test/chasers/libbitcoin_node_test-chaser_block.o
+  CXX      test/chasers/libbitcoin_node_test-chaser_check.o
+  CXX      test/chasers/libbitcoin_node_test-chaser_confirm.o
+  CXX      test/chasers/libbitcoin_node_test-chaser_header.o
+  CXX      test/chasers/libbitcoin_node_test-chaser_template.o
+  CXX      test/chasers/libbitcoin_node_test-chaser_transaction.o
+  CXX      test/chasers/libbitcoin_node_test-chaser_validate.o
+  CXX      test/protocols/libbitcoin_node_test-protocol.o
+  CXX      test/sessions/libbitcoin_node_test-session.o
+  CXXLD    test/libbitcoin-node-test
+make[1]: uscita dalla directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-node»
+make  check-TESTS
+make[1]: ingresso nella directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-node»
+make[2]: ingresso nella directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-node»
+PASS: libbitcoin-node-test_runner.sh
+============================================================================
+Testsuite summary for libbitcoin-node 4.0.0
+============================================================================
+# TOTAL: 1
+# PASS:  1
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[2]: uscita dalla directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-node»
+make[1]: uscita dalla directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-node»
+Running 59 test cases...
+Platform: linux
+Compiler: GNU C++ version 12.2.0
+STL     : GNU libstdc++ version 20220819
+Boost   : 1.78.0
+make[1]: ingresso nella directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-node»
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/lib'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   src/libbitcoin-node.la '/home/tester/gitprojects2/libbitcoin4/lib'
+libtool: install: /usr/bin/install -c src/.libs/libbitcoin-node.lai /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-node.la
+libtool: install: /usr/bin/install -c src/.libs/libbitcoin-node.a /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-node.a
+libtool: install: chmod 644 /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-node.a
+libtool: install: ranlib /home/tester/gitprojects2/libbitcoin4/lib/libbitcoin-node.a
+libtool: finish: PATH="/home/tester/.pyenv/plugins/pyenv-virtualenv/shims:/home/tester/.pyenv/shims:/home/tester/.pyenv/bin:/home/tester/anaconda3/bin:/home/tester/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/tester/.local/bin:/sbin" ldconfig -n /home/tester/gitprojects2/libbitcoin4/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/tester/gitprojects2/libbitcoin4/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/bin'
+  /bin/bash ./libtool   --mode=install /usr/bin/install -c console/bn '/home/tester/gitprojects2/libbitcoin4/bin'
+libtool: install: /usr/bin/install -c console/bn /home/tester/gitprojects2/libbitcoin4/bin/bn
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/share/doc/libbitcoin-node'
+ /usr/bin/install -c -m 644 AUTHORS COPYING ChangeLog INSTALL NEWS README '/home/tester/gitprojects2/libbitcoin4/share/doc/libbitcoin-node'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin'
+ /usr/bin/install -c -m 644 include/bitcoin/node.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/node'
+ /usr/bin/install -c -m 644 include/bitcoin/node/chase.hpp include/bitcoin/node/configuration.hpp include/bitcoin/node/define.hpp include/bitcoin/node/error.hpp include/bitcoin/node/events.hpp include/bitcoin/node/full_node.hpp include/bitcoin/node/parser.hpp include/bitcoin/node/settings.hpp include/bitcoin/node/version.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/node'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/node/chasers'
+ /usr/bin/install -c -m 644 include/bitcoin/node/chasers/chaser.hpp include/bitcoin/node/chasers/chaser_block.hpp include/bitcoin/node/chasers/chaser_check.hpp include/bitcoin/node/chasers/chaser_confirm.hpp include/bitcoin/node/chasers/chaser_header.hpp include/bitcoin/node/chasers/chaser_organize.hpp include/bitcoin/node/chasers/chaser_snapshot.hpp include/bitcoin/node/chasers/chaser_storage.hpp include/bitcoin/node/chasers/chaser_template.hpp include/bitcoin/node/chasers/chaser_transaction.hpp include/bitcoin/node/chasers/chaser_validate.hpp include/bitcoin/node/chasers/chasers.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/node/chasers'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/node/impl/chasers'
+ /usr/bin/install -c -m 644 include/bitcoin/node/impl/chasers/chaser_organize.ipp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/node/impl/chasers'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/node/protocols'
+ /usr/bin/install -c -m 644 include/bitcoin/node/protocols/protocol.hpp include/bitcoin/node/protocols/protocol_block_in.hpp include/bitcoin/node/protocols/protocol_block_in_31800.hpp include/bitcoin/node/protocols/protocol_block_out.hpp include/bitcoin/node/protocols/protocol_header_in_31800.hpp include/bitcoin/node/protocols/protocol_header_in_70012.hpp include/bitcoin/node/protocols/protocol_header_out_31800.hpp include/bitcoin/node/protocols/protocol_header_out_70012.hpp include/bitcoin/node/protocols/protocol_observer.hpp include/bitcoin/node/protocols/protocol_performer.hpp include/bitcoin/node/protocols/protocol_transaction_in.hpp include/bitcoin/node/protocols/protocol_transaction_out.hpp include/bitcoin/node/protocols/protocols.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/node/protocols'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/node/sessions'
+ /usr/bin/install -c -m 644 include/bitcoin/node/sessions/attach.hpp include/bitcoin/node/sessions/session.hpp include/bitcoin/node/sessions/session_inbound.hpp include/bitcoin/node/sessions/session_manual.hpp include/bitcoin/node/sessions/session_outbound.hpp include/bitcoin/node/sessions/sessions.hpp '/home/tester/gitprojects2/libbitcoin4/include/bitcoin/node/sessions'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libbitcoin-node.pc '/home/tester/gitprojects2/libbitcoin4/lib/pkgconfig'
+ /usr/bin/mkdir -p '/home/tester/gitprojects2/libbitcoin4/etc/libbitcoin'
+ /usr/bin/install -c -m 644 data/bn.cfg '/home/tester/gitprojects2/libbitcoin4/etc/libbitcoin'
+make[1]: exit from directory «/home/tester/gitprojects2/libbitcoin4/build-libbitcoin-node/libbitcoin-node»

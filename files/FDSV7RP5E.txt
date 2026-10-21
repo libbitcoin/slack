@@ -1,0 +1,90 @@
+=========== Input script evaluation ===========
+
+> Operation: 0
+[00149a19a31c2fda7d0c30215ec954a20a542aa84ad3]
+
+> Stack after operation: 0
+[00149a19a31c2fda7d0c30215ec954a20a542aa84ad3]
+
+=========== Output script evaluation ==========
+
+> Operation: 0
+hash160
+
+> Stack after operation: 0
+[dcdc2f89b96c420751e3750da7d5073a81b16946]
+
+>> Operation: 1
+[dcdc2f89b96c420751e3750da7d5073a81b16946]
+
+>> Stack after operation: 1
+[dcdc2f89b96c420751e3750da7d5073a81b16946]
+[dcdc2f89b96c420751e3750da7d5073a81b16946]
+
+>>> Operation: 2
+equal
+
+>>> Stack after operation: 2
+[01]
+
+----------- P2SH pattern detected -------------
+
+======= P2SH Embedded script evaluation =======
+
+> Operation: 0
+zero
+
+> Stack after operation: 0
+[]
+
+>> Operation: 1
+[9a19a31c2fda7d0c30215ec954a20a542aa84ad3]
+
+>> Stack after operation: 1
+[9a19a31c2fda7d0c30215ec954a20a542aa84ad3]
+[]
+
+---------- Witness program detected -----------
+
+============== Witness evaluation =============
+
+> Operation: 0
+dup
+
+> Stack after operation: 0
+[026ccfb8061f235cc110697c0bfb3afb99d82c886672f6b9b5393b25a434c0cbf3]
+[026ccfb8061f235cc110697c0bfb3afb99d82c886672f6b9b5393b25a434c0cbf3]
+[304402207ecbb796a2bc706d90e2ed7efb58f59822bdc4c253b91f6eecd26ca5df1a6bb60220700b737f3c49b2f21bb228fadeab786e2ac78fd87890ede3f5d299e81880d96301]
+
+>> Operation: 1
+hash160
+
+>> Stack after operation: 1
+[9a19a31c2fda7d0c30215ec954a20a542aa84ad3]
+[026ccfb8061f235cc110697c0bfb3afb99d82c886672f6b9b5393b25a434c0cbf3]
+[304402207ecbb796a2bc706d90e2ed7efb58f59822bdc4c253b91f6eecd26ca5df1a6bb60220700b737f3c49b2f21bb228fadeab786e2ac78fd87890ede3f5d299e81880d96301]
+
+>>> Operation: 2
+[9a19a31c2fda7d0c30215ec954a20a542aa84ad3]
+
+>>> Stack after operation: 2
+[9a19a31c2fda7d0c30215ec954a20a542aa84ad3]
+[9a19a31c2fda7d0c30215ec954a20a542aa84ad3]
+[026ccfb8061f235cc110697c0bfb3afb99d82c886672f6b9b5393b25a434c0cbf3]
+[304402207ecbb796a2bc706d90e2ed7efb58f59822bdc4c253b91f6eecd26ca5df1a6bb60220700b737f3c49b2f21bb228fadeab786e2ac78fd87890ede3f5d299e81880d96301]
+
+>>>> Operation: 3
+equalverify
+
+>>>> Stack after operation: 3
+[026ccfb8061f235cc110697c0bfb3afb99d82c886672f6b9b5393b25a434c0cbf3]
+[304402207ecbb796a2bc706d90e2ed7efb58f59822bdc4c253b91f6eecd26ca5df1a6bb60220700b737f3c49b2f21bb228fadeab786e2ac78fd87890ede3f5d299e81880d96301]
+
+>>>>> Operation: 4
+checksig
+
+>>>>> Stack after operation: 4
+[01]
+
+--------- Script evaluation complete ----------
+success
