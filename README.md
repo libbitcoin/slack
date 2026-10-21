@@ -14,7 +14,7 @@ https://libbitcoin.info/slack/.
 1. Create a Slack app from `slack-app.yml` (api.slack.com/apps, *Create New
    App*, *From a manifest*), install it to the workspace and copy its *Bot
    User OAuth Token* (`xoxb-...`).
-2. In Slack, `/invite @archive` in `#general`.
+2. In Slack, `/invite @libbitcoin-mirror` in `#general`.
 3. Add the token to this repository as the Actions secret `SLACK_TOKEN`.
 4. Set *Settings › Pages › Source* to *GitHub Actions*.
 

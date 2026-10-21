@@ -1,9 +1,9 @@
 display_information:
-  name: Archive
+  name: libbitcoin mirror
   description: Mirrors #general to libbitcoin.info/slack.
 features:
   bot_user:
-    display_name: archive
+    display_name: libbitcoin-mirror
     always_online: false
 oauth_config:
   scopes:
