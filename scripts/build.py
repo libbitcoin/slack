@@ -555,8 +555,8 @@ def build_index(a, months):
         rows.append('<tr><th>%s<small>%d</small></th>%s</tr>' % (
             year, total, ''.join(cells)))
     first, last = months[0], months[-1]
-    lede = ('Archive of the libbitcoin Slack <strong>#%s</strong> channel, '
-            'mirrored daily.' % esc(a.channel['name']))
+    lede = ('Mirror of the libbitcoin Slack <strong>#%s</strong> channel.'
+            % esc(a.channel['name']))
     stats = ('<p class="stats"><b>%s</b> messages · <b>%d</b> people · '
              '%s – %s</p>' % ('{:,}'.format(sum(counts.values())),
                               len(people), month_name(first),
