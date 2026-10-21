@@ -10,17 +10,17 @@
 }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+html { -webkit-text-size-adjust: 100%; scrollbar-gutter: stable; }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px 96px; }
+.wrap { box-sizing: content-box; max-width: 1120px; margin: 0 auto; padding: 0 24px 96px; }
 
 .mast { padding: 56px 0 28px; border-bottom: 2px solid var(--ink); display: flex; flex-direction: column; gap: 14px; }
 .logo { width: 132px; height: auto; display: block; }
 .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-h1 { color: var(--heading); font-family: var(--mono); font-size: clamp(26px, 4.4vw, 40px); font-weight: 600; letter-spacing: -.02em; line-height: 1.1; margin: 0; }
-.lede { max-width: 66ch; color: var(--ink-2); font-size: 16px; margin: 0; }
+h1 { color: var(--heading); font-family: var(--mono); font-size: clamp(28px, 4.4vw, 44px); font-weight: 600; letter-spacing: -.02em; line-height: 1.1; text-wrap: balance; margin: 0; }
+.lede { max-width: 66ch; color: var(--ink-2); font-size: 16px; }
 .stats { font-family: var(--mono); font-size: 12.5px; color: var(--ink-3); margin: 0; }
 .stats b { color: var(--ink); font-weight: 600; }
 .lede strong { color: var(--ink); font-weight: 600; }
@@ -123,12 +123,14 @@ h2 { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-tran
 .th[open] { border-left: 2px solid var(--rule); padding-left: 6px; }
 .th .th { margin-left: 0; }
 
+@media (max-width: 760px) {
+  .wrap { padding: 0 14px 72px; }
+}
 @media (max-width: 640px) {
-  .wrap { padding: 0 16px 72px; }
-  .mast { padding-top: 36px; }
   .msg { grid-template-columns: 36px 1fr; column-gap: 8px; padding: 5px 4px; }
   .av { width: 30px; height: 30px; }
   .msg.ev { padding-left: 48px; }
   .th { margin-left: 30px; }
   .msg.c .tm { display: none; }
 }
+.share { margin-top: 24px; }
