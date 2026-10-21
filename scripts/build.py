@@ -257,8 +257,15 @@ class Archive:
         return '\n'.join(lines[:SNIPPET_LINES]), more
 
     def file(self, f, prefix):
-        if f.get('mode') == 'tombstone' or 'path' not in f:
+        if f.get('mode') == 'tombstone':
             return '<div class="file gone">File deleted</div>'
+        if 'path' not in f:
+            return ('<div class="file"><span class="ico">%s</span><span>'
+                    '<span class="fn">%s</span><span class="meta">%s · too '
+                    'large to mirror</span></span></div>' % (
+                        esc((f.get('filetype') or 'file').upper()[:4]),
+                        esc(f.get('title') or f.get('name') or f['id']),
+                        esc(size(f.get('size', 0)))))
         if not os.path.exists(os.path.join(store.ROOT, f['path'])):
             return '<div class="file gone">%s (missing)</div>' % esc(
                 f.get('name', ''))

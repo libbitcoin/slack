@@ -31,6 +31,7 @@ USER_KEYS = {'id', 'name', 'deleted', 'is_bot', 'is_admin', 'is_owner'}
 USER_PROFILE_KEYS = {'real_name', 'display_name', 'title', 'avatar_hash'}
 ROOM_KEYS = {'date_start', 'date_end', 'created_by', 'participant_history'}
 
+MAX_FILE = 95 * 1024 * 1024
 SECRET = re.compile(r'xox[a-z]-|[?&](t|token)=')
 
 
@@ -86,9 +87,15 @@ def file_path(f):
     return 'files/' + f['id'] + ext
 
 
+def mirrored(f):
+    """True if the attachment is stored, false if metadata only."""
+    return (f.get('mode') not in ('tombstone', 'hidden_by_limit', 'external')
+            and f.get('size', 0) <= MAX_FILE)
+
+
 def sanitize_file(f):
     out = {k: v for k, v in f.items() if k in FILE_KEYS}
-    if f.get('mode') not in ('tombstone', 'hidden_by_limit', 'external'):
+    if mirrored(f):
         out['path'] = file_path(f)
     return out
 
@@ -193,7 +200,7 @@ def fetch_files(raw_messages, headers=None):
     for m in raw_messages:
         for f in m.get('files', []) + m.get('root', {}).get('files', []):
             url = f.get('url_private_download') or f.get('url_private')
-            if not url or f.get('mode') == 'tombstone':
+            if not url or not mirrored(f):
                 continue
             try:
                 count += download(url, file_path(f), headers)
