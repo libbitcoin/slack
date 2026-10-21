@@ -20,9 +20,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
@@ -45,7 +45,7 @@ jobs:
             git push
           fi
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: .cache
           key: thumbs-${{ github.run_id }}
@@ -53,7 +53,7 @@ jobs:
 
       - run: python scripts/build.py
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -65,4 +65,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
