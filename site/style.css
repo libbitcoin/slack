@@ -30,6 +30,13 @@ h1 { color: var(--heading); font-family: var(--mono); font-size: clamp(28px, 4.4
 .menu a.here { color: var(--heading); }
 .mast .menu.site { margin: 0; }
 .mast + .menu { border-top: 0; }
+.menu.site { align-items: center; }
+.drop { position: relative; }
+.drop > summary { list-style: none; cursor: pointer; color: var(--ink-2); }
+.drop > summary::-webkit-details-marker { display: none; }
+.drop > summary::after { content: " ▾"; }
+.drop > summary:hover, .drop[open] > summary { color: var(--heading); }
+.drop > div { position: absolute; top: calc(100% + 10px); left: -14px; z-index: 20; display: flex; flex-direction: column; gap: 10px; width: max-content; padding: 12px 14px; background: var(--surface); border: 1px solid var(--rule); border-radius: 3px; box-shadow: var(--shadow); }
 h2 { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--rule-soft); }
 
 .search { margin: 32px 0 40px; }

@@ -28,12 +28,21 @@ CODE_TYPES = {'text', 'cpp', 'c', 'python', 'shell', 'diff', 'javascript',
 
 SITE_MENU = [
     ('index.html', 'Home'),
-    ('interfaces.html', 'Server interfaces'),
-    ('interface-performance.html', 'Interface performance'),
-    ('node-performance.html', 'Node performance'),
-    ('architecture/index.html', 'Node architecture'),
-    ('database/index.html', 'Database architecture'),
-    ('slack/index.html', 'Slack'),
+    ('Server', [
+        ('interfaces.html', 'Interfaces'),
+        ('configuration/index.html', 'Configuration'),
+        ('building/index.html', 'Building'),
+    ]),
+    ('Performance', [
+        ('sync.html', 'Sync'),
+        ('footprint.html', 'Footprint'),
+        ('computation.html', 'Computation'),
+        ('interface-performance.html', 'Interfaces'),
+    ]),
+    ('Architecture', [
+        ('architecture/index.html', 'Node'),
+        ('database/index.html', 'Database'),
+    ]),
     ('team.html', 'Team'),
 ]
 
@@ -498,9 +507,16 @@ def page(title, path, prefix, body, description, image=None, robots=''):
 
 def mast(prefix, title, lede, extra=''):
     root = prefix + '../'
-    items = ''.join('<a href="%s%s"%s>%s</a>' % (
-        root, href, ' class="here"' if label == 'Slack' else '', label)
-        for href, label in SITE_MENU)
+    items = ''
+    for label, target in SITE_MENU:
+        if isinstance(target, list):
+            links = ''.join('<a href="%s%s">%s</a>' % (root, href, name)
+                for href, name in target)
+            items += ('<details class="drop" name="site"><summary>%s</summary>'
+                '<div>%s</div></details>' % (label, links))
+        else:
+            here = ' class="here"' if label == 'team.html' else ''
+            items += '<a href="%s%s"%s>%s</a>' % (root, label, here, target)
     return '''<header class="mast">
 <a href="%s" aria-label="libbitcoin.info"><img class="logo" src="%slogo.svg" alt="libbitcoin"></a>
 <div class="eyebrow">Bitcoin full node and query server</div>
