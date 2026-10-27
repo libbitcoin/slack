@@ -539,7 +539,7 @@ def mast(prefix, title, lede, extra=''):
             items += '<a href="%s%s"%s>%s</a>' % (root, label, here, target)
     return '''<header class="mast">
 <a href="%s" aria-label="libbitcoin.info"><img class="logo" src="%slogo.svg" alt="libbitcoin"></a>
-<div class="eyebrow">Bitcoin full node and query server</div>
+<div class="eyebrow">Full stack Bitcoin software</div>
 <h1>%s</h1>
 <nav class="menu site">%s</nav>
 <p class="lede">%s</p>
