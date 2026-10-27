@@ -62,7 +62,15 @@ SITE_MENU = [
     ('Client', [
         ('client/commands.html', 'BX Commands'),
     ]),
-    ('developers/index.html', 'Developers'),
+    ('Developers', [
+        ('developers/index.html', 'Overview'),
+        ('api/system/index.html', 'System'),
+        ('api/database/index.html', 'Database'),
+        ('api/network/index.html', 'Network'),
+        ('api/node/index.html', 'Node'),
+        ('api/server/index.html', 'Server'),
+        ('api/explorer/index.html', 'Explorer'),
+    ]),
     ('team.html', 'Team'),
 ]
 
