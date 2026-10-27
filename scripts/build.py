@@ -28,10 +28,23 @@ CODE_TYPES = {'text', 'cpp', 'c', 'python', 'shell', 'diff', 'javascript',
 
 SITE_MENU = [
     ('index.html', 'Home'),
-    ('Server', [
-        ('interfaces.html', 'Interfaces'),
+    ('Getting Started', [
+        ('start/index.html', 'Quick Start'),
         ('configuration/index.html', 'Configuration'),
         ('building/index.html', 'Building'),
+    ]),
+    ('Server', [
+        ('interfaces.html', 'Interfaces'),
+        ('interfaces/admin.html', 'Admin Console'),
+        ('interfaces/native.html', 'Native REST'),
+        ('interfaces/electrum.html', 'Electrum'),
+        ('interfaces/sparrow.html', 'Sparrow'),
+        ('interfaces/p2p.html', 'Bitcoin P2P'),
+        ('interfaces/bitcoind-rpc.html', 'Bitcoind JSON-RPC'),
+        ('interfaces/bitcoind-rest.html', 'Bitcoind REST'),
+        ('interfaces/zeromq.html', 'Bitcoind ZMQ'),
+        ('interfaces/btcd.html', 'BTCD'),
+        ('interfaces/esplora.html', 'Esplora'),
     ]),
     ('Performance', [
         ('sync.html', 'Sync'),
