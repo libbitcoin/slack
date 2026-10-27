@@ -57,6 +57,10 @@ SITE_MENU = [
         ('architecture/index.html', 'Node'),
         ('database/index.html', 'Database'),
     ]),
+    ('Client', [
+        ('client/commands.html', 'Commands'),
+    ]),
+    ('developers/index.html', 'Developers'),
     ('team.html', 'Team'),
 ]
 
