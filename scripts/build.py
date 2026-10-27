@@ -465,7 +465,7 @@ def share_path(ts):
 
 def page(title, path, prefix, body, description, image=None, robots=''):
     """Image is (url, width, height) or None for the site card."""
-    url, width, height = image or ('https://%s/card.png' % CANONICAL,
+    url, width, height = image or ('https://%s/card3.png' % CANONICAL,
                                    2400, 1260)
     title, description = esc(title, True), esc(description, True)
     meta = [('property', 'og:type', 'website'),
