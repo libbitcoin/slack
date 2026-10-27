@@ -29,6 +29,7 @@ CODE_TYPES = {'text', 'cpp', 'c', 'python', 'shell', 'diff', 'javascript',
 SITE_MENU = [
     ('index.html', 'Home'),
     ('Getting Started', [
+        ('download/index.html', 'Download'),
         ('start/index.html', 'Quick Start'),
         ('configuration/index.html', 'Configuration'),
         ('building/index.html', 'Building'),
