@@ -29,13 +29,13 @@ CODE_TYPES = {'text', 'cpp', 'c', 'python', 'shell', 'diff', 'javascript',
 SITE_MENU = [
     ('index.html', 'Home'),
     ('Getting Started', [
-        ('download/index.html', 'Download'),
+        ('download/index.html', 'Download BS'),
         ('start/index.html', 'Quick Start'),
         ('configuration/index.html', 'Configuration'),
         ('building/index.html', 'Building'),
     ]),
     ('Server', [
-        ('interfaces.html', 'Interfaces'),
+        ('interfaces.html', 'BS Interfaces'),
         ('interfaces/admin.html', 'Admin Console'),
         ('interfaces/native.html', 'Native REST'),
         ('interfaces/electrum.html', 'Electrum'),
@@ -46,9 +46,11 @@ SITE_MENU = [
         ('interfaces/zeromq.html', 'Bitcoind ZMQ'),
         ('interfaces/btcd.html', 'BTCD'),
         ('interfaces/esplora.html', 'Esplora'),
+        ('interfaces/stratum-v1.html', 'Stratum v1'),
+        ('interfaces/stratum-v2.html', 'Stratum v2'),
     ]),
     ('Performance', [
-        ('sync.html', 'Sync'),
+        ('sync.html', 'Sync BS'),
         ('footprint.html', 'Footprint'),
         ('computation.html', 'Computation'),
         ('interface-performance.html', 'Interfaces'),
@@ -58,7 +60,7 @@ SITE_MENU = [
         ('database/index.html', 'Database'),
     ]),
     ('Client', [
-        ('client/commands.html', 'Commands'),
+        ('client/commands.html', 'BX Commands'),
     ]),
     ('developers/index.html', 'Developers'),
     ('team.html', 'Team'),
