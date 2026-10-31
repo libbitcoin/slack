@@ -33,7 +33,26 @@ SITE_MENU = [
         ('start/index.html', 'Quick Start'),
         ('configuration/index.html', 'Configuration'),
         ('configuration/reference.html', 'Settings Reference'),
+        ('building/platforms.html', 'Platform Support'),
         ('building/index.html', 'Building'),
+        ('packages/index.html', 'Packages'),
+    ]),
+    ('Performance', [
+        ('sync.html', 'Sync BS'),
+        ('footprint.html', 'Footprint'),
+        ('computation.html', 'Computation'),
+        ('interface-performance.html', 'Interfaces'),
+    ]),
+    ('Architecture', [
+        ('architecture/index.html', 'Overview'),
+        ('architecture/system/index.html', 'System'),
+        ('architecture/database/index.html', 'Database'),
+        ('architecture/network/index.html', 'Network'),
+        ('architecture/node/index.html', 'Node'),
+        ('architecture/server/index.html', 'Server'),
+        ('architecture/explorer/index.html', 'Explorer'),
+        ('architecture/build/index.html', 'Build'),
+        ('architecture/test/index.html', 'Test'),
     ]),
     ('Server', [
         ('interfaces.html', 'BS Interfaces'),
@@ -50,35 +69,16 @@ SITE_MENU = [
         ('interfaces/stratum-v1.html', 'Stratum v1'),
         ('interfaces/stratum-v2.html', 'Stratum v2'),
     ]),
-    ('Performance', [
-        ('sync.html', 'Sync BS'),
-        ('footprint.html', 'Footprint'),
-        ('computation.html', 'Computation'),
-        ('interface-performance.html', 'Interfaces'),
-    ]),
-    ('Architecture', [
-        ('overview/index.html', 'Overview'),
-        ('system/index.html', 'System Architecture'),
-        ('database/index.html', 'Database Architecture'),
-        ('network/index.html', 'Network Architecture'),
-        ('architecture/index.html', 'Node Architecture'),
-        ('server/index.html', 'Server Architecture'),
-        ('explorer/index.html', 'Explorer Architecture'),
-        ('build/index.html', 'Build Architecture'),
-    ]),
     ('Client', [
         ('client/commands.html', 'BX Commands'),
     ]),
     ('Developers', [
         ('developers/index.html', 'Overview'),
-        ('api/system/index.html', 'System API'),
-        ('api/database/index.html', 'Database API'),
-        ('api/network/index.html', 'Network API'),
-        ('api/node/index.html', 'Node API'),
-        ('api/server/index.html', 'Server API'),
-        ('api/explorer/index.html', 'Explorer API'),
+        ('developers/contributing.html', 'Contributing'),
+        ('developers/style.html', 'Style Guide'),
+        ('developers/testing.html', 'Test Practices'),
     ]),
-    ('team.html', 'Team'),
+    ('about.html', 'About'),
 ]
 
 esc = html.escape
@@ -550,7 +550,7 @@ def mast(prefix, title, lede, extra=''):
             items += ('<details class="drop" name="site"><summary>%s</summary>'
                 '<div>%s</div></details>' % (label, links))
         else:
-            here = ' class="here"' if label == 'team.html' else ''
+            here = ' class="here"' if label == 'about.html' else ''
             items += '<a href="%s%s"%s>%s</a>' % (root, label, here, target)
     return '''<header class="mast">
 <a href="%s" aria-label="libbitcoin.info"><img class="logo" src="%slogo.svg" alt="libbitcoin"></a>
