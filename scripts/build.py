@@ -33,7 +33,7 @@ SITE_MENU = [
         ('start/index.html', 'Quick Start'),
         ('configuration/index.html', 'Configuration'),
         ('configuration/reference.html', 'Settings Reference'),
-        ('building/platforms.html', 'Platform Support'),
+        ('building/platforms.html', 'Platform Coverage'),
         ('building/index.html', 'Building'),
         ('packages/index.html', 'Packages'),
     ]),
