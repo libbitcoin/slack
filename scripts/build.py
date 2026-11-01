@@ -34,6 +34,7 @@ SITE_MENU = [
         ('configuration/index.html', 'Configuration'),
         ('configuration/reference.html', 'Settings Reference'),
         ('building/platforms.html', 'Platform Coverage'),
+        ('building/status.html', 'Build Status'),
         ('building/index.html', 'Building'),
         ('packages/index.html', 'Packages'),
     ]),
