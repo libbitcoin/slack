@@ -1,6 +1,6 @@
 display_information:
   name: libbitcoin mirror
-  description: Mirrors #general to libbitcoin.info/slack.
+  description: Mirrors #general to libbitcoin.org/slack.
 features:
   bot_user:
     display_name: libbitcoin-mirror

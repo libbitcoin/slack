@@ -1,7 +1,7 @@
 # libbitcoin Slack archive
 
 Public mirror of the libbitcoin Slack `#general` channel, served at
-https://libbitcoin.info/slack/.
+https://libbitcoin.org/slack/.
 
 * `data/` sanitized messages (one file per month), users and channel.
 * `files/` attachments and avatars.

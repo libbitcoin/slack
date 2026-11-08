@@ -14,8 +14,8 @@ from PIL import Image
 
 import store
 
-SITE = 'https://libbitcoin.info/slack/'
-CANONICAL = 'libbitcoin.info'
+SITE = 'https://libbitcoin.org/slack/'
+CANONICAL = 'libbitcoin.org'
 OUT = os.path.join(store.ROOT, '_site')
 CACHE = os.path.join(store.ROOT, '.cache')
 THUMB_WIDTH = 960
@@ -554,7 +554,7 @@ def mast(prefix, title, lede, extra=''):
             here = ' class="here"' if label == 'about.html' else ''
             items += '<a href="%s%s"%s>%s</a>' % (root, label, here, target)
     return '''<header class="mast">
-<a href="%s" aria-label="libbitcoin.info"><img class="logo" src="%slogo.svg" alt="libbitcoin"></a>
+<a href="%s" aria-label="libbitcoin.org"><img class="logo" src="%slogo.svg" alt="libbitcoin"></a>
 <div class="eyebrow">Full stack Bitcoin software</div>
 <h1>%s</h1>
 <nav class="menu site">%s</nav>
