@@ -32,7 +32,7 @@ SITE_MENU = [
         ('download/index.html', 'Download BS'),
         ('start/index.html', 'Quick Start'),
         ('building/platforms.html', 'Platform Coverage'),
-        ('configuration/public.html', 'Public Servers'),
+        ('configuration/public.html', 'Community Servers'),
         ('building/status.html', 'Build Status'),
         ('building/index.html', 'Building'),
         ('packages/index.html', 'Packages'),
