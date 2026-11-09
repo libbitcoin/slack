@@ -75,7 +75,7 @@ SITE_MENU = [
         ('interfaces/p2p.html', 'Bitcoin P2P'),
         ('interfaces/bitcoind-rpc.html', 'Bitcoind JSON-RPC'),
         ('interfaces/bitcoind-rest.html', 'Bitcoind REST'),
-        ('interfaces/zeromq.html', 'Bitcoind ZMQ'),
+        ('interfaces/zeromq.html', 'ZMQ'),
         ('interfaces/btcd.html', 'BTCD'),
         ('interfaces/esplora.html', 'Esplora'),
         ('interfaces/stratum-v1.html', 'Stratum v1'),
