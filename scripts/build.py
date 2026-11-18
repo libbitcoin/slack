@@ -540,6 +540,7 @@ def page(title, path, prefix, body, description, image=None, robots=''):
 <link rel="canonical" href="%s%s">
 <link rel="icon" type="image/svg+xml" href="%sfavicon.svg">
 <link rel="stylesheet" href="%sstyle.css">
+<script src="%s../skins/skins.js"></script>
 %s
 %s
 </head>
@@ -548,8 +549,8 @@ def page(title, path, prefix, body, description, image=None, robots=''):
 <script src="%sapp.js"></script>
 </body>
 </html>
-''' % (title, description, SITE, path, prefix, prefix, tags, guard(path),
-       body, prefix)
+''' % (title, description, SITE, path, prefix, prefix, prefix, tags,
+       guard(path), body, prefix)
 
 
 def mast(prefix, title, lede, extra=''):
